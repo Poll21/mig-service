@@ -1,0 +1,10 @@
+^D:\MIGSERVICE\BUILD\WINDOWS\CMAKEFILES\1BDB87846509BE4D9BCE7012D3B4E674\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,1 @@
+ build\\web\\favicon.png build\\web\\icons\\Icon-192.png build\\web\\icons\\Icon-512.png build\\web\\index.html build\\web\\manifest.json:  D:\\migservice\\web\\favicon.png D:\\migservice\\web\\icons\\Icon-192.png D:\\migservice\\web\\icons\\Icon-512.png D:\\migservice\\web\\index.html D:\\migservice\\web\\manifest.json
