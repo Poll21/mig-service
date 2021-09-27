@@ -14,9 +14,11 @@ class BodiPrise1 extends StatelessWidget {
           Expanded(
           flex: 2,
             child:Container(
+
               constraints: BoxConstraints(
                 minHeight: kDefaultPadding * 20
               ),
+
 
               padding: EdgeInsets.only(
                   left: kDefaultPadding,
@@ -34,7 +36,11 @@ class BodiPrise1 extends StatelessWidget {
               children: <Widget>[
 
                 Image.asset('assets/tablet.png'),
+
                 PriseTitle(title:'РЕМОНТ ПЛАНШЕТОВ')
+
+
+
 
               ],
             ),
@@ -52,6 +58,7 @@ class BodiPrise1 extends StatelessWidget {
     );
   }
 }
+
 class PriseTitle extends StatelessWidget {
   const PriseTitle({
     Key key,
@@ -78,3 +85,4 @@ class PriseTitle extends StatelessWidget {
       );
   }
 }
+
