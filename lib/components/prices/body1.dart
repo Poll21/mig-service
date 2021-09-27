@@ -8,23 +8,19 @@ class BodiPrise1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-          flex: 2,
-            child:Container(
 
-              constraints: BoxConstraints(
-                minHeight: kDefaultPadding * 20
-              ),
-
-
+            Container(
+              height: 60 + kDefaultPadding * 5,
               padding: EdgeInsets.only(
                   left: kDefaultPadding,
                   top: kDefaultPadding,
                   right: kDefaultPadding,
-                  bottom: kDefaultPadding *2),
+                  bottom: kDefaultPadding * 2),
               decoration: BoxDecoration(
                 color: kPrimaryColor,
                 borderRadius: BorderRadius.only(
@@ -33,11 +29,15 @@ class BodiPrise1 extends StatelessWidget {
                 //boxShadow:
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
 
                 Image.asset('assets/tablet.png'),
+                Center(
+                  child: PriseTitle(title:'РЕМОНТ ПЛАНШЕТОВ',size: size,),
+                )
 
-                PriseTitle(title:'РЕМОНТ ПЛАНШЕТОВ')
+
 
 
 
@@ -47,7 +47,7 @@ class BodiPrise1 extends StatelessWidget {
 
 
             ),
-        ),
+
           Expanded(
             flex: 8,
               child: Container())
@@ -62,10 +62,14 @@ class BodiPrise1 extends StatelessWidget {
 class PriseTitle extends StatelessWidget {
   const PriseTitle({
     Key key,
-    this.title
+    this.title,
+    this.size
+
   }) : super(key: key);
 
   final String title;
+  final Size size;
+
 
   @override
   Widget build(BuildContext context){
@@ -79,8 +83,11 @@ class PriseTitle extends StatelessWidget {
               Radius.circular(20)),
         ),
         child: Text(title,
-          style: Theme.of(context).textTheme.headline5.copyWith(
-              color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: kPrimaryColor,
+            fontWeight: FontWeight.bold,
+            
+          ),
         ),
       );
   }
