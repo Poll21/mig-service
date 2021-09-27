@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
+import 'package:migservice/components/prices/body1.dart';
 import 'package:migservice/components/prices/details_price.dart';
 
 class RecomendsPlants extends StatelessWidget{
@@ -25,7 +26,13 @@ class RecomendsPlants extends StatelessWidget{
         PlantCard(
               image:'assets/tablet.png',
               title: 'ПЛАНШЕТЫ',
-              press: () {},
+              press: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => BodiPrise1()
+                    ));
+              },
             ),
         PlantCard(
             image:'assets/computer.png',

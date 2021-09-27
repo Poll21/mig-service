@@ -26,11 +26,11 @@ class BodyPrice extends StatelessWidget {
                   Column(
                       children:[
                       CustomScrollView(
-    physics: ScrollPhysics(),
-    scrollDirection: Axis.vertical,
-    shrinkWrap: true,
-    slivers: <Widget>[
-    SliverPadding(
+                        physics: ScrollPhysics(),
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        slivers: <Widget>[
+                          SliverPadding(
     padding: const EdgeInsets.all(20.0),
     sliver: SliverList(
     delegate: SliverChildListDelegate( <Widget>[
@@ -70,30 +70,34 @@ class BodyPrice extends StatelessWidget {
     )
     ),
     ),
-    ]
-    ),]
+                        ]
+                      ),
+                      ]
 
                   ),
                 ),
 
                 Expanded(
                     flex: 3,
-                    child: Container(
-                      height: 300,
-                      margin: EdgeInsets.only(
-                          top: kDefaultPadding),
-                      padding: EdgeInsets.only(
-                          left: kDefaultPadding,
-                          top: kDefaultPadding),
-                      decoration: BoxDecoration(
+                  child:
+                    Expanded(
+                          child: Container(
+                            height: 400,
+                              margin: EdgeInsets.only(
+                                  top: kDefaultPadding),
+                              padding: EdgeInsets.only(
+                                  left: kDefaultPadding,
+                                  top: kDefaultPadding),
+                              decoration: BoxDecoration(
+                                color: kPrimaryColor.withOpacity(0.8),
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(30)
+                                ),
+                              ),
+                              child:PrisSmart()
 
-                        color: kPrimaryColor.withOpacity(0.8),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30)
-                        ),
                       ),
 
-                      child: PrisSmart()
                     ),
                 )
               ]
