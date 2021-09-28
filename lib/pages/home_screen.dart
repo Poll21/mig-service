@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
        mainAxisAlignment: MainAxisAlignment.spaceBetween,
        children: [
          IconButton(
-           icon: Icon(Icons.menu_sharp),
+           icon: Icon(Icons.list_outlined),
            iconSize: kDefaultPadding * 2,
            onPressed: () {},
          ),

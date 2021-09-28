@@ -5,10 +5,12 @@ class TitleWithMoreBtn extends StatelessWidget {
   const TitleWithMoreBtn ({
     Key key,
     this.title,
+    this.kSize,
     this.press,
   }) : super(key: key);
   final String title;
   final Function press;
+  final int kSize;
 
 
   @override
@@ -24,9 +26,12 @@ class TitleWithMoreBtn extends StatelessWidget {
       ),
       child: TextButton(
         style: TextButton.styleFrom(
-          textStyle: Theme.of(context).textTheme.headline6.copyWith(
-          fontWeight: FontWeight.bold),
-          primary: kTextColor
+          textStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: kTextColor,
+            fontSize: kSize * 4.0,
+          )
+
         ),
         onPressed: () {},
         child: Text('СРОЧНЫЙ РЕМОНТ'),
@@ -38,15 +43,17 @@ class TitleWithMoreBtn extends StatelessWidget {
 class TitleWithCustomUnderline extends StatelessWidget {
   const TitleWithCustomUnderline({
     Key key,
-    this.text
+    this.text,
+    this.kSize
   }) : super(key: key);
 
   final String text;
+  final int kSize;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 24,
+      height:20,
       child: Stack(
         children: [
           Padding(
@@ -54,7 +61,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
             child: Text(
                 text,
                 style:
-                TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ),
           Positioned(
               bottom: 0,

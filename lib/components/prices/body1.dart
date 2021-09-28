@@ -16,6 +16,7 @@ class BodiPrise1 extends StatelessWidget {
           Stack(
             alignment: AlignmentDirectional.bottomCenter,
             children: [
+
               Container(
                 height: size.height * 0.15 + kDefaultPadding * 5,
                 padding: EdgeInsets.only(
@@ -45,7 +46,9 @@ class BodiPrise1 extends StatelessWidget {
 
 
               ),
-              IconButton(onPressed:  () {}, icon: Icon(Icons.menu)),
+              IconButton(
+                  onPressed:  () {},
+                  icon: Icon(Icons.maximize_outlined, size: 100, color: kTextColor)),
             ],
           ),
 

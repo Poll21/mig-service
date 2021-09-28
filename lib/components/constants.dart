@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
   const kPrimaryColor = Colors.indigoAccent;
+  const kButtonColor = Colors.lightBlue;
   const kTextColor = Colors.white;
   const kBackgroudColor = Colors.lightBlueAccent;
   const kRextColor = Colors.red;
   const kShadowColor =Colors.black12;
+
 
   const double kDefaultPadding = 15.0;
   const double kDefaultRadius = 30.0;

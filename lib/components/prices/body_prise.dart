@@ -11,7 +11,7 @@ class BodyPrice extends StatelessWidget {
 
     return Column(
       children: [
-        HeaderWithSearchBox(size: size),
+        HeaderWithSearchBox(),
         PriseTitle(title: 'РЕМОНТ СМАРТФОНОВ'),
         Container(
           //color: Colors.white,
