@@ -6,7 +6,9 @@ import 'package:migservice/components/prices/details_price.dart';
 class RecomendsPlants extends StatelessWidget{
   const RecomendsPlants({
     Key key,
+    this.kSize,
   }) : super(key: key);
+    final int kSize;
 
   @override
   Widget build(BuildContext context){
@@ -15,6 +17,7 @@ class RecomendsPlants extends StatelessWidget{
         PlantCard(
             image:'assets/smartphone.png',
             title: 'СМАРТФОНЫ',
+            ksize: kSize,
             press: () {
               Navigator.push(
                   context,
@@ -26,6 +29,7 @@ class RecomendsPlants extends StatelessWidget{
         PlantCard(
               image:'assets/tablet.png',
               title: 'ПЛАНШЕТЫ',
+              ksize: kSize,
               press: () {
                 Navigator.push(
                     context,
@@ -37,22 +41,26 @@ class RecomendsPlants extends StatelessWidget{
         PlantCard(
             image:'assets/computer.png',
             title: 'КОМПЬЮТЕРЫ',
+            ksize: kSize,
             press: () {},
           ),
         PlantCard(
             image:'assets/TV.png',
             title: 'ТЕЛЕВИЗОРЫ',
+            ksize: kSize,
             press: () {},
           ),
         PlantCard(
             image:'assets/noteboock.png',
             title: 'НОУТБУКИ',
+            ksize: kSize,
             press: () {},
           ),
         PlantCard(
-          image:'assets/photocamera.png',
-          title: 'ФОТОКАМЕРЫ',
-          press: () {},
+            image:'assets/photocamera.png',
+            title: 'ФОТОКАМЕРЫ',
+            ksize: kSize,
+            press: () {},
         )
         ],
 
@@ -65,11 +73,16 @@ class PlantCard extends StatelessWidget {
     Key key,
     this.image,
     this.title,
+    this.ksize,
     this.press,
+
+
   }) : super(key: key);
 
   final String image, title;
+  final int ksize;
   final Function press;
+
 
   @override
   Widget build(BuildContext context) {

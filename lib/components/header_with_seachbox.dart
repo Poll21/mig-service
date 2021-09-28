@@ -63,11 +63,11 @@ class HeaderWithSearchBox extends StatelessWidget {
               ],
             ),
           ),
-          TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: kSize ,press: () {},),
-          //Searchr(),
+         //Searchr(),
         ],
       ),
     );
+
   }
 }
 

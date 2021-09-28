@@ -23,18 +23,24 @@ class TitleWithMoreBtn extends StatelessWidget {
         color: kRextColor,
         borderRadius: BorderRadius.all(
             Radius.circular(20)),
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0, 5),
+              blurRadius: 50,
+              color: kShadowColor.withOpacity(0.50),
+            ),
+          ]
       ),
       child: TextButton(
-        style: TextButton.styleFrom(
-          textStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: kTextColor,
-            fontSize: kSize * 4.0,
-          )
-
-        ),
         onPressed: () {},
-        child: Text('СРОЧНЫЙ РЕМОНТ'),
+            child: Text(title,
+              style:
+              TextStyle(
+                fontWeight: FontWeight.bold,
+                color: kTextColor,
+                fontSize: kSize * 3.0,
+            ),
+        )
       )
     );
   }

@@ -21,9 +21,19 @@ class Body extends StatelessWidget {
             tablet: HeaderWithSearchBox(kSize: 8),
             desktop: HeaderWithSearchBox(kSize: 10)
           ),
+          Responsive(
+            mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: 6 ,press: () {},),
+            tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: 8 ,press: () {},),
+            desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: 10 ,press: () {},)
+          ),
+          Responsive(
+              mobile: RecomendsPlants(kSize: 6),
+              tablet: RecomendsPlants(kSize: 8),
+              desktop: RecomendsPlants(kSize: 10)
+          ),
 
-          //TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', press: () {},),
-         //RecomendsPlants(),
+
+
         ],
       ),
     );
