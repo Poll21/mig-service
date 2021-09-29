@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(
               width: kMobilSize * 5.0,
-              
+
          )
        ],
      ),
