@@ -8,63 +8,53 @@ class RecomendsPlants extends StatelessWidget{
     Key key,
     this.kSize,
   }) : super(key: key);
-    final int kSize;
+
+  final int kSize;
 
   @override
   Widget build(BuildContext context){
-    return Wrap(
-      children: [
-        PlantCard(
-            image:'assets/smartphone.png',
-            title: 'СМАРТФОНЫ',
-            ksize: kSize,
-            press: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => DetailPrice()
-                  ));
-            },
-          ),
-        PlantCard(
-              image:'assets/tablet.png',
-              title: 'ПЛАНШЕТЫ',
-              ksize: kSize,
-              press: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => BodiPrise1()
-                    ));
-              },
-            ),
-        PlantCard(
-            image:'assets/computer.png',
-            title: 'КОМПЬЮТЕРЫ',
-            ksize: kSize,
-            press: () {},
-          ),
-        PlantCard(
-            image:'assets/TV.png',
-            title: 'ТЕЛЕВИЗОРЫ',
-            ksize: kSize,
-            press: () {},
-          ),
-        PlantCard(
-            image:'assets/noteboock.png',
-            title: 'НОУТБУКИ',
-            ksize: kSize,
-            press: () {},
-          ),
-        PlantCard(
-            image:'assets/photocamera.png',
-            title: 'ФОТОКАМЕРЫ',
-            ksize: kSize,
-            press: () {},
-        )
-        ],
+    return
+      Wrap(
 
-    );
+      children: <Widget>[
+        PlantCard(
+          image: 'assets/smartphone.png',
+          title: 'СМАРТФОНОВ',
+          ksize: kSize,
+          press: () {},
+        ),
+        PlantCard(
+      image: 'assets/smartphone.png',
+      title: 'СМАРТФОНОВ',
+      ksize: kSize,
+      press: () {},
+    ),
+        PlantCard(
+          image: 'assets/smartphone.png',
+          title: 'СМАРТФОНОВ',
+          ksize: kSize,
+          press: () {},
+        ),
+        PlantCard(
+          image: 'assets/smartphone.png',
+          title: 'СМАРТФОНОВ',
+          ksize: kSize,
+          press: () {},
+        ),
+        PlantCard(
+          image: 'assets/smartphone.png',
+          title: 'СМАРТФОНОВ',
+          ksize: kSize,
+          press: () {},
+        ),
+        PlantCard(
+          image: 'assets/smartphone.png',
+          title: 'СМАРТФОНОВ',
+          ksize: kSize,
+          press: () {},
+        ),
+      ]
+      );
   }
 }
 
@@ -88,13 +78,13 @@ class PlantCard extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      width: kCardDefaultHeigth / 1.5,
-      height: kCardDefaultHeigth + kDefaultPadding * 0.5,
+      width: 20.0 * ksize,
+      height: 30 * ksize + kDefaultPadding * 0.5,
 
       decoration: BoxDecoration(
           color: kPrimaryColor,
           borderRadius: BorderRadius.all(
-              Radius.circular(15)),
+              Radius.circular(kDefaultRadius / 2)),
           boxShadow: [
             BoxShadow(
                 offset: Offset(0, 10),
@@ -102,26 +92,23 @@ class PlantCard extends StatelessWidget {
                 color: kShadowColor.withOpacity(0.5)
             )]
       ),
-      margin: EdgeInsets.only(
-          left: kDefaultPadding * 2,
-          top: kDefaultPadding / 2,
-          bottom: kDefaultPadding * 2.5
-      ),
+
 
       child: Column(
         children: [
           Padding(
             padding: EdgeInsets.all(kDefaultPadding / 2),
             child:Image.asset(image,
-              height: kCardDefaultHeigth - kDefaultPadding * 3,),
+              height: 25.5 * ksize - kDefaultPadding),
             ),
           GestureDetector(
             onTap: press,
             child: Container(
               padding: EdgeInsets.only(
+
                 left: kDefaultPadding / 2,
                 right: kDefaultPadding / 2,
-                bottom: kDefaultPadding / 3,
+                bottom: kDefaultPadding / 2,
               ),
               child: Center(
                 child: RichText(
@@ -130,7 +117,7 @@ class PlantCard extends StatelessWidget {
                         TextSpan(
                           text: title.toUpperCase(),
                           style: TextStyle(
-                                  fontSize: kDefaultPadding * 1.2,
+                                  fontSize: 2 * ksize * 1.2,
                                   color: kRextColor,
                                   fontWeight: FontWeight.bold)
 

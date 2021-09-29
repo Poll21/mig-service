@@ -26,11 +26,18 @@ class Body extends StatelessWidget {
             tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: 8 ,press: () {},),
             desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: 10 ,press: () {},)
           ),
-          Responsive(
-              mobile: RecomendsPlants(kSize: 6),
-              tablet: RecomendsPlants(kSize: 8),
-              desktop: RecomendsPlants(kSize: 10)
-          ),
+          Padding(padding: EdgeInsets.only(top: kDefaultPadding)),
+          Container(
+            padding: EdgeInsets.all(kDefaultPadding),
+            color: Colors.white,
+            child: Responsive(
+                mobile: RecomendsPlants(kSize: 6),
+                tablet: RecomendsPlants(kSize: 8),
+                desktop: RecomendsPlants(kSize: 10),
+            ),
+            ),
+
+
 
 
 
