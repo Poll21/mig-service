@@ -17,30 +17,25 @@ class Body extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Responsive(
-            mobile: HeaderWithSearchBox(kSize: 6),
-            tablet: HeaderWithSearchBox(kSize: 8),
-            desktop: HeaderWithSearchBox(kSize: 10)
+            mobile: HeaderWithSearchBox(kSize: kMobilSize),
+            tablet: HeaderWithSearchBox(kSize: kTabletSize),
+            desktop: HeaderWithSearchBox(kSize: kDesktopSize)
           ),
           Responsive(
-            mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: 6 ,press: () {},),
-            tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: 8 ,press: () {},),
-            desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: 10 ,press: () {},)
+            mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: kMobilSize ,press: () {},),
+            tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: kTabletSize ,press: () {},),
+            desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: kTabletSize ,press: () {},)
           ),
           Padding(padding: EdgeInsets.only(top: kDefaultPadding)),
           Container(
             padding: EdgeInsets.all(kDefaultPadding),
             color: Colors.white,
             child: Responsive(
-                mobile: RecomendsPlants(kSize: 6),
-                tablet: RecomendsPlants(kSize: 8),
-                desktop: RecomendsPlants(kSize: 10),
+             mobile: RecomendsPlants(kSize: kMobilSize),
+             tablet: RecomendsPlants(kSize: kTabletSize),
+             desktop: RecomendsPlants(kSize: kTabletSize),
             ),
             ),
-
-
-
-
-
         ],
       ),
     );

@@ -15,41 +15,40 @@ class RecomendsPlants extends StatelessWidget{
   Widget build(BuildContext context){
     return
       Wrap(
-
       children: <Widget>[
         PlantCard(
           image: 'assets/smartphone.png',
           title: 'СМАРТФОНОВ',
           ksize: kSize,
-          press: () {},
+          press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPrice())),
         ),
         PlantCard(
-      image: 'assets/smartphone.png',
-      title: 'СМАРТФОНОВ',
-      ksize: kSize,
-      press: () {},
+          image: 'assets/tablet.png',
+          title: 'ПЛАНШЕТОВ',
+          ksize: kSize,
+          press: () {},
     ),
         PlantCard(
-          image: 'assets/smartphone.png',
-          title: 'СМАРТФОНОВ',
+          image: 'assets/noteboock.png',
+          title: 'НОУТБУКОВ',
           ksize: kSize,
           press: () {},
         ),
         PlantCard(
-          image: 'assets/smartphone.png',
-          title: 'СМАРТФОНОВ',
+          image: 'assets/computer.png',
+          title: 'КОМПЬЮТЕРОВ',
           ksize: kSize,
           press: () {},
         ),
         PlantCard(
-          image: 'assets/smartphone.png',
-          title: 'СМАРТФОНОВ',
+          image: 'assets/TV.png',
+          title: 'ТЕЛЕВИЗОРОВ',
           ksize: kSize,
           press: () {},
         ),
         PlantCard(
-          image: 'assets/smartphone.png',
-          title: 'СМАРТФОНОВ',
+          image: 'assets/photocamera.png',
+          title: 'ФОТОКАМЕР',
           ksize: kSize,
           press: () {},
         ),
@@ -78,7 +77,7 @@ class PlantCard extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      width: 20.0 * ksize,
+      width: 21.0 * ksize,
       height: 30 * ksize + kDefaultPadding * 0.5,
 
       decoration: BoxDecoration(

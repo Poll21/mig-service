@@ -56,7 +56,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                       style: TextStyle(
                           color: kTextColor,
                           fontWeight: FontWeight.bold,
-                          fontSize: kDefaultPadding /3 * kSize)
+                          fontSize: kDefaultPadding / 2 * kSize)
                   ),)
                 ),
                 Image.asset('assets/computer.png', height: kDefaultPadding * 2 * kSize),
