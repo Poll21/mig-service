@@ -26,75 +26,123 @@ class CustomAppBar extends StatelessWidget {
 
   return Container(
 
-      decoration: BoxDecoration(
-          color: kPrimaryColor,
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(kDefaultRadius * 2),
-            bottomRight: Radius.circular(kDefaultRadius * 2),
-          ),
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(0, 5),
-              blurRadius: 50,
-              color: kShadowColor.withOpacity(0.50),
-            ),
-          ]
-      ),
+
 
      child: Column(
        children: [
          Responsive(
-             mobile: Row(
-               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-               children: [
-                 IconButton(
-                   color: kTextColor,
-                   icon: Icon(Icons.list_outlined),
-                   iconSize: kMobilSize * 5.0,
-                   onPressed: () {},
-                 ),
-                 Text('СЕРВИСНЫЙ ЦЕНТР',
-                   style: TextStyle(
-                       fontSize: kMobilSize * 2.5,
-                       fontWeight: FontWeight.bold),
-                 ),
-                 SizedBox(
-                   width: kMobilSize * 5.0,
+             mobile: Container(
+               height: kDefaultPadding * kMobilSize * 1.6,
+               decoration: BoxDecoration(
+                   color: kPrimaryColor,
+                   borderRadius: BorderRadius.only(
+                     bottomLeft: Radius.circular(kDefaultRadius * 2),
+                     bottomRight: Radius.circular(kDefaultRadius * 2),
+                   ),
+                   boxShadow: [
+                     BoxShadow(
+                       offset: Offset(0, 5),
+                       blurRadius: 50,
+                       color: kShadowColor.withOpacity(0.50),
+                     ),
+                   ]
+               ),
+               child: Column(
+                 children: [
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     children: [
+                       IconButton(
+                         color: kTextColor,
+                         icon: Icon(Icons.list_outlined),
+                         iconSize: kMobilSize * 5.0,
+                         onPressed: () {},
+                       ),
+                       Text('СЕРВИСНЫЙ ЦЕНТР',
+                         style: TextStyle(
+                             fontSize: kMobilSize * 2.5,
+                             fontWeight: FontWeight.bold),
+                       ),
+                       SizedBox(
+                         width: kMobilSize * 5.0,
 
-                 )
-               ],
+                       )
+                     ],
+                   ),
+                   HeaderWithSearchBox(kSize: kMobilSize),
+                 ],
+               ),
              ),
-             tablet: Row(
-               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-               children: [
-                 ButtonMenu(title: 'Главня', kSize: kTabletSize, press: () {}),
-                 ButtonMenu(title: 'Ремонт', kSize: kTabletSize, press: () {}),
-                 ButtonMenu(title: 'Услуги', kSize: kTabletSize, press: () {}),
-                 Text('СЕРВИСНЫЙ ЦЕНТР', style: TextStyle(fontSize: kTabletSize * 2.5, fontWeight: FontWeight.bold),),
-                 ButtonMenu(title: 'Контакты', kSize: kTabletSize, press: () {}),
-                 ButtonMenu(title: 'О Нас', kSize: kTabletSize, press: () {}),
-                 ButtonMenu(title: 'Главня', kSize: kTabletSize, press: () {}),
-               ],
+             tablet: Container(
+               height: kDefaultPadding * kTabletSize * 1.6,
+               decoration: BoxDecoration(
+                   color: kPrimaryColor,
+                   borderRadius: BorderRadius.only(
+                     bottomLeft: Radius.circular(kDefaultRadius * 2),
+                     bottomRight: Radius.circular(kDefaultRadius * 2),
+                   ),
+                   boxShadow: [
+                     BoxShadow(
+                       offset: Offset(0, 5),
+                       blurRadius: 50,
+                       color: kShadowColor.withOpacity(0.50),
+                     ),
+                   ]
+               ),
+               child: Column(
+                 children: [
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     children: [
+                       ButtonMenu(title: 'Главня', kSize: kTabletSize, press: () {}),
+                       ButtonMenu(title: 'Ремонт', kSize: kTabletSize, press: () {}),
+                       ButtonMenu(title: 'Услуги', kSize: kTabletSize, press: () {}),
+                       Text('СЕРВИСНЫЙ ЦЕНТР', style: TextStyle(fontSize: kTabletSize * 2.5, fontWeight: FontWeight.bold),),
+                       ButtonMenu(title: 'Контакты', kSize: kTabletSize, press: () {}),
+                       ButtonMenu(title: 'О Нас', kSize: kTabletSize, press: () {}),
+                       ButtonMenu(title: 'Главня', kSize: kTabletSize, press: () {}),
+                     ],
+                   ),
+                   HeaderWithSearchBox(kSize: kTabletSize),
+                 ],
+               ),
              ),
-             desktop: Row(
-               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-               children: [
-                 ButtonMenu(title: 'Главня', kSize: kDesktopSize, press: () {}),
-                 ButtonMenu(title: 'Ремонт', kSize: kDesktopSize, press: () {}),
-                 ButtonMenu(title: 'Услуги', kSize: kDesktopSize, press: () {}),
-                 Text('СЕРВИСНЫЙ ЦЕНТР', style: TextStyle(fontSize: kDesktopSize * 2.5, fontWeight: FontWeight.bold),),
-                 ButtonMenu(title: 'Контакты', kSize: kDesktopSize, press: () {}),
-                 ButtonMenu(title: 'О Нас', kSize: kDesktopSize, press: () {}),
-                 ButtonMenu(title: 'Главня', kSize: kDesktopSize, press: () {}),
-               ],
-             )
-         ),
-         Responsive(
-             mobile: HeaderWithSearchBox(kSize: kMobilSize),
-             tablet: HeaderWithSearchBox(kSize: kTabletSize),
-             desktop: HeaderWithSearchBox(kSize: kDesktopSize)
-         ),
+             desktop: Container(
+               height: kDefaultPadding * kDesktopSize * 1.6,
+               decoration: BoxDecoration(
+                   color: kPrimaryColor,
+                   borderRadius: BorderRadius.only(
+                     bottomLeft: Radius.circular(kDefaultRadius * 2),
+                     bottomRight: Radius.circular(kDefaultRadius * 2),
+                   ),
+                   boxShadow: [
+                     BoxShadow(
+                       offset: Offset(0, 5),
+                       blurRadius: 50,
+                       color: kShadowColor.withOpacity(0.50),
+                     ),
+                   ]
+               ),
+               child: Column(
+                 children: [
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     children: [
+                       ButtonMenu(title: 'Главня', kSize: kDesktopSize, press: () {}),
+                       ButtonMenu(title: 'Ремонт', kSize: kDesktopSize, press: () {}),
+                       ButtonMenu(title: 'Услуги', kSize: kDesktopSize, press: () {}),
+                       Text('СЕРВИСНЫЙ ЦЕНТР', style: TextStyle(fontSize: kDesktopSize * 2.5, fontWeight: FontWeight.bold),),
+                       ButtonMenu(title: 'Контакты', kSize: kDesktopSize, press: () {}),
+                       ButtonMenu(title: 'О Нас', kSize: kDesktopSize, press: () {}),
+                       ButtonMenu(title: 'Главня', kSize: kDesktopSize, press: () {}),
+                     ],
+                   ),
+                   HeaderWithSearchBox(kSize: kDesktopSize),
+                 ],
+               ),
+             ),
 
+         ),
        ],
      )
 
