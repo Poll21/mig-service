@@ -16,7 +16,9 @@ class TitleWithMoreBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: kDefaultPadding),
+      margin: EdgeInsets.only(
+          top: kDefaultPadding,
+          bottom: kDefaultPadding),
       padding: EdgeInsets.only(
           left: kDefaultPadding, right: kDefaultPadding),
       decoration: BoxDecoration(

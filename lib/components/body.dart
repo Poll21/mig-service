@@ -16,11 +16,7 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          Responsive(
-            mobile: HeaderWithSearchBox(kSize: kMobilSize),
-            tablet: HeaderWithSearchBox(kSize: kTabletSize),
-            desktop: HeaderWithSearchBox(kSize: kDesktopSize)
-          ),
+
           Responsive(
             mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: kMobilSize ,press: () {},),
             tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: kTabletSize ,press: () {},),
