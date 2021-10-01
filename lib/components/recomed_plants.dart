@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
-import 'package:migservice/components/prices/body1.dart';
 import 'package:migservice/components/prices/details_price.dart';
 
 class RecomendsPlants extends StatelessWidget{
