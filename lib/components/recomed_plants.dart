@@ -5,6 +5,7 @@ import 'package:migservice/components/prices/details_price.dart';
 class RecomendsPlants extends StatelessWidget{
   const RecomendsPlants({
     Key key,
+
     this.kSize,
   }) : super(key: key);
 
@@ -16,6 +17,7 @@ class RecomendsPlants extends StatelessWidget{
       Wrap(
       children: <Widget>[
         PlantCard(
+
           image: 'assets/smartphone.png',
           title: 'СМАРТФОНОВ',
           ksize: kSize,
@@ -90,8 +92,6 @@ class PlantCard extends StatelessWidget {
                 color: kShadowColor.withOpacity(0.5)
             )]
       ),
-
-
       child: Column(
         children: [
           Padding(
@@ -103,7 +103,6 @@ class PlantCard extends StatelessWidget {
             onTap: press,
             child: Container(
               padding: EdgeInsets.only(
-
                 left: kDefaultPadding / 2,
                 right: kDefaultPadding / 2,
                 bottom: kDefaultPadding / 2,

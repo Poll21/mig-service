@@ -2,6 +2,34 @@
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES />
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://C:/src/flutter" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/android/src/main/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/android/src/test/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/android/src/test/java/io/flutter/plugins/camera/media" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/example/android/app/src/androidTestDebug/java/io/flutter/plugins/cameraexample" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/example/android/app/src/main/java/io/flutter/plugins/cameraexample" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity-3.0.3/android/src/main/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity-3.0.3/example/android/app/src/main/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/device_info-2.0.0/android/src/main/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/device_info-2.0.0/example/android/app/src/main/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/foldable_sidebar-1.0.0/example/android/app/src/main/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/new_gradient_app_bar-0.2.0/example/android/app/src/main/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.1/android/src/main/java/io/flutter/plugins/pathprovider" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.1/android/src/test/java/io/flutter/plugins/pathprovider" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.1/example/android/app/src/androidTest/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.1/example/android/app/src/main/java/io/flutter/plugins/pathproviderexample" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.3/android/src/main/java/io/flutter/plugins/urllauncher" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.3/android/src/test/java/io/flutter/plugins/urllauncher" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.3/example/android/app/src/androidTestDebug/java" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-2.1.1/android/src/main/java/io/flutter/plugins/videoplayer" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vm_service-6.2.0/java/src" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vm_service-6.2.0/java/test" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vm_service-7.1.1/java/src" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vm_service-7.1.1/java/test" />
+      <root url="file://C:/src/flutter/dev/integration_tests/flutter_gallery/android/app/src/main/java" />
+      <root url="file://C:/src/flutter/examples/platform_view/android/app/src/main/java" />
+      <root url="file://C:/src/flutter/packages/integration_test/android/src/main/java" />
+    </SOURCES>
   </library>
 </component>

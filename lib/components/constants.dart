@@ -13,5 +13,5 @@ import 'package:flutter/material.dart';
   const double kCardDefaultHeigth = 200 + kDefaultPadding * 2;
   const int kMobilSize = 5;
   const int kTabletSize = 6;
-  const int kDesktopSize = 8;
+  const int kDesktopSize = 7;
 

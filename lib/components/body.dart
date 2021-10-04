@@ -16,13 +16,14 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-
           Responsive(
-            mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: kMobilSize ,press: () {},),
-            tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: kTabletSize ,press: () {},),
-            desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ', kSize: kTabletSize ,press: () {},)
+            mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
+              kSize: kMobilSize ,press: () {},),
+            tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
+              kSize: kTabletSize ,press: () {},),
+            desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
+              kSize: kTabletSize ,press: () {},)
           ),
-          Padding(padding: EdgeInsets.only(top: kDefaultPadding)),
           Container(
             padding: EdgeInsets.all(kDefaultPadding),
             color: Colors.white,
@@ -32,7 +33,7 @@ class Body extends StatelessWidget {
              desktop: RecomendsPlants(kSize: kTabletSize),
             ),
             ),
-        ],
+          ],
       ),
     );
   }

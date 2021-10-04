@@ -77,7 +77,7 @@ class CustomAppBar extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ButtonMenu(title: 'Главня', kSize: kTabletSize, press: () {}),
+                        ButtonMenu(title: 'Главня', kSize: kTabletSize, press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()))),
                         ButtonMenu(title: 'Ремонт', kSize: kTabletSize, press: () {}),
                         ButtonMenu(title: 'Услуги', kSize: kTabletSize, press: () {}),
                         Text('СЕРВИСНЫЙ ЦЕНТР', style: TextStyle(fontSize: kTabletSize * 2.5, fontWeight: FontWeight.bold),),
