@@ -3,6 +3,7 @@ import 'package:migservice/pages/costum_appbar.dart';
 import '../constants.dart';
 import '../size_progect.dart';
 import '../title_with_more_btn.dart';
+import 'body1.dart';
 
 
 class DetailPrice extends StatelessWidget {
@@ -48,19 +49,20 @@ class StartMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
+      physics: BouncingScrollPhysics(),
       padding: EdgeInsets.all(kDefaultPadding * 2),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: kCross,
         mainAxisSpacing: kDefaultPadding * 2,
         crossAxisSpacing: kDefaultPadding * 3,
-        childAspectRatio: 1.1
+        childAspectRatio: 0.9
       ),
     children: [
-      PlantCard(
+      PlantCard1(
         image: 'assets/smartphone.png',
         title: 'СМАРТФОНОВ',
         kSize: kSize,
-        press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPrice())),
+        press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BodiPrise1())),
       ),
       PlantCard(
         image: 'assets/tablet.png',
@@ -159,4 +161,46 @@ class PlantCard extends StatelessWidget {
   }
 }
 
+class PlantCard1 extends StatelessWidget {
+  const PlantCard1({
+    Key key,
+    this.image,
+    this.title,
+    this.kSize,
+    this.press,
+  }) : super(key: key);
 
+  final String image, title;
+  final int kSize;
+  final Function press;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: press,
+        child:
+        SizedBox(
+          height: kCardDefaultHeigth * kSize *2,
+          width: kCardDefaultHeigth * kSize,
+          child:
+            Card(
+              color: kPrimaryColor,
+              shadowColor: kShadowColor,
+              elevation: 100,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius))
+              ),
+              child: Column(
+                children: [
+                  Image.asset(image),
+                  Text(title)
+                ],
+
+              ),
+
+
+            )
+        )
+        );
+  }
+}
