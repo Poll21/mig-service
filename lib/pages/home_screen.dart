@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         body: Column(
           children: [
             CustomAppBar(),
-            TitlyPag(),
+            TitlePag(),
             Body(),
         ]
         )

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
 import 'package:migservice/components/prices/body1.dart';
 import 'package:migservice/components/size_progect.dart';
-import 'package:migservice/components/title_with_more_btn.dart';
+i
 
 
 class Body extends StatelessWidget {
@@ -11,31 +11,15 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(child:
-    Responsive(
-              mobile: StartMenu(kSize: kMobilSize, kCross: 2,),
-              tablet: StartMenu(kSize: kTabletSize, kCross: 3),
-              desktop: StartMenu(kSize: kDesktopSize, kCross: 3),
+      Responsive(
+        mobile: StartMenu(kSize: kMobilSize, kCross: 2,),
+        tablet: StartMenu(kSize: kTabletSize, kCross: 3),
+        desktop: StartMenu(kSize: kDesktopSize, kCross: 3),
     ),
    );
  }
 }
-class TitlyPag extends StatelessWidget {
-  const TitlyPag ({
-    Key key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Responsive(
-        mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
-          kSize: kMobilSize ,press: () {},),
-        tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
-          kSize: kTabletSize ,press: () {},),
-        desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
-          kSize: kTabletSize ,press: () {},)
-    );
-  }
-}
 
 class StartMenu extends StatelessWidget {
   const StartMenu ({
