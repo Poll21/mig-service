@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:migservice/pages/costum_appbar.dart';
 import '../constants.dart';
@@ -27,7 +28,7 @@ class DetailPrice extends StatelessWidget {
                 child: Responsive(
                     mobile: StartMenu(kSize: kMobilSize, kCross: 2,),
                     tablet: StartMenu(kSize: kTabletSize, kCross: 3),
-                    desktop: StartMenu(kSize: kDesktopSize, kCross: 4),
+                    desktop: StartMenu(kSize: kDesktopSize, kCross: 3),
 
             ),
             )
@@ -58,7 +59,7 @@ class StartMenu extends StatelessWidget {
         childAspectRatio: 0.9
       ),
     children: [
-      PlantCard1(
+      PlantCard(
         image: 'assets/smartphone.png',
         title: 'СМАРТФОНОВ',
         kSize: kSize,
@@ -99,70 +100,10 @@ class StartMenu extends StatelessWidget {
   }
 }
 
+
+
 class PlantCard extends StatelessWidget {
   const PlantCard({
-    Key key,
-    this.image,
-    this.title,
-    this.kSize,
-    this.press,
-  }) : super(key: key);
-
-  final String image, title;
-  final int kSize;
-  final Function press;
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Container(
-      padding: EdgeInsets.all(kDefaultPadding),
-      decoration: BoxDecoration(
-          color: kPrimaryColor,
-          borderRadius: BorderRadius.all(
-              Radius.circular(kDefaultRadius / 2)),
-          boxShadow: [
-            BoxShadow(
-                offset: Offset(0, 10),
-                blurRadius: 50,
-                color: kShadowColor.withOpacity(0.5)
-            )]
-      ),
-      child: Column(
-        children: [
-        Image.asset(image,
-                height: 35 * kSize - kDefaultPadding * 2),
-
-          GestureDetector(
-            onTap: press,
-            child: Container(
-              padding: EdgeInsets.all(kDefaultPadding),
-              child: Center(
-                child: RichText(
-                  text: TextSpan(
-                      children: [
-                        TextSpan(
-                            text: title.toUpperCase(),
-                            style: TextStyle(
-                                fontSize: 2 * kSize * 1.2,
-                                color: kRextColor,
-                                fontWeight: FontWeight.bold)
-
-                        )
-                      ]
-                  ),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class PlantCard1 extends StatelessWidget {
-  const PlantCard1({
     Key key,
     this.image,
     this.title,
@@ -179,28 +120,45 @@ class PlantCard1 extends StatelessWidget {
     return GestureDetector(
         onTap: press,
         child:
-        SizedBox(
-          height: kCardDefaultHeigth * kSize *2,
-          width: kCardDefaultHeigth * kSize,
-          child:
             Card(
+
               color: kPrimaryColor,
               shadowColor: kShadowColor,
-              elevation: 100,
+              elevation: 50,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius))
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(image),
-                  Text(title)
+                  Padding(padding: EdgeInsets.only(top: kDefaultPadding)),
+                  Expanded(
+                    flex: 9,
+                      child:Container(
+                        padding: EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
+                        child: Image.asset(image) ,
+                      )
+                  ),
+                  Padding(padding: EdgeInsets.only(top: kDefaultPadding)),
+                  Expanded(
+                    flex: 1,
+                      child: Text(title,
+                        style: TextStyle(
+                            color: kRextColor,
+                            fontSize: kSize * 3.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: kDefaultPadding)),
+
+
                 ],
 
               ),
 
 
             )
-        )
+
         );
   }
 }
