@@ -1,38 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
-import 'package:migservice/components/header_with_seachbox.dart';
 import 'package:migservice/components/prices/body1.dart';
-import 'package:migservice/components/recomed_plants.dart';
 import 'package:migservice/components/size_progect.dart';
 import 'package:migservice/components/title_with_more_btn.dart';
-import 'package:migservice/pages/costum_appbar.dart';
+
 
 class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        children: [
-          CustomAppBar(),
-          Responsive(
-              mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ СМАРТФОНОВ',
-                kSize: kMobilSize ,press: () {},),
-              tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ СМАРТФОНОВ',
-                kSize: kTabletSize ,press: () {},),
-              desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ СМАРТФОНОВ',
-                kSize: kTabletSize ,press: () {},)
-          ),
-          Expanded(
-
-            child: Responsive(
+    return Expanded(child:
+    Responsive(
               mobile: StartMenu(kSize: kMobilSize, kCross: 2,),
               tablet: StartMenu(kSize: kTabletSize, kCross: 3),
               desktop: StartMenu(kSize: kDesktopSize, kCross: 3),
+    ),
+   );
+ }
+}
+class TitlyPag extends StatelessWidget {
+  const TitlyPag ({
+    Key key,
+  }) : super(key: key);
 
-            ),
-          )
-        ],
+  @override
+  Widget build(BuildContext context) {
+    return Responsive(
+        mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
+          kSize: kMobilSize ,press: () {},),
+        tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
+          kSize: kTabletSize ,press: () {},),
+        desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
+          kSize: kTabletSize ,press: () {},)
     );
   }
 }
@@ -119,7 +119,6 @@ class PlantCard extends StatelessWidget {
         onTap: press,
         child:
         Card(
-
           color: kPrimaryColor,
           shadowColor: kShadowColor,
           elevation: 50,

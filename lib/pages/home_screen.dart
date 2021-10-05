@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/body.dart';
 import 'package:migservice/components/constants.dart';
+
 import 'costum_appbar.dart';
+
 
 class HomeScreen extends StatelessWidget {
 
@@ -10,18 +12,15 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
         backgroundColor: kBackgroudColor,
-        body:Column(
+        body: Column(
           children: [
             CustomAppBar(),
+            TitlyPag(),
             Body(),
-          ],
+        ]
         )
-
-      //
-    );
+     );
   }
-
-
 }
 
 
