@@ -35,7 +35,9 @@ class BodyPrice extends StatelessWidget {
                         DataCell(
                           Row(
                             children: [
-                              Image.asset('assets/LCD.jpg')
+                              Image.asset('assets/LCD.jpg', width: 30, height: 30),
+                              Text('Замена дисплейного модуля'),
+
                               
                             ],
                           )

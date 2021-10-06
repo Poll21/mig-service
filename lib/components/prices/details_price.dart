@@ -4,7 +4,7 @@ import 'package:migservice/pages/costum_appbar.dart';
 import '../constants.dart';
 import '../size_progect.dart';
 import '../title_with_more_btn.dart';
-import 'body1.dart';
+import 'mobeil_manu.dart';
 
 
 class DetailPrice extends StatelessWidget {
