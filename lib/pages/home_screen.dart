@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/body.dart';
 import 'package:migservice/components/constants.dart';
+import 'package:migservice/components/title_page.dart';
 
 import 'costum_appbar.dart';
 
@@ -14,8 +15,10 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: kBackgroudColor,
         body: Column(
           children: [
-            CustomAppBar(),
-            TitlePag(),
+            CustomAppBar(
+              icon: Icons.list_outlined,),
+
+            TitlePag(title: 'СРОЧНЫЙ РЕМОНТ'),
             Body(),
         ]
         )

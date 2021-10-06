@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:migservice/components/body.dart';
 import 'package:migservice/components/constants.dart';
-mport 'package:migservice/components/title_with_more_btn.dart';
+import 'package:migservice/components/size_progect.dart';
+import 'package:migservice/components/title_with_more_btn.dart';
+
 
 
 class TitlePag extends StatelessWidget {
   const TitlePag ({
     Key key,
-  }) : super(key: key);
+    this.title,
 
+  }) : super(key: key);
+    final String title;
   @override
   Widget build(BuildContext context) {
     return Responsive(
-        mobile: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
+        mobile: TitleWithMoreBtn(title: title,
           kSize: kMobilSize ,press: () {},),
-        tablet: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
+        tablet: TitleWithMoreBtn(title: title,
           kSize: kTabletSize ,press: () {},),
-        desktop: TitleWithMoreBtn(title: 'СРОЧНЫЙ РЕМОНТ',
+        desktop: TitleWithMoreBtn(title: title,
           kSize: kTabletSize ,press: () {},)
     );
   }

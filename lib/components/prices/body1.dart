@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
-import '../header_with_seachbox.dart';
 
 class BodiPrise1 extends StatelessWidget {
 

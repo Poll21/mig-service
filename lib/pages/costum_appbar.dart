@@ -5,10 +5,17 @@ import 'package:migservice/components/size_progect.dart';
 import 'home_screen.dart';
 
 class CustomAppBar extends StatelessWidget {
+  const CustomAppBar ({
+    Key key,
+    this.icon,
+    this.pressIcon,
 
+  }) : super(key: key);
+  final icon;
+  final pressIcon;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+
 
     return Container(
         child: Column(
@@ -37,9 +44,9 @@ class CustomAppBar extends StatelessWidget {
                       children: [
                         IconButton(
                           color: kTextColor,
-                          icon: Icon(Icons.list_outlined),
+                          icon: Icon(icon),
                           iconSize: kMobilSize * 5.0,
-                          onPressed: () {},
+                          onPressed:  pressIcon,
                         ),
                         Text('СЕРВИСНЫЙ ЦЕНТР',
                           style: TextStyle(

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
-import 'package:migservice/components/prices/body1.dart';
+import 'package:migservice/components/prices/body_prise.dart';
 import 'package:migservice/components/size_progect.dart';
-i
+
 
 
 class Body extends StatelessWidget {
@@ -45,7 +45,7 @@ class StartMenu extends StatelessWidget {
           image: 'assets/smartphone.png',
           title: 'СМАРТФОНОВ',
           kSize: kSize,
-          press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BodiPrise1())),
+          press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BodyPrice())),
         ),
         PlantCard(
           image: 'assets/tablet.png',
