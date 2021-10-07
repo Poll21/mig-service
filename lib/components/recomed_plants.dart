@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
-import 'package:migservice/components/prices/details_price.dart';
+
+
+import 'prices/body_prise.dart';
 
 class RecomendsPlants extends StatelessWidget{
   const RecomendsPlants({
@@ -21,7 +23,7 @@ class RecomendsPlants extends StatelessWidget{
           image: 'assets/smartphone.png',
           title: 'СМАРТФОНОВ',
           ksize: kSize,
-          press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPrice())),
+          press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BodyPrice())),
         ),
         PlantCard(
           image: 'assets/tablet.png',
