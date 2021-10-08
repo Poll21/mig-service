@@ -45,7 +45,7 @@ class CustomAppBar extends StatelessWidget {
                           color: kTextColor,
                           icon: Icon(icon, color: kTextColor),
                           iconSize: kMobilSize * 5.0,
-                          onPressed:  pressIcon,
+                          onPressed:  () {},
                         ),
                         Text('СЕРВИСНЫЙ ЦЕНТР',
                           style: TextStyle(
@@ -237,3 +237,17 @@ class HeaderWithSearchBox extends StatelessWidget {
 
   }
 }
+class AttentionPage extends StatelessWidget {
+
+@override
+Widget build(BuildContext context) {
+return AlertDialog(
+  title: Text('ВНИМАНИЕ!!!'),
+  actions: [
+    IconButton(
+        onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.close))
+  ],
+);
+}
+}
+
