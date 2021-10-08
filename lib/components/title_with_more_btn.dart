@@ -10,7 +10,7 @@ class TitleWithMoreBtn extends StatelessWidget {
   }) : super(key: key);
   final String title;
   final Function press;
-  final int kSize;
+  final double kSize;
 
 
   @override

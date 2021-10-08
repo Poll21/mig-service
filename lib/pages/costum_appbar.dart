@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
 import 'package:migservice/components/size_progect.dart';
-
 import 'home_screen.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -44,7 +43,7 @@ class CustomAppBar extends StatelessWidget {
                       children: [
                         IconButton(
                           color: kTextColor,
-                          icon: Icon(icon),
+                          icon: Icon(icon, color: kTextColor),
                           iconSize: kMobilSize * 5.0,
                           onPressed:  pressIcon,
                         ),
@@ -148,7 +147,7 @@ class  ButtonMenu extends StatelessWidget {
     this. press,
   }) : super(key: key);
   final String title;
-  final int kSize;
+  final double kSize;
   final press;
 
   @override
@@ -189,7 +188,7 @@ class HeaderWithSearchBox extends StatelessWidget {
     @required this.kSize,
   }) : super(key: key);
 
-  final int kSize;
+  final double kSize;
 
   @override
   Widget build(BuildContext context) {
@@ -200,7 +199,7 @@ class HeaderWithSearchBox extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.only(
-              bottom: 15 + kDefaultPadding,
+              bottom: 5 + kDefaultPadding,
             ),
             height: kDefaultPadding * kSize - 10,
 

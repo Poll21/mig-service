@@ -27,7 +27,8 @@ class StartMenu extends StatelessWidget {
     this.kSize,
     this.kCross
   }) : super(key: key);
-  final int kSize, kCross;
+  final double kSize;
+  final int kCross;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class StartMenu extends StatelessWidget {
           crossAxisCount: kCross,
           mainAxisSpacing: kDefaultPadding * 2,
           crossAxisSpacing: kDefaultPadding * 3,
-          childAspectRatio: 0.9
+          childAspectRatio: 0.15 * kSize,
       ),
       children: [
         PlantCard(
@@ -94,7 +95,7 @@ class PlantCard extends StatelessWidget {
   }) : super(key: key);
 
   final String image, title;
-  final int kSize;
+  final double kSize;
   final Function press;
 
   @override
@@ -121,9 +122,9 @@ class PlantCard extends StatelessWidget {
                     child: Image.asset(image),
                   )
               ),
-              Padding(padding: EdgeInsets.only(top: kDefaultPadding)),
+              Padding(padding: EdgeInsets.only(top: kDefaultPadding / 2)),
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: Text(title,
                   style: TextStyle(
                       color: kRextColor,

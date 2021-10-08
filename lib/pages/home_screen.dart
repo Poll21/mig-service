@@ -16,8 +16,7 @@ class HomeScreen extends StatelessWidget {
         body: Column(
           children: [
             CustomAppBar(
-              icon: Icons.list_outlined,),
-
+              icon: Icons.reorder_outlined,),
             TitlePag(title: 'СРОЧНЫЙ РЕМОНТ'),
             Body(),
         ]
