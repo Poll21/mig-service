@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:migservice/pages/costum_appbar.dart';
 import 'package:migservice/pages/home_screen.dart';
 import '../constants.dart';
+import '../size_progect.dart';
 import '../title_page.dart';
 
 
@@ -19,64 +20,18 @@ class BodyPrice extends StatelessWidget {
                   pressIcon: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()))
           ),
           TitlePag(title: 'РЕМОНТ СМАРТФОНОВ'),
-          Container(
-            height: 40,
-            decoration: BoxDecoration(
-              color: kPrimaryColor,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(kDefaultRadius * 2),
-                  topRight: Radius.circular(kDefaultRadius * 2) )
-            ),
-            child:
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Center(
-                      child: Container(
-                        child:
-                        Text( 'Дталь',textAlign: TextAlign.center,),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 4,
-                    child: Center(
-                      child: Container(
-                        child:
-                        Text( 'Описание услуги',textAlign: TextAlign.center,),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Center(
-                      child: Container(
-                          child:
-                          Text( 'Стоимость услуги', textAlign: TextAlign.center,)
-                      ),
-                    ),
-                  ),
-                ]
-            ),
+          Responsive(
+              mobile: PriceHeading(kSize: kMobilSize),
+              tablet: PriceHeading(kSize: kTabletSize),
+              desktop: PriceHeading(kSize: kDesktopSize),
           ),
-
           Expanded(
-              child: ListView(
-                     scrollDirection: Axis.vertical,
-                     children: <Widget>[
-                       PriseDetale(image: 'assets/LCD.jpg',title: 'Замена дисплейного модуля', price:'800р.'),
-                       PriseDetale(image: 'assets/FPC.jpg',title: 'Замена межплатного шлефа', price:'800р.'),
-                       PriseDetale(image: 'assets/camer.jpg',title: 'Замена модуля камеры', price:'800р.'),
-                       PriseDetale(image: 'assets/LCD.jpg',title: 'Замена дисплейного модуля', price:'800р.'),
-                       PriseDetale(image: 'assets/LCD.jpg',title: 'Замена дисплейного модуля', price:'800р.'),
-                       PriseDetale(image: 'assets/LCD.jpg',title: 'Замена дисплейного модуля', price:'800р.'),
-                       PriseDetale(image: 'assets/LCD.jpg',title: 'Замена дисплейного модуля', price:'800р.'),
-                       PriseDetale(image: 'assets/LCD.jpg',title: 'Замена дисплейного модуля', price:'800р.'),
-                       PriseDetale(image: 'assets/LCD.jpg',title: 'Замена дисплейного модуля', price:'800р.'),
-                     ],
-                   )),
+              child:  Responsive(
+                mobile: ScrolPrice(kSize: kMobilSize),
+                tablet: ScrolPrice(kSize: kTabletSize),
+                desktop: ScrolPrice(kSize: kDesktopSize),
+              ),
+          ),
         ]
     ),
 
@@ -84,8 +39,100 @@ class BodyPrice extends StatelessWidget {
   }
 }
 
-class PriseDetale extends StatelessWidget {
-  const PriseDetale({
+
+
+class PriceHeading extends StatelessWidget {
+  const PriceHeading({
+    Key key,
+    this.kSize,
+  }) : super(key: key);
+
+  final int kSize;
+
+  @override
+Widget build(BuildContext context) {
+return Container(
+  height: 50,
+  decoration: BoxDecoration(
+      color: kPrimaryColor,
+      borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(kDefaultRadius * 2),
+          topRight: Radius.circular(kDefaultRadius * 2) )
+  ),
+  child:
+  Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Expanded(
+          flex: 2,
+          child: Center(
+            child: Container(
+              child:
+              Text( 'Дталь',textAlign: TextAlign.center,
+                style: TextStyle(fontSize: kSize * 3.0, fontWeight: FontWeight.bold),),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 5,
+          child: Container(
+            padding: EdgeInsets.only(left: kDefaultPadding, right: kDefaultPadding),
+            child: Center(
+              child:
+              Text( 'Описание услуги',textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: kSize * 3.0, fontWeight: FontWeight.bold)),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 2,
+          child: Container(
+            child: Center(
+                child:
+                Text( 'Стоимость услуги', textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: kSize * 3.0, fontWeight: FontWeight.bold))
+            ),
+          ),
+        ),
+      ]
+  ),
+);
+}
+}
+
+class ScrolPrice extends StatelessWidget {
+  const ScrolPrice({
+    Key key,
+    this.kSize,
+  }) : super(key: key);
+
+  final int kSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return  ListView(
+      scrollDirection: Axis.vertical,
+      children: <Widget>[
+        PriceDetale(image: 'assets/8_fOyVKHrV4.jpg',title: 'Восстановление устройства после удара или попадания жидкости', price:'1500р.',kSize: kSize,),
+        PriceDetale(image: 'assets/android_logo_PNG27.png',title: 'Восстановление операционной системы (програмный ремонт без разбора устройства)', price:'1000р.',kSize: kSize,),
+        PriceDetale(image: 'assets/LCD.jpg',title: 'Замена модуля дисплей + сенсор', price:'1000р.',kSize: kSize,),
+        PriceDetale(image: 'assets/LCD1.jpg',title: 'Замена дисплея', price:'1000р.',kSize: kSize,),
+        PriceDetale(image: 'assets/tachskrin.jpg',title: 'Замена сенсора', price:'1000р.',kSize: kSize,),
+        PriceDetale(image: 'assets/microUSB.jpg',title: 'Замена системного разъема', price:'800р.',kSize: kSize,),
+        PriceDetale(image: 'assets/FPC.jpg',title: 'Замена межплатного шлефа', price:'500р.',kSize: kSize,),
+        PriceDetale(image: 'assets/camer.jpg',title: 'Замена модуля камеры', price:'500р.',kSize: kSize,),
+        PriceDetale(image: 'assets/recever.jpg',title: 'Замена динамика', price:'500р.',kSize: kSize,),
+        PriceDetale(image: 'assets/mic.jpg',title: 'Замена микрофоны', price:'500р.',kSize: kSize,),
+        PriceDetale(image: 'assets/Buser.jpg',title: 'Замена полифонического динамика', price:'500р.',kSize: kSize,),
+        PriceDetale(image: 'assets/cover.jpg',title: 'Замена корпусных элементов', price:'500р.',kSize: kSize,),
+        PriceDetale(image: 'assets/cpu_PNG42.png',title: 'Замена микросхемы', price:'2500р.',kSize: kSize,),
+      ],
+    );
+  }
+}
+
+class PriceDetale extends StatelessWidget {
+  const PriceDetale({
     Key key,
     this.image,
     this.title,
@@ -105,30 +152,43 @@ class PriseDetale extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-        Expanded(
-          flex: 2,
-          child: Center(
-            child: Container(
-              margin: EdgeInsets.only(bottom: kDefaultPadding),
-              width: kCardDefaultHeigth,
-              height: kCardDefaultHeigth,
-              padding: EdgeInsets.all(kDefaultPadding),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius))
+            Expanded(
+              flex: 2,
+              child: Center(
+                child: Container(
+                    margin: EdgeInsets.only(bottom: kDefaultPadding),
+                    width: kImagePrice * kSize,
+                    height: kImagePrice * kSize,
+                    padding: EdgeInsets.all(kDefaultPadding),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius))
+                    ),
+                    child: Image.asset(image)
+                ),
               ),
-              child: Image.asset(image)
             ),
-          ),
-        ),
 
-        Expanded(
-          flex: 4,
-            child: Center(child: Text(title, style: TextStyle(color: kTextColor),))),
-        Expanded(
-          flex: 1,
-            child: Center(child: Text(price)))
-      ]
+            Expanded(
+                flex: 5,
+                child: Container(
+                    padding: EdgeInsets.only(left: kDefaultPadding, right: kDefaultPadding),
+                    child: Center(
+                        child: Text(title,
+                          style: TextStyle(
+                              fontSize: kSize * 3.0,
+                              fontWeight: FontWeight.bold),
+                        )
+                    )
+                )
+            ),
+            Expanded(
+                flex: 1,
+                child: Center(
+                    child: Text(price,
+                      style: TextStyle(fontSize: kSize * 4.0,
+                          fontWeight: FontWeight.bold),)))
+          ]
       ),
     );
   }
