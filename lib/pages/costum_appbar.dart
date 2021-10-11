@@ -241,15 +241,36 @@ class AttentionPage extends StatelessWidget {
 @override
 Widget build(BuildContext context) {
 return AlertDialog(
-  title: Text('ВНИМАНИЕ!!!', style:  TextStyle(color: kRextColor),
-    
+  title: Center(
+    child: Text('ВНИМАНИЕ!!!', style:  TextStyle(color: kRextColor, fontSize: kMobilSize * 6, fontWeight: FontWeight.bold,),
+    ),
   ),
- 
+ content: Container(
+   height: 200,
+   width: 200,
+   child: ListView(
+     children: [
+       Text('Сроки оказания услуг могут завистить от сроков поставки запчастей и сложности монтажа устройства.'),
+       Text('В прайсе указани минимальная стоимость услуг, может менятся, в зависимоти от стоимости запасных частей и сложности монтажа устройства.'),
+       Text('Для уточнения сроков и стоимости ремонта свяжитель с нами:'),
+     ],
+   ),
+ ),
   actions: [
-    IconButton(
-        onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.close))
+    Row(
+      children: [
+        IconButton(
+        onPressed: () {}, icon: Icon(Icons.phone),),
+        IconButton(
+          onPressed: () {}, icon: Icon(Icons.email),),
+       
+        IconButton(
+            onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.close)),
+      ],
+    )
   ],
-  shape: RoundedRectangleBorder(borderRadius: 
+  backgroundColor: kPrimaryColor.withOpacity(0.80),
+  shape: RoundedRectangleBorder(borderRadius:
   BorderRadius.circular(kDefaultRadius)),
 );
 }
