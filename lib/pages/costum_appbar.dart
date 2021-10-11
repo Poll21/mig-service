@@ -241,22 +241,16 @@ class AttentionPage extends StatelessWidget {
 @override
 Widget build(BuildContext context) {
 return AlertDialog(
-  title: Container(
-    height: 400,
-    width: 300,
-    decoration: BoxDecoration(
-      color: kPrimaryColor,
-      borderRadius: BorderRadius.circular(
-        kDefaultRadius
-      )
-    ),
-    child:  Text('ВНИМАНИЕ!!!', style: TextStyle(color: kRextColor),
-  )
- ),
+  title: Text('ВНИМАНИЕ!!!', style:  TextStyle(color: kRextColor),
+    
+  ),
+ 
   actions: [
     IconButton(
         onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.close))
   ],
+  shape: RoundedRectangleBorder(borderRadius: 
+  BorderRadius.circular(kDefaultRadius)),
 );
 }
 }
