@@ -35,7 +35,7 @@ class TitleWithMoreBtn extends StatelessWidget {
           ]
       ),
       child: TextButton(
-        onPressed: () {},
+        onPressed: press,
             child: Text(title,
               style:
               TextStyle(

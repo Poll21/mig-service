@@ -45,7 +45,7 @@ class CustomAppBar extends StatelessWidget {
                           color: kTextColor,
                           icon: Icon(icon, color: kTextColor),
                           iconSize: kMobilSize * 5.0,
-                          onPressed:  () {},
+                          onPressed: pressIcon,
                         ),
                         Text('СЕРВИСНЫЙ ЦЕНТР',
                           style: TextStyle(
@@ -54,7 +54,6 @@ class CustomAppBar extends StatelessWidget {
                         ),
                         SizedBox(
                           width: kMobilSize * 5.0,
-
                         )
                       ],
                     ),
@@ -242,7 +241,18 @@ class AttentionPage extends StatelessWidget {
 @override
 Widget build(BuildContext context) {
 return AlertDialog(
-  title: Text('ВНИМАНИЕ!!!'),
+  title: Container(
+    height: 400,
+    width: 300,
+    decoration: BoxDecoration(
+      color: kPrimaryColor,
+      borderRadius: BorderRadius.circular(
+        kDefaultRadius
+      )
+    ),
+    child:  Text('ВНИМАНИЕ!!!', style: TextStyle(color: kRextColor),
+  )
+ ),
   actions: [
     IconButton(
         onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.close))

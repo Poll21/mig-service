@@ -20,7 +20,7 @@ class TitlePag extends StatelessWidget {
           kSize: kMobilSize ,press: () {
             Navigator.push(context, PageRouteBuilder(
             opaque: false,
-            pageBuilder: (BuildContext context, _, __) => AttentionPage());
+            pageBuilder: (BuildContext context, _, __) => AttentionPage()));
           },
           ),
         tablet: TitleWithMoreBtn(title: title,
