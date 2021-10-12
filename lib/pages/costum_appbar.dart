@@ -237,7 +237,12 @@ class HeaderWithSearchBox extends StatelessWidget {
   }
 }
 class AttentionPage extends StatelessWidget {
+  const AttentionPage({
+    Key key,
+    @required this.kSize,
+  }) : super(key: key);
 
+  final double kSize;
 @override
 Widget build(BuildContext context) {
 return AlertDialog(
@@ -246,12 +251,12 @@ return AlertDialog(
     ),
   ),
  content: Container(
-   height: 200,
-   width: 200,
+   height: 40 * kSize,
+   width: 50 * kSize,
    child: ListView(
      children: [
        Text('Сроки оказания услуг могут завистить от сроков поставки запчастей и сложности монтажа устройства.',
-       style: TextStyle(color: kTextColor, fontSize: 20),),
+       style: TextStyle(color: kTextColor, fontSize: 4 * kSize),),
        Text('В прайсе указани минимальная стоимость услуг, может менятся, в зависимоти от стоимости запасных частей и сложности монтажа устройства.'),
        Text('Для уточнения сроков и стоимости ремонта свяжитель с нами:'),
      ],
@@ -259,23 +264,45 @@ return AlertDialog(
  ),
   actions: [
     Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
 
       children: [
         Container(
 
           decoration: BoxDecoration(
-              color: Colors.amberAccent,
+              color: Colors.green[500],
             borderRadius: BorderRadius.circular(kDefaultRadius/2)
           ),
           child: IconButton(
             onPressed: () {}, icon: Icon(Icons.phone, color: kTextColor,),),
         ),
-        IconButton(
-          onPressed: () {}, icon: Icon(Icons.email),),
-        IconButton(
-          onPressed: () {}, icon: Icon(Icons.whatshot),),
-        IconButton(
-            onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.close)),
+        Container(
+
+          decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(kDefaultRadius/2)
+          ),
+          child:IconButton(
+          onPressed: () {}, icon: Icon(Icons.email,color: kTextColor,),),
+        ),
+        Container(
+
+          decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(kDefaultRadius/2)
+          ),
+          child:IconButton(
+            onPressed: () {}, icon: Icon(Icons.whatshot_outlined),color: kTextColor,),
+        ),
+        Container(
+
+          decoration: BoxDecoration(
+              color: kRextColor,
+              borderRadius: BorderRadius.circular(kDefaultRadius/2)
+          ),
+          child:IconButton(
+            onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.close),color: kTextColor,),
+        ),
       ],
     )
   ],

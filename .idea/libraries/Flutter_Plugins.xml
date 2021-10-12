@@ -4,8 +4,6 @@
     <JAVADOC />
     <SOURCES>
       <root url="file://C:/src/flutter" />
-      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/android/src/main/java" />
-      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/android/src/test/java" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/android/src/test/java/io/flutter/plugins/camera/media" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/example/android/app/src/androidTestDebug/java/io/flutter/plugins/cameraexample" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17/example/android/app/src/main/java/io/flutter/plugins/cameraexample" />
@@ -31,5 +29,8 @@
       <root url="file://C:/src/flutter/examples/platform_view/android/app/src/main/java" />
       <root url="file://C:/src/flutter/packages/integration_test/android/src/main/java" />
     </SOURCES>
+    <excluded>
+      <root url="file://C:/src/flutter" />
+    </excluded>
   </library>
 </component>
