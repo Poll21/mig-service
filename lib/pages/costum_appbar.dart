@@ -250,7 +250,8 @@ return AlertDialog(
    width: 200,
    child: ListView(
      children: [
-       Text('Сроки оказания услуг могут завистить от сроков поставки запчастей и сложности монтажа устройства.'),
+       Text('Сроки оказания услуг могут завистить от сроков поставки запчастей и сложности монтажа устройства.',
+       style: TextStyle(color: kTextColor, fontSize: 20),),
        Text('В прайсе указани минимальная стоимость услуг, может менятся, в зависимоти от стоимости запасных частей и сложности монтажа устройства.'),
        Text('Для уточнения сроков и стоимости ремонта свяжитель с нами:'),
      ],
@@ -258,12 +259,21 @@ return AlertDialog(
  ),
   actions: [
     Row(
+
       children: [
-        IconButton(
-        onPressed: () {}, icon: Icon(Icons.phone),),
+        Container(
+
+          decoration: BoxDecoration(
+              color: Colors.amberAccent,
+            borderRadius: BorderRadius.circular(kDefaultRadius/2)
+          ),
+          child: IconButton(
+            onPressed: () {}, icon: Icon(Icons.phone, color: kTextColor,),),
+        ),
         IconButton(
           onPressed: () {}, icon: Icon(Icons.email),),
-       
+        IconButton(
+          onPressed: () {}, icon: Icon(Icons.whatshot),),
         IconButton(
             onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.close)),
       ],
