@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/body.dart';
 import 'package:migservice/components/constants.dart';
+import 'package:migservice/components/title_page.dart';
+
+import 'costum_appbar.dart';
+
 
 class HomeScreen extends StatelessWidget {
 
@@ -8,36 +12,20 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: buildAppBar(),
-      body: Body(),
-    );
+        backgroundColor: kBackgroudColor,
+        body: Column(
+          children: [
+            CustomAppBar(
+              icon: Icons.reorder_outlined,),
+            TitlePag(title: 'СРОЧНЫЙ РЕМОНТ'),
+            Body(),
+        ]
+        )
+     );
   }
-
- AppBar buildAppBar() {
-   return AppBar(
-     backgroundColor: kPrimaryColor,
-     elevation: 0,
-
-     title: Row(
-       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-       children: [
-         IconButton(
-           icon: Icon(Icons.menu_sharp),
-           iconSize: kDefaultPadding * 2,
-           onPressed: () {},
-         ),
-         Text('сервисный центр',
-         ),
-         SizedBox(
-          width: kDefaultPadding * 2.4,
-          height: kDefaultPadding * 2,
-         )
-       ],
-     )
-
-
-   );
- }
 }
+
+
+
 
 
