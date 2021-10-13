@@ -8,60 +8,49 @@ class HeaderWithSearchBox extends StatelessWidget {
     @required this.kSize,
   }) : super(key: key);
 
-  final int kSize;
+  final double kSize;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: kDefaultPadding),
+      padding: EdgeInsets.only(top: kDefaultPadding),
       height: kDefaultPadding * kSize,
       child: Stack(
         children: [
           Container(
             padding: EdgeInsets.only(
-              bottom: 20 + kDefaultPadding,
+              bottom: 5 + kDefaultPadding,
             ),
             height: kDefaultPadding * kSize - 10,
-            decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(kDefaultRadius * 2),
-                  bottomRight: Radius.circular(kDefaultRadius * 2),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 5),
-                    blurRadius: 50,
-                    color: kShadowColor.withOpacity(0.50),
-                  ),
-                ]
-            ),
+
             child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  padding: EdgeInsets.only(left: kDefaultPadding * kSize / 4, right: kDefaultPadding * kSize/ 4),
+                  padding: EdgeInsets.only(
+                    left: kDefaultPadding * kSize / 8,
+                    right: kDefaultPadding * kSize/ 8,
+                  ),
                   child:
-                    Image.asset('assets/smartphone.png', height: kDefaultPadding * 2 * kSize),
+                  Image.asset('assets/smartphone.png', height: kDefaultPadding * 2 * kSize),
                 ),
                 Center(
-                child:
-                  Container(
                     child:
-                    Text('MIG-SERVICE',
-                      style: TextStyle(
-                          color: kTextColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: kDefaultPadding / 2 * kSize)
-                  ),)
+                    Container(
+                      child:
+                      Text('MIG-SERVICE',
+                          style: TextStyle(
+                              color: kTextColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: kDefaultPadding / 2.3 * kSize)
+                      ),)
                 ),
                 Image.asset('assets/computer.png', height: kDefaultPadding * 2 * kSize),
               ],
             ),
           ),
-         //Searchr(),
         ],
       ),
     );

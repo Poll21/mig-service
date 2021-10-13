@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:migservice/components/prices/%D1%81ontact_Information.dart';
 
 import 'constants.dart';
 
@@ -9,6 +10,7 @@ class AttentionPage extends StatelessWidget {
   }) : super(key: key);
 
   final double kSize;
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -39,16 +41,15 @@ class AttentionPage extends StatelessWidget {
       actions: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-
           children: [
             Container(
-
               decoration: BoxDecoration(
                   color: Colors.green[500],
                   borderRadius: BorderRadius.circular(kDefaultRadius/2)
               ),
               child: IconButton(
-                onPressed: () {}, icon: Icon(Icons.phone, color: kTextColor,),),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+                icon: Icon(Icons.phone, color: kTextColor,),),
             ),
             Container(
 
@@ -57,25 +58,26 @@ class AttentionPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(kDefaultRadius/2)
               ),
               child:IconButton(
-                onPressed: () {}, icon: Icon(Icons.email,color: kTextColor,),),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+                icon: Icon(Icons.email,color: kTextColor,),),
             ),
             Container(
-
               decoration: BoxDecoration(
                   color: Colors.green,
                   borderRadius: BorderRadius.circular(kDefaultRadius/2)
               ),
               child:IconButton(
-                onPressed: () {}, icon: Icon(Icons.whatshot_outlined),color: kTextColor,),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+                icon: Icon(Icons.alternate_email),color: kTextColor,),
             ),
             Container(
-
               decoration: BoxDecoration(
                   color: kRextColor,
                   borderRadius: BorderRadius.circular(kDefaultRadius/2)
               ),
               child:IconButton(
-                onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.close),color: kTextColor,),
+                onPressed: () {Navigator.pop(context);},
+                icon: Icon(Icons.close),color: kTextColor,),
             ),
           ],
         )
