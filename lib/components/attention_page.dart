@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/prices/%D1%81ontact_Information.dart';
-
 import 'constants.dart';
+import 'package:migservice/costomicons_icons.dart';
 
 class AttentionPage extends StatelessWidget {
   const AttentionPage({
@@ -54,12 +54,12 @@ class AttentionPage extends StatelessWidget {
             Container(
 
               decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: Colors.blue,
                   borderRadius: BorderRadius.circular(kDefaultRadius/2)
               ),
               child:IconButton(
                 onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
-                icon: Icon(Icons.email,color: kTextColor,),),
+                icon: Icon(Costomicons.vk,color: kTextColor,),),
             ),
             Container(
               decoration: BoxDecoration(
@@ -68,8 +68,20 @@ class AttentionPage extends StatelessWidget {
               ),
               child:IconButton(
                 onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
-                icon: Icon(Icons.alternate_email),color: kTextColor,),
+                icon: Icon(Costomicons.whatsapp),color: kTextColor,),
             ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(kDefaultRadius/2)
+              ),
+              child:IconButton(
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+                icon: Icon(Costomicons.instagram, color: Colors.red,),),
+            ),
+
+
+
             Container(
               decoration: BoxDecoration(
                   color: kRextColor,
@@ -77,7 +89,7 @@ class AttentionPage extends StatelessWidget {
               ),
               child:IconButton(
                 onPressed: () {Navigator.pop(context);},
-                icon: Icon(Icons.close),color: kTextColor,),
+                icon: Icon(Icons.close),color: kTextColor,  ),
             ),
           ],
         )
