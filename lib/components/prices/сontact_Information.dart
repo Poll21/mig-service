@@ -1,10 +1,14 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:migservice/pages/costum_appbar.dart';
 import 'package:migservice/pages/home_screen.dart';
 import '../../costomicons_icons.dart';
 import '../constants.dart';
-import '../size_progect.dart';
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../title_page.dart';
 import 'body_prise.dart';
 
@@ -32,9 +36,61 @@ class ContactInf extends StatelessWidget {
                   flex: 2,
                   child: Column(
                     children: [
+                      Container(
+                        child: Center(
+                          child: Column(
+                            children:[
+                              Text('Режим работы:',
+                                style: TextStyle(
+                                  color: kTextColor,
+                                  fontSize: kTabletSize * 5),),
+                              Text('Пн. 10:00-19:00',
+                                style: TextStyle(
+                                    color: kTextColor,
+                                    fontSize: kTabletSize * 4),),
+                              Text('Вт. 10:00-19:00',
+                                style: TextStyle(
+                                  color: kTextColor,
+                                  fontSize: kTabletSize * 4),),
+                              Text('Ср. 10:00-19:00',
+                                style: TextStyle(
+                                    color: kTextColor,
+                                    fontSize: kTabletSize * 4),),
+                              Text('Чт. 10:00-19:00',
+                                style: TextStyle(
+                                    color: kTextColor,
+                                    fontSize: kTabletSize * 4),),
+                              Text('Пт. 10:00-19:00',
+                                style: TextStyle(
+                                    color: kTextColor,
+                                    fontSize: kTabletSize * 4),),
+                              Text('Сб. 10:00-19:00',
+                                style: TextStyle(
+                                    color: kRextColor,
+                                    fontSize: kTabletSize * 4),),
+                              Text('Вб. 10:00-19:00',style: TextStyle(
+                                  color: kRextColor,
+                                  fontSize: kTabletSize * 4),),
+                              Container(
+                                margin: EdgeInsets.all(kDefaultPadding),
+                                child:
+                                Text('В субботу и воскресенье сервисный центр работает в режиме приема и выдачи.',
+                                  style: TextStyle(
+                                    color: kRextColor,
+                                    fontSize: kTabletSize * 3),),
+                              ),
+                              
+
+                            ]
+                          )
+                        ),
+                      ),
                       Row(
                         children: [
                           Container(
+                           margin: EdgeInsets.all(kDefaultPadding),
+                            height: 50,
+                            width: 50,
                             decoration: BoxDecoration(
                                 color: Colors.green[500],
                                 borderRadius:
@@ -46,12 +102,18 @@ class ContactInf extends StatelessWidget {
                                       builder: (context) => ContactInf())),
                               icon: Icon(
                                 Icons.phone,
+                                size: 30.0,
                                 color: kTextColor,
                               ),
                             ),
                           ),
-                          Text('+7 (3852) 60-74-43'
-                              ' +7-913-210-74-43'),
+                          Column(
+                            children: [
+                              Text('+7 (3852) 60-74-43,'),
+                              Text('+7-913-210-74-43'),
+                            ],
+                          ),
+
                         ],
                       ),
                       Row(
@@ -109,17 +171,17 @@ class ContactInf extends StatelessWidget {
                   flex: 3,
                   child: Column(
                     children: [
-                      Text('г. Барнаул, прос-кт Красоармейский 4.'),
+                      Text('г. Барнаул,', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
+                      Text('прос-кт Красоармейский 4.', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
                       Row(
                         children: [
                           Image.asset('assets/1.jpg', height: 300,),
                           Image.asset('assets/2.jpg', height: 300,),
                         ],
                       ),
-
-
                     ],
-                  )),
+                  )
+              ),
             ],
           ),
         ),

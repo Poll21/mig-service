@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/prices/%D1%81ontact_Information.dart';
+import 'package:migservice/components/prices/contact_pag.dart';
 import 'constants.dart';
 import 'package:migservice/costomicons_icons.dart';
 
@@ -58,7 +59,7 @@ class AttentionPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(kDefaultRadius/2)
               ),
               child:IconButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactPage())),
                 icon: Icon(Costomicons.vk,color: kTextColor,),),
             ),
             Container(

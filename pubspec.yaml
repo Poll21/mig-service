@@ -29,6 +29,7 @@ dependencies:
   cupertino_icons: ^1.0.3
   foldable_sidebar: ^1.0.0
   new_gradient_app_bar: ^0.2.0
+  url_launcher: ^6.0.12
 
 dev_dependencies:
   flutter_test:
