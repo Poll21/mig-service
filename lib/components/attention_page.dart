@@ -80,9 +80,6 @@ class AttentionPage extends StatelessWidget {
                 onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
                 icon: Icon(Costomicons.instagram, color: Colors.red,),),
             ),
-
-
-
             Container(
               decoration: BoxDecoration(
                   color: kRextColor,
@@ -101,3 +98,5 @@ class AttentionPage extends StatelessWidget {
     );
   }
 }
+
+
