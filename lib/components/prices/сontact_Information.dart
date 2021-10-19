@@ -37,78 +37,21 @@ class ContactInf extends StatelessWidget {
                   child: Column(
                     children: [
                       OperatingMode(),
-                      Expanded(child:
-                          Container(child:
-                            ListView(
-                            scrollDirection: Axis.vertical,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.all(kDefaultPadding),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                        color: Colors.green[500],
-                                        borderRadius:
-                                        BorderRadius.circular(kDefaultRadius / 2)),
-                                    child: IconButton(
-                                      onPressed: () => Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => ContactInf())),
-                                      icon: Icon(
-                                        Icons.phone,
-                                        size: 30.0,
-                                        color: kTextColor,
-                                      ),
-                                    ),
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text('+7 (3852) 60-74-43,'),
-                                      Text('+7-913-210-74-43'),
-                                    ],
-                                  ),
+                    Expanded(
+                      child:
 
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.blue,
-                                        borderRadius:
-                                        BorderRadius.circular(kDefaultRadius / 2)),
-                                    child: IconButton(
-                                      onPressed: () {},
-                                      //=> setState((){_launched = _launchInWebViewOrVC('https://vk.com/mig_service22');}),
-                                      icon: Icon(
-                                        Costomicons.vk,
-                                        color: kTextColor,
-                                      ),
-                                    ),
-                                  ),
-                                  Text('https://vk.com/mig_service22')
-                                ],
-                              ),
+                        ListView(
+                        scrollDirection: Axis.vertical,
+                        children: [
+
+                          Row(
+                            children: [
                               Container(
+                                margin: EdgeInsets.all(kDefaultPadding),
+                                height: 50,
+                                width: 50,
                                 decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius:
-                                    BorderRadius.circular(kDefaultRadius / 2)),
-                                child: IconButton(
-                                  onPressed: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => ContactInf())),
-                                  icon: Icon(Costomicons.whatsapp),
-                                  color: kTextColor,
-                                ),
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Colors.green[500],
                                     borderRadius:
                                     BorderRadius.circular(kDefaultRadius / 2)),
                                 child: IconButton(
@@ -117,13 +60,72 @@ class ContactInf extends StatelessWidget {
                                       MaterialPageRoute(
                                           builder: (context) => ContactInf())),
                                   icon: Icon(
-                                    Costomicons.instagram,
-                                    color: Colors.red,
+                                    Icons.phone,
+                                    size: 30.0,
+                                    color: kTextColor,
                                   ),
                                 ),
                               ),
+                              Column(
+                                children: [
+                                  Text('+7 (3852) 60-74-43,'),
+                                  Text('+7-913-210-74-43'),
+                                ],
+                              ),
+
                             ],
-                          )),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius:
+                                    BorderRadius.circular(kDefaultRadius / 2)),
+                                child: IconButton(
+                                  onPressed: () {},
+                                  //=> setState((){_launched = _launchInWebViewOrVC('https://vk.com/mig_service22');}),
+                                  icon: Icon(
+                                    Costomicons.vk,
+                                    color: kTextColor,
+                                  ),
+                                ),
+                              ),
+                              Text('https://vk.com/mig_service22')
+                            ],
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius:
+                                BorderRadius.circular(kDefaultRadius / 2)),
+                            child: IconButton(
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ContactInf())),
+                              icon: Icon(Costomicons.whatsapp),
+                              color: kTextColor,
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                BorderRadius.circular(kDefaultRadius / 2)),
+                            child: IconButton(
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ContactInf())),
+                              icon: Icon(
+                                Costomicons.instagram,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                       ),
 
                     ],
