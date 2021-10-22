@@ -30,124 +30,63 @@ class ContactInf extends StatelessWidget {
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(kDefaultRadius * 2),
                   topRight: Radius.circular(kDefaultRadius * 2))),
-          child: Row(
+        ),
+        Container(
+          color: kPrimaryColor.withOpacity(0.30),
+          child:Row(
             children: [
               Expanded(
-                  flex: 1,
-                  child: Column(
-                    children: [
-                      OperatingMode(),
-                    Expanded(
-                      child:
+              flex: 1,
+                  child:
+                      Container(
 
-                        ListView(
-                        scrollDirection: Axis.vertical,
-                        children: [
-
-                          Row(
-                            children: [
+                        padding: EdgeInsets.all(kDefaultPadding),
+                        color: Colors.greenAccent,
+                        child: ListView(
+                            children: <Widget>[
+                              OperatingMode(),
                               Container(
-                                margin: EdgeInsets.all(kDefaultPadding),
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    color: Colors.green[500],
-                                    borderRadius:
-                                    BorderRadius.circular(kDefaultRadius / 2)),
-                                child: IconButton(
-                                  onPressed: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => ContactInf())),
-                                  icon: Icon(
-                                    Icons.phone,
-                                    size: 30.0,
-                                    color: kTextColor,
-                                  ),
-                                ),
+                                height: 20,
+                                color: Colors.orange,
                               ),
-                              Column(
-                                children: [
-                                  Text('+7 (3852) 60-74-43,'),
-                                  Text('+7-913-210-74-43'),
-                                ],
-                              ),
-
-                            ],
-                          ),
-                          Row(
-                            children: [
                               Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.blue,
-                                    borderRadius:
-                                    BorderRadius.circular(kDefaultRadius / 2)),
-                                child: IconButton(
-                                  onPressed: () {},
-                                  //=> setState((){_launched = _launchInWebViewOrVC('https://vk.com/mig_service22');}),
-                                  icon: Icon(
-                                    Costomicons.vk,
-                                    color: kTextColor,
-                                  ),
-                                ),
+                                height: 20,
+                                color: Colors.black,
                               ),
-                              Text('https://vk.com/mig_service22')
-                            ],
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius:
-                                BorderRadius.circular(kDefaultRadius / 2)),
-                            child: IconButton(
-                              onPressed: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ContactInf())),
-                              icon: Icon(Costomicons.whatsapp),
-                              color: kTextColor,
-                            ),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius:
-                                BorderRadius.circular(kDefaultRadius / 2)),
-                            child: IconButton(
-                              onPressed: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ContactInf())),
-                              icon: Icon(
-                                Costomicons.instagram,
-                                color: Colors.red,
+                              Container(
+                                height: 20,
+                                color: Colors.orange,
                               ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      ),
+                              Container(
+                                height: 20,
+                                color: Colors.black,
+                              ),
+                            ]
+                      )
 
-                    ],
-                  )),
-              Expanded(
-                  flex: 3,
-                  child: Column(
+
+
+
+
+              )),
+          Expanded(
+              flex: 3,
+              child: Column(
+                children: [
+                  Text('г. Барнаул,', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
+                  Text('прос-кт Красоармейский 4.', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
+                  Row(
                     children: [
-                      Text('г. Барнаул,', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
-                      Text('прос-кт Красоармейский 4.', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
-                      Row(
-                        children: [
-                          Image.asset('assets/1.jpg', height: 300,),
-                          Image.asset('assets/2.jpg', height: 300,),
-                        ],
-                      ),
+                      Image.asset('assets/1.jpg', height: 300,),
+                      Image.asset('assets/2.jpg', height: 300,),
                     ],
-                  )
-              ),
-            ],
+                  ),
+                ],
+              )
           ),
-        ),
+        ],
+      ), ),
+
       ]),
     );
   }
