@@ -11,6 +11,7 @@ import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../title_page.dart';
 import 'body_prise.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ContactInf extends StatelessWidget {
   @override
@@ -22,8 +23,9 @@ class ContactInf extends StatelessWidget {
             icon: Icons.chevron_left,
             pressIcon: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => HomeScreen()))),
-        TitlePag(title: 'Свяжитесь с нами:'),
+        TitlePag(title: 'Контактная информация:'),
         Container(
+          height: kDefaultRadius *2,
           padding: EdgeInsets.only(top: kDefaultPadding * 2),
           decoration: BoxDecoration(
               color: kPrimaryColor.withOpacity(0.30),
@@ -31,60 +33,158 @@ class ContactInf extends StatelessWidget {
                   topLeft: Radius.circular(kDefaultRadius * 2),
                   topRight: Radius.circular(kDefaultRadius * 2))),
         ),
-        Container(
-          color: kPrimaryColor.withOpacity(0.30),
+        Expanded(
           child:Row(
             children: [
               Expanded(
               flex: 1,
                   child:
-                      Container(
-
-                        padding: EdgeInsets.all(kDefaultPadding),
-                        color: Colors.greenAccent,
-                        child: ListView(
-                            children: <Widget>[
-                              OperatingMode(),
-                              Container(
-                                height: 20,
-                                color: Colors.orange,
+                  Container(
+                    color: kPrimaryColor.withOpacity(0.30),
+                    child:
+                    ListView(
+                      scrollDirection: Axis.vertical,
+                      children: <Widget>[
+                        OperatingMode(),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.all(kDefaultPadding),
+                              height: kDesktopSize * 10,
+                              width: kDesktopSize * 10,
+                              decoration: BoxDecoration(
+                                  color: Colors.green[500],
+                                  borderRadius:
+                                  BorderRadius.circular(kDefaultRadius / 2 )),
+                              child: IconButton(
+                                onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ContactInf())),
+                                icon: Icon(
+                                  Icons.phone,
+                                  size: kDesktopSize * 5,
+                                  color: kTextColor,
+                                ),
                               ),
-                              Container(
-                                height: 20,
-                                color: Colors.black,
+                            ),
+                            Column(
+                              children: [
+                                Text('+7 (3852) 60-74-43;',style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),),
+                                Text('+7-913-210-74-43',style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),),
+                              ],
+                            ),
+
+                          ],
+                        ),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.all(kDefaultPadding),
+                              height: kDesktopSize * 10,
+                              width: kDesktopSize * 10,
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius:
+                                BorderRadius.circular(kDefaultRadius / 2)),
+                              child: IconButton(
+                                onPressed: () {},
+                                //=> setState((){_launched = _launchInWebViewOrVC('https://vk.com/mig_service22');}),
+                                icon: Icon(
+                                  Costomicons.vk,
+                                  size: kDesktopSize * 5,
+                                  color: kTextColor,
+                                ),
                               ),
+                            ),
+                            Container(),
+                            Text('https://vk.com/mig_service22', style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),)
+                          ],
+                        ),
+                        Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.all(kDefaultPadding),
+                            height: kDesktopSize * 10,
+                            width: kDesktopSize * 10,
+                            decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius:
+                                BorderRadius.circular(kDefaultRadius / 2)),
+                            child: IconButton(
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ContactInf())),
+                              icon: Icon(
+                                  Costomicons.whatsapp,
+                                  size: kDesktopSize * 5,
+                                  color: kTextColor),
+                            ),
+                          ),
+                          Text('+7-913-210-74-43',style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),),
+                        ]),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
                               Container(
-                                height: 20,
-                                color: Colors.orange,
+                                margin: EdgeInsets.all(kDefaultPadding),
+                                height: kDesktopSize * 10,
+                                width: kDesktopSize * 10,
+                                decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius:
+                                    BorderRadius.circular(kDefaultRadius / 2)),
+                                child: IconButton(
+                                  onPressed: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ContactInf())),
+                                  icon: Icon(
+                                    Costomicons.instagram,
+                                      size: kDesktopSize * 5,
+                                      color: kTextColor
+                                  ),
+                                ),
                               ),
-                              Container(
-                                height: 20,
-                                color: Colors.black,
-                              ),
-                            ]
-                      )
-
-
-
-
-
-              )),
-          Expanded(
-              flex: 3,
-              child: Column(
-                children: [
-                  Text('г. Барнаул,', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
-                  Text('прос-кт Красоармейский 4.', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
-                  Row(
-                    children: [
-                      Image.asset('assets/1.jpg', height: 300,),
-                      Image.asset('assets/2.jpg', height: 300,),
-                    ],
+                              Text('https://vk.com/mig_service22',
+                                style: TextStyle(
+                                    color: kTextColor,
+                                    fontSize:kDesktopSize * 2.5),)
+                        ]),
+                      ]
+                    ),
                   ),
-                ],
+              ),
+            Expanded(
+              flex: 3,
+              child:
+              Container(
+                color: kPrimaryColor.withOpacity(0.30),
+                child: Column(
+                  children: [
+                    Text('г. Барнаул,', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
+                    Text('прос-кт Красоармейский 4.', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
+                    Row(
+                      mainAxisAlignment:  MainAxisAlignment.center,
+                      children: [
+                       Image.asset('assets/1.jpg', height: kDesktopSize * 30, ),
+                       Image.asset('assets/Coms4.jpg', height: kDesktopSize * 30,),
+                       Image.asset('assets/2.jpg', height: kDesktopSize * 30,),
+                          ]
+                    ),
+                    Image.asset('assets/Map.png'),//Будет карта
+
+                  ],
+                ),
+
               )
+
           ),
-        ],
+            ],
       ), ),
 
       ]),
