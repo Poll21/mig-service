@@ -45,139 +45,68 @@ class ContactInf extends StatelessWidget {
                     ListView(
                       scrollDirection: Axis.vertical,
                       children: <Widget>[
-                        OperatingMode(),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.all(kDefaultPadding),
-                              height: kDesktopSize * 10,
-                              width: kDesktopSize * 10,
-                              decoration: BoxDecoration(
-                                  color: Colors.green[500],
-                                  borderRadius:
-                                  BorderRadius.circular(kDefaultRadius / 2 )),
-                              child: IconButton(
-                                onPressed: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => ContactInf())),
-                                icon: Icon(
-                                  Icons.phone,
-                                  size: kDesktopSize * 5,
-                                  color: kTextColor,
-                                ),
-                              ),
-                            ),
-                            Column(
-                              children: [
-                                Text('+7 (3852) 60-74-43;',style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),),
-                                Text('+7-913-210-74-43',style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),),
-                              ],
-                            ),
-
-                          ],
+                        OperatingMode(kSize: kDesktopSize,),
+                        IconCont(
+                            kSize: kDesktopSize,
+                            kColor: Colors.green[500],
+                            kIcon: Icons.phone,
+                            kText1: '+7 (3852)-210-74-43;',
+                            kText2: '+7-913-210-74-43'),
+                        IconCont(
+                            kSize: kDesktopSize,
+                            kColor: Colors.blue,
+                            kIcon: Costomicons.vk,
+                            kText1: 'https://vk.com/mig_service22',
+                            kText2: ''),
+                        IconCont(kSize: kDesktopSize,
+                            kColor: Colors.green[500],
+                            kIcon: Costomicons.whatsapp,
+                            kText1: '+7-913-210-74-43',
+                            kText2: ''
                         ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.all(kDefaultPadding),
-                              height: kDesktopSize * 10,
-                              width: kDesktopSize * 10,
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius:
-                                BorderRadius.circular(kDefaultRadius / 2)),
-                              child: IconButton(
-                                onPressed: () {},
-                                //=> setState((){_launched = _launchInWebViewOrVC('https://vk.com/mig_service22');}),
-                                icon: Icon(
-                                  Costomicons.vk,
-                                  size: kDesktopSize * 5,
-                                  color: kTextColor,
-                                ),
-                              ),
-                            ),
-                            Container(),
-                            Text('https://vk.com/mig_service22', style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),)
-                          ],
-                        ),
-                        Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.all(kDefaultPadding),
-                            height: kDesktopSize * 10,
-                            width: kDesktopSize * 10,
-                            decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius:
-                                BorderRadius.circular(kDefaultRadius / 2)),
-                            child: IconButton(
-                              onPressed: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ContactInf())),
-                              icon: Icon(
-                                  Costomicons.whatsapp,
-                                  size: kDesktopSize * 5,
-                                  color: kTextColor),
-                            ),
-                          ),
-                          Text('+7-913-210-74-43',style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),),
-                        ]),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.all(kDefaultPadding),
-                                height: kDesktopSize * 10,
-                                width: kDesktopSize * 10,
-                                decoration: BoxDecoration(
-                                    color: Colors.red,
-                                    borderRadius:
-                                    BorderRadius.circular(kDefaultRadius / 2)),
-                                child: IconButton(
-                                  onPressed: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => ContactInf())),
-                                  icon: Icon(
-                                    Costomicons.instagram,
-                                      size: kDesktopSize * 5,
-                                      color: kTextColor
-                                  ),
-                                ),
-                              ),
-                              Text('https://vk.com/mig_service22',
-                                style: TextStyle(
-                                    color: kTextColor,
-                                    fontSize:kDesktopSize * 2.5),)
-                        ]),
-                      ]
+                        ]
                     ),
                   ),
               ),
             Expanded(
-              flex: 3,
+              flex: 2,
               child:
               Container(
                 color: kPrimaryColor.withOpacity(0.30),
                 child: Column(
                   children: [
-                    Text('г. Барнаул,', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
-                    Text('прос-кт Красоармейский 4.', style: TextStyle(color: kTextColor, fontSize: kTabletSize * 5 ),),
-                    Row(
-                      mainAxisAlignment:  MainAxisAlignment.center,
-                      children: [
-                       Image.asset('assets/1.jpg', height: kDesktopSize * 30, ),
-                       Image.asset('assets/Coms4.jpg', height: kDesktopSize * 30,),
-                       Image.asset('assets/2.jpg', height: kDesktopSize * 30,),
-                          ]
-                    ),
-                    Image.asset('assets/Map.png'),//Будет карта
+                    Text('г. Барнаул,', style: TextStyle(color: kTextColor, fontSize: kDesktopSize * 5 ),),
+                    Text('пр. Красоармейский 4', style: TextStyle(color: kTextColor, fontSize: kDesktopSize * 4 ),),
+                    Expanded(
+                      child: ListView(
+                        children:[
+                        Container(
+                          margin: EdgeInsets.all(kDefaultPadding),
+                          child: Row(
+                          mainAxisAlignment:  MainAxisAlignment.spaceAround,
+                          children: [
+                            Card(
 
+                             color: Colors.blueGrey,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius))),
+                              child:
+                                Container(height: kDesktopSize * 30,
+                                  child: Image.asset('assets/1.jpg', height: kDesktopSize * 30,
+                                )
+                                )
+                            ),
+                          Image.asset('assets/Coms4.jpg', height: kDesktopSize * 30,),
+                          Image.asset('assets/2.jpg', height: kDesktopSize * 30,),
+                          ]
+                        ),),
+                        Container(
+                          margin: EdgeInsets.all(kDefaultPadding),
+                          child: Image.asset('assets/Map.jpg'),//Будет карта)e
+                        )
+                      ]
+                    ),
+                    ),
                   ],
                 ),
 
@@ -193,57 +122,127 @@ class ContactInf extends StatelessWidget {
 }
 
 class OperatingMode extends StatelessWidget {
+  const OperatingMode ({
+    Key key,
+    this.kSize,
+
+  }) : super(key: key);
+  final double kSize;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
+
       child: Center(
-          child: Column(
-              children:[
-                Text('Режим работы:',
-                  style: TextStyle(
-                      color: kTextColor,
-                      fontSize: kTabletSize * 5),),
-                Text('Пн. 10:00-19:00',
-                  style: TextStyle(
-                      color: kTextColor,
-                      fontSize: kTabletSize * 4),),
-                Text('Вт. 10:00-19:00',
-                  style: TextStyle(
-                      color: kTextColor,
-                      fontSize: kTabletSize * 4),),
-                Text('Ср. 10:00-19:00',
-                  style: TextStyle(
-                      color: kTextColor,
-                      fontSize: kTabletSize * 4),),
-                Text('Чт. 10:00-19:00',
-                  style: TextStyle(
-                      color: kTextColor,
-                      fontSize: kTabletSize * 4),),
-                Text('Пт. 10:00-19:00',
-                  style: TextStyle(
-                      color: kTextColor,
-                      fontSize: kTabletSize * 4),),
-                Text('Сб. 10:00-19:00*',
-                  style: TextStyle(
-                      color: kRextColor,
-                      fontSize: kTabletSize * 4),),
-                Text('Вб. 10:00-19:00*',style: TextStyle(
-                    color: kRextColor,
-                    fontSize: kTabletSize * 4),),
-                Container(
-                  margin: EdgeInsets.all(kDefaultPadding),
-                  child:
-                  Text('  *В субботу и воскресенье сервисный центр работает в режиме приема и выдачи.',
-                    style: TextStyle(
-                        color: kRextColor,
-                        fontSize: kTabletSize * 3),),
-                ),
-              ]
-          )
+         child: Container(
+           margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+           padding: EdgeInsets.all(kDefaultPadding * 2),
+           decoration: BoxDecoration(
+               color: kPrimaryColor.withOpacity(0.40),
+               borderRadius: BorderRadius.all(
+                   Radius.circular(kDefaultRadius * 2),
+                  )),
+           child: Column(
+               children:[
+                 Text('Режим работы:',
+                   style: TextStyle(
+                       color: kTextColor,
+                       fontSize: kSize * 5),),
+                 Text('Пн. 10:00-19:00',
+                   style: TextStyle(
+                       color: kTextColor,
+                       fontSize: kSize * 4),),
+                 Text('Вт. 10:00-19:00',
+                   style: TextStyle(
+                       color: kTextColor,
+                       fontSize: kSize * 4),),
+                 Text('Ср. 10:00-19:00',
+                   style: TextStyle(
+                       color: kTextColor,
+                       fontSize: kSize * 4),),
+                 Text('Чт. 10:00-19:00',
+                   style: TextStyle(
+                       color: kTextColor,
+                       fontSize: kSize * 4),),
+                 Text('Пт. 10:00-19:00',
+                   style: TextStyle(
+                       color: kTextColor,
+                       fontSize: kSize * 4),),
+                 Text('Сб. 10:00-19:00*',
+                   style: TextStyle(
+                       color: kRextColor,
+                       fontSize: kSize * 4),),
+                 Text('Вб. 10:00-19:00*',style: TextStyle(
+                     color: kRextColor,
+                     fontSize: kSize * 4),),
+                 Container(
+                   margin: EdgeInsets.all(kDefaultPadding),
+                   child:
+                   Text('  *В субботу и воскресенье сервисный центр работает в режиме приема и выдачи.',
+                     style: TextStyle(
+                         color: kRextColor,
+                         fontSize: kSize * 3),),
+                 ),
+               ]
+           ),
+         )
+
       ),
     );
   }
 }
+
+class IconCont extends StatelessWidget {
+  const IconCont ({
+    Key key,
+    this.kSize,
+    this.kColor,
+    this.kIcon,
+    this.kText1,
+    this.kText2,
+  }) : super(key: key);
+  final double kSize;
+  final kColor;
+  final kIcon;
+  final kText1;
+  final kText2;
+
+@override
+Widget build(BuildContext context) {
+return Row(
+  mainAxisAlignment: MainAxisAlignment.start,
+  children: [
+    Container(
+      margin: EdgeInsets.all(kDefaultPadding),
+      height: kSize * 8,
+      width: kSize * 8,
+      decoration: BoxDecoration(
+          color: kColor,
+          borderRadius:
+          BorderRadius.circular(kDefaultRadius / 2 )),
+      child: IconButton(
+        onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ContactInf())),
+        icon: Icon(
+          kIcon,
+          size: kSize * 5,
+          color: kTextColor,
+        ),
+      ),
+    ),
+    Column(
+      children: [
+        Text(kText1, style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),),
+        Text(kText2, style: TextStyle(color: kTextColor, fontSize:kDesktopSize * 2.5),),
+      ],
+    ),
+  ],
+);
+}
+}
+
+
 
