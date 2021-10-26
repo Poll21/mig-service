@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:migservice/pages/costum_appbar.dart';
 import 'package:migservice/pages/home_screen.dart';
 import '../../costomicons_icons.dart';
@@ -85,25 +87,54 @@ class ContactInf extends StatelessWidget {
                           child: Row(
                           mainAxisAlignment:  MainAxisAlignment.spaceAround,
                           children: [
-                            Card(
-
-                             color: Colors.blueGrey,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius))),
-                              child:
-                                Container(height: kDesktopSize * 30,
-                                  child: Image.asset('assets/1.jpg', height: kDesktopSize * 30,
-                                )
-                                )
-                            ),
-                          Image.asset('assets/Coms4.jpg', height: kDesktopSize * 30,),
-                          Image.asset('assets/2.jpg', height: kDesktopSize * 30,),
+                            Container(
+                              height: kDesktopSize * 30,
+                              width: kDesktopSize * 25,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius  )),
+                                  image:  DecorationImage(
+                                    alignment: AlignmentDirectional.center,
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/1.jpg')
+                                  ),
+                                ),),
+                            Container(
+                              height: kDesktopSize * 30,
+                              width: kDesktopSize * 25,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius  )),
+                                image:  DecorationImage(
+                                    alignment: AlignmentDirectional.center,
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/Coms4.jpg')
+                                ),
+                              ),),
+                            Container(
+                              height: kDesktopSize * 30,
+                              width: kDesktopSize * 25,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius  )),
+                                image:  DecorationImage(
+                                    alignment: AlignmentDirectional.center,
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/2.jpg')
+                                ),
+                              ),),
                           ]
                         ),),
-                        Container(
-                          margin: EdgeInsets.all(kDefaultPadding),
-                          child: Image.asset('assets/Map.jpg'),//Будет карта)e
-                        )
+                          Container(
+                            height: kDesktopSize * 100,
+                           padding: EdgeInsets.all(kDefaultPadding),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius  )),
+                              image:  DecorationImage(
+                                  alignment: AlignmentDirectional.center,
+                                  fit: BoxFit.cover,
+                                  image: AssetImage('assets/Map.jpg')
+
+
+                              ),
+                            ),),
                       ]
                     ),
                     ),
