@@ -158,7 +158,8 @@ class PriceDetale extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: Center(
+              child:
+              Center(
                 child: Container(
                     margin: EdgeInsets.only(bottom: kDefaultPadding),
                     width: kImagePrice * kSize,
@@ -171,6 +172,7 @@ class PriceDetale extends StatelessWidget {
                     child: Image.asset(image)
                 ),
               ),
+
             ),
 
             Expanded(

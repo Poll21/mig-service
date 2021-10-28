@@ -16,7 +16,7 @@ class AttentionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Center(
-        child: Text('ВНИМАНИЕ!!!', style:  TextStyle(color: kRextColor, fontSize: kMobilSize * 6, fontWeight: FontWeight.bold,),
+        child: Text('ВНИМАНИЕ!!!', style:  TextStyle(color: kRextColor, fontSize: kMobilSize * 5, fontWeight: FontWeight.bold,),
         ),
       ),
       content: Container(
@@ -43,52 +43,33 @@ class AttentionPage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.green[500],
-                  borderRadius: BorderRadius.circular(kDefaultRadius/2)
-              ),
-              child: IconButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
-                icon: Icon(Icons.phone, color: kTextColor,),),
+            IconCont(
+              kSize: kSize,
+              kColor: Colors.green[500],
+              kIcon: Icons.phone,
+              press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
             ),
-            Container(
+            IconCont(
+              kSize: kSize,
+              kColor: Colors.blue,
+              kIcon: Costomicons.vk,
+              press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+            ),
+            IconCont(
+              kSize: kSize,
+              kColor: Colors.green[500],
+              kIcon: Costomicons.whatsapp,
+              press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+            ),
+            IconCont(
+              kSize: kSize,
+              kColor: Colors.red,
+              kIcon: Icons.clear_sharp,
+              press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+            ),
 
-              decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(kDefaultRadius/2)
-              ),
-              child:IconButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactPage())),
-                icon: Icon(Costomicons.vk,color: kTextColor,),),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(kDefaultRadius/2)
-              ),
-              child:IconButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
-                icon: Icon(Costomicons.whatsapp),color: kTextColor,),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(kDefaultRadius/2)
-              ),
-              child:IconButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
-                icon: Icon(Costomicons.instagram, color: Colors.red,),),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  color: kRextColor,
-                  borderRadius: BorderRadius.circular(kDefaultRadius/2)
-              ),
-              child:IconButton(
-                onPressed: () {Navigator.pop(context);},
-                icon: Icon(Icons.close),color: kTextColor,  ),
-            ),
+
+
           ],
         )
       ],
