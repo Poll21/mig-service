@@ -48,9 +48,8 @@ class CustomAppBar extends StatelessWidget {
                           color: kTextColor,
                           icon: Icon(icon, color: kTextColor),
                           iconSize: kMobilSize * 5.0,
-                          onPressed: (){
-                            Scaffold.of(context).openDrawer();
-                          }
+                          onPressed: pressIcon,
+
                         ),
                         Text('СЕРВИСНЫЙ ЦЕНТР',
                           style: TextStyle(

@@ -420,6 +420,7 @@ class ContInformMob extends StatelessWidget {
     );
   }
 }
+
 class Hand extends StatelessWidget {
   const Hand({
     Key key,
