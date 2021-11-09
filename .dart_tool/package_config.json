@@ -39,7 +39,7 @@
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.3",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -81,7 +81,7 @@
     },
     {
       "name": "google_maps_flutter",
-      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.0.11",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -230,7 +230,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-10-28T03:36:48.984650Z",
+  "generated": "2021-11-09T04:17:14.248890Z",
   "generator": "pub",
   "generatorVersion": "2.15.0-116.0.dev"
 }
