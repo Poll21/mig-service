@@ -17,6 +17,11 @@ class Assets {
   static const String assetsLCD = 'assets/LCD.jpg';
   static const String assetsLCD1 = 'assets/LCD1.jpg';
   static const String assetsLcd = 'assets/lcd.jpeg';
+<<<<<<< HEAD
+=======
+  static const String assetsLogo = 'assets/logo.png';
+  static const String assetsLogoL = 'assets/logo_l.png';
+>>>>>>> origin/test
   static const String assetsMap = 'assets/Map.jpg';
   static const String assetsMic = 'assets/mic.jpg';
   static const String assetsMicroUSB = 'assets/microUSB.jpg';

@@ -34,7 +34,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                     right: kDefaultPadding * kSize/ 8,
                   ),
                   child:
-                  Image.asset('assets/smartphone.png', height: kDefaultPadding * 2 * kSize),
+                  Image.asset('assets/logo.png'),
                 ),
                 Center(
                     child:
@@ -47,7 +47,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                               fontSize: kDefaultPadding / 2.3 * kSize)
                       ),)
                 ),
-                Image.asset('assets/computer.png', height: kDefaultPadding * 2 * kSize),
+                Image.asset('assets/logo_l.png'),
               ],
             ),
           ),
