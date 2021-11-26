@@ -32,7 +32,6 @@ class ContactInf extends StatelessWidget {
             tablet: Hand(kSize: 2),
             desktop: Hand(kSize: 2),
           ),
-
           Responsive(
             mobile: ContInformMob(kSize: kMobilSize),
             tablet: ContInform(kSize: kTabletSize),
@@ -55,63 +54,60 @@ class OperatingMode extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
       child: Center(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-            padding: EdgeInsets.all(kDefaultPadding * 2),
-            decoration: BoxDecoration(
+        margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        padding: EdgeInsets.all(kDefaultPadding * 2),
+        decoration: BoxDecoration(
             color: kPrimaryColor.withOpacity(0.40),
-              borderRadius: BorderRadius.all(
+            borderRadius: BorderRadius.all(
               Radius.circular(kDefaultRadius),
-              )
-            ),
-            child:
-            Column(children: [
-              Text(
+            )),
+        child: Column(children: [
+          Text(
             'Режим работы:',
             style: TextStyle(color: kTextColor, fontSize: kSize * 4),
-              ),
-              Text(
+          ),
+          Text(
             'Пн. 10:00-19:00',
             style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
+          ),
+          Text(
             'Вт. 10:00-19:00',
             style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
+          ),
+          Text(
             'Ср. 10:00-19:00',
             style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
+          ),
+          Text(
             'Чт. 10:00-19:00',
             style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
+          ),
+          Text(
             'Пт. 10:00-19:00',
             style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
+          ),
+          Text(
             'Сб. 10:00-19:00*',
             style: TextStyle(color: kRextColor, fontSize: kSize * 3),
-              ),
-              Text(
+          ),
+          Text(
             'Вб. 10:00-19:00*',
             style: TextStyle(color: kRextColor, fontSize: kSize * 3),
-              ),
-              Container(
-                margin: EdgeInsets.all(kDefaultPadding),
-                child:
-                Text('  *В субботу и воскресенье сервисный центр работает в режиме приема и выдачи.',
-                  style: TextStyle(color: kRextColor, fontSize: kSize * 2),
-                ),
+          ),
+          Container(
+            margin: EdgeInsets.all(kDefaultPadding),
+            child: Text(
+              '  *В субботу и воскресенье сервисный центр работает в режиме приема и выдачи.',
+              style: TextStyle(color: kRextColor, fontSize: kSize * 2),
             ),
-          ]),
+          ),
+        ]),
       )),
     );
   }
 }
 
 class IconCont extends StatelessWidget {
-
   const IconCont({
     Key key,
     this.kSize,
@@ -163,62 +159,75 @@ class ContInform extends StatelessWidget {
               color: kPrimaryColor.withOpacity(0.30),
               child:
                   ListView(scrollDirection: Axis.vertical, children: <Widget>[
-                    OperatingMode(kSize: kSize,),
-                    SizedBox(height: kDefaultPadding),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                        IconCont(
-                          kSize: kSize,
-                          kColor: Colors.green[500],
-                          kIcon: Icons.phone,
-                          press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
-                        ),
-                      Column(children: [
-                        Text('+7(3852)-210-74-43',
-                          style: TextStyle(color: kTextColor, fontSize: kDesktopSize * 2.5),
-                        ),
-                        Text(
+                OperatingMode(
+                  kSize: kSize,
+                ),
+                SizedBox(height: kDefaultPadding),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    IconCont(
+                      kSize: kSize,
+                      kColor: Colors.green[500],
+                      kIcon: Icons.phone,
+                      press: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ContactInf())),
+                    ),
+                    Column(children: [
+                      Text(
+                        '+7(3852)-210-74-43',
+                        style: TextStyle(
+                            color: kTextColor, fontSize: kDesktopSize * 2.5),
+                      ),
+                      Text(
                         '+7-913-210-74-43',
                         style: TextStyle(
                             color: kTextColor, fontSize: kDesktopSize * 2.5),
-                        ),
-                      ]
                       ),
-                    ],
-                    ),
-                    SizedBox(height: kDefaultPadding),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                        IconCont(
-                          kSize: kSize,
-                          kColor: Colors.blue,
-                          kIcon: Costomicons.vk,
-                          press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
-                        ),
-                        Text(
-                        'vk.com/mig_service22',
-                          style: TextStyle(color: kTextColor, fontSize: kDesktopSize * 2.5),
-                        ),
                     ]),
-                    SizedBox(height: kDefaultPadding),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                        IconCont(
-                          kSize: kSize,
-                          kColor: Colors.green[500],
-                          kIcon: Costomicons.whatsapp,
-                          press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
-                        ),
-                          Text(
-                            '+7-913-210-74-43',
-                            style: TextStyle(color: kTextColor, fontSize: kDesktopSize * 2.5),
-                          ),
-                        ]),
-                  ]
-                  ),
+                  ],
+                ),
+                SizedBox(height: kDefaultPadding),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      IconCont(
+                        kSize: kSize,
+                        kColor: Colors.blue,
+                        kIcon: Costomicons.vk,
+                        press: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ContactInf())),
+                      ),
+                      Text(
+                        'vk.com/mig_service22',
+                        style: TextStyle(
+                            color: kTextColor, fontSize: kDesktopSize * 2.5),
+                      ),
+                    ]),
+                SizedBox(height: kDefaultPadding),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      IconCont(
+                        kSize: kSize,
+                        kColor: Colors.green[500],
+                        kIcon: Costomicons.whatsapp,
+                        press: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ContactInf())),
+                      ),
+                      Text(
+                        '+7-913-210-74-43',
+                        style: TextStyle(
+                            color: kTextColor, fontSize: kDesktopSize * 2.5),
+                      ),
+                    ]),
+              ]),
             ),
           ),
           Expanded(
@@ -232,11 +241,13 @@ class ContInform extends StatelessWidget {
                       children: [
                         Text(
                           'г. Барнаул,',
-                          style: TextStyle(color: kTextColor, fontSize: kSize * 5),
+                          style:
+                              TextStyle(color: kTextColor, fontSize: kSize * 5),
                         ),
                         Text(
                           'пр. Красоармейский 4',
-                          style: TextStyle(color: kTextColor, fontSize: kSize * 4),
+                          style:
+                              TextStyle(color: kTextColor, fontSize: kSize * 4),
                         ),
                       ],
                     ),
@@ -320,60 +331,63 @@ class ContInformMob extends StatelessWidget {
     return Expanded(
       child: Container(
         color: kPrimaryColor.withOpacity(0.30),
-        child: ListView(
-            scrollDirection: Axis.vertical,
-            children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'г. Барнаул,',
-                    style: TextStyle(color: kTextColor, fontSize: kSize * 5),
-                  ),
-                  Text(
-                    'пр. Красоармейский 4',
-                    style: TextStyle(color: kTextColor, fontSize: kSize * 4),
-                  ),
-                ],
+        child: ListView(scrollDirection: Axis.vertical, children: <Widget>[
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'г. Барнаул,',
+                style: TextStyle(color: kTextColor, fontSize: kSize * 5),
               ),
-              OperatingMode(
+              Text(
+                'пр. Красоармейский 4',
+                style: TextStyle(color: kTextColor, fontSize: kSize * 4),
+              ),
+            ],
+          ),
+          OperatingMode(
             kSize: kSize,
           ),
-              Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconCont(
                 kSize: kSize,
                 kColor: Colors.green[500],
                 kIcon: Icons.phone,
-                press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+                press: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ContactInf())),
               ),
               IconCont(
                 kSize: kSize,
                 kColor: Colors.blue,
                 kIcon: Costomicons.vk,
-                press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),),
+                press: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ContactInf())),
+              ),
               IconCont(
                 kSize: kSize,
                 kColor: Colors.green[500],
                 kIcon: Costomicons.whatsapp,
-                press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),),
+                press: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ContactInf())),
+              ),
             ],
           ),
-              Container(
-                height: kSize * 100,
-                margin: EdgeInsets.all(kDefaultPadding),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius)),
-                  image: DecorationImage(
-                      alignment: AlignmentDirectional.center,
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/Map.jpg')),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(kDefaultPadding),
-                child: Row(
+          Container(
+            height: kSize * 100,
+            margin: EdgeInsets.all(kDefaultPadding),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius)),
+              image: DecorationImage(
+                  alignment: AlignmentDirectional.center,
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/Map.jpg')),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(kDefaultPadding),
+            child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
@@ -414,7 +428,6 @@ class ContInformMob extends StatelessWidget {
                   ),
                 ]),
           ),
-
         ]),
       ),
     );
@@ -428,17 +441,15 @@ class Hand extends StatelessWidget {
   }) : super(key: key);
   final double kSize;
 
-Widget build(BuildContext context) {
-return Container(
-  height: kDefaultRadius * kSize,
-  padding: EdgeInsets.only(top: kDefaultPadding * kSize),
-  decoration: BoxDecoration(
-      color: kPrimaryColor.withOpacity(0.30),
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(kDefaultRadius * kSize),
-          topRight: Radius.circular(kDefaultRadius * kSize))),
-);
+  Widget build(BuildContext context) {
+    return Container(
+      height: kDefaultRadius * kSize,
+      padding: EdgeInsets.only(top: kDefaultPadding * kSize),
+      decoration: BoxDecoration(
+          color: kPrimaryColor.withOpacity(0.30),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(kDefaultRadius * kSize),
+              topRight: Radius.circular(kDefaultRadius * kSize))),
+    );
+  }
 }
-}
-
-

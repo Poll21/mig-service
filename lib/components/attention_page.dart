@@ -65,11 +65,8 @@ class AttentionPage extends StatelessWidget {
               kSize: kSize,
               kColor: Colors.red,
               kIcon: Icons.clear_sharp,
-              press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
+              press: () => Navigator.pop(context),
             ),
-
-
-
           ],
         )
       ],

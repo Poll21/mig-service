@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
-
-
 import 'prices/body_prise.dart';
 
 class RecomendsPlants extends StatelessWidget{
   const RecomendsPlants({
     Key key,
-
     this.kSize,
   }) : super(key: key);
 
@@ -19,7 +16,6 @@ class RecomendsPlants extends StatelessWidget{
       Wrap(
       children: <Widget>[
         PlantCard(
-
           image: 'assets/smartphone.png',
           title: 'СМАРТФОНОВ',
           ksize: kSize,
@@ -67,8 +63,6 @@ class PlantCard extends StatelessWidget {
     this.title,
     this.ksize,
     this.press,
-
-
   }) : super(key: key);
 
   final String image, title;
@@ -78,11 +72,9 @@ class PlantCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       width: 21.0 * ksize,
       height: 30 * ksize + kDefaultPadding * 0.5,
-
       decoration: BoxDecoration(
           color: kPrimaryColor,
           borderRadius: BorderRadius.all(
@@ -119,7 +111,6 @@ class PlantCard extends StatelessWidget {
                                   fontSize: 2 * ksize * 1.2,
                                   color: kRextColor,
                                   fontWeight: FontWeight.bold)
-
                         )
                       ]
                   ),

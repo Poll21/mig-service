@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Column(
+     child: Column(
       children: [
         Responsive(
           mobile: Container(
@@ -102,10 +102,16 @@ class ButRoW extends StatelessWidget {
               ButtonMenu(
                   title: 'Главня',
                   kSize: kSize,
-                  press: () => Navigator.push(context,
+                  presst: () => Navigator.push(context,
                       MaterialPageRoute(builder: (context) => HomeScreen()))),
-              ButtonMenu(title: 'Ремонт', kSize: kSize, press: () {}),
-              ButtonMenu(title: 'Услуги', kSize: kSize, press: () {}),
+              ButtonMenu(
+                  title: 'Ремонт',
+                  kSize: kSize,
+                  presst: () {}),
+              ButtonMenu(
+                  title: 'Услуги',
+                  kSize: kSize,
+                  presst: () {}),
               Text(
                 'СЕРВИСНЫЙ ЦЕНТР',
                 style: TextStyle(
@@ -114,42 +120,21 @@ class ButRoW extends StatelessWidget {
               ButtonMenu(
                   title: 'Контакты',
                   kSize: kSize,
-                  press: () => Navigator.push(context,
+                  presst: () => Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ContactInf()))),
-              ButtonMenu(title: 'О Нас', kSize: kSize, press: () {}),
-              ButtonMenu(title: 'Главня', kSize: kSize, press: () {}),
+              ButtonMenu(
+                  title: 'О Нас',
+                  kSize: kSize,
+                  presst: () {}),
+              ButtonMenu(
+                  title: 'Главня',
+                  kSize: kSize,
+                  presst: () {}),
             ],
           ),
           HeaderWithSearchBox(kSize: kSize),
         ],
       ),
     );
-  }
-}
-
-class MobailMenu extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-        child: SizedBox(
-          width: 100,
-          height: 300,
-          child: ListView(
-            children: <Widget>[
-              DrawerHeader(
-                child: Text("Drawer Header"),
-                decoration: BoxDecoration(color: Colors.blue),
-              ),
-              Text("Item 1"),
-              Text("Item 2"),
-              Text("Item 3"),
-              Text("Item 4"),
-              Text("Item 5"),
-              Text("Item 6"),
-            ],
-          ),
-        ),
-      );
-
   }
 }
