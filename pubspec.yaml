@@ -29,6 +29,8 @@ dependencies:
   cupertino_icons: ^1.0.3
   foldable_sidebar: ^1.0.0
   new_gradient_app_bar: ^0.2.0
+  url_launcher: ^6.0.12
+  google_maps_flutter: ^2.0.11
 
 dev_dependencies:
   flutter_test:
@@ -47,8 +49,38 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
-    - assets/icons/
+    - assets/1.jpg
+    - assets/2.jpg
+    - assets/8_fOyVKHrV4.jpg
+    - assets/android_logo_PNG27.png
+    - assets/Buser.jpg
+    - assets/camer.jpg
+    - assets/computer.png
+    - assets/Coms4.jpg
+    - assets/cover.jpg
+    - assets/cpu_PNG42.png
+    - assets/FPC.jpg
+    - assets/icons/Costomicons.ttf
+    - assets/kor.jpg
+    - assets/lcd.jpeg
+    - assets/LCD.jpg
+    - assets/LCD1.jpg
+    - assets/logo.png
+    - assets/logo_l.png
+    - assets/Map.jpg
+    - assets/mic.jpg
+    - assets/microUSB.jpg
+    - assets/noteboock.png
+    - assets/photocamera.png
+    - assets/recever.jpg
+    - assets/scrin.jpg
+    - assets/smartphone.png
+    - assets/smartphone_PNG101502.png
+    - assets/subPCB.jpg
+    - assets/tablet.png
+    - assets/tachskrin.jpg
+    - assets/tich.jpg
+    - assets/TV.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
@@ -60,7 +92,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: Costomicons
+      fonts:
+        - asset: assets/icons/Costomicons.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

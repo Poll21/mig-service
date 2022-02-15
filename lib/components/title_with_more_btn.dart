@@ -15,7 +15,9 @@ class TitleWithMoreBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
+    return Padding(
+        padding: EdgeInsets.only(top: kDefaultPadding * kSize * 1.8),
+      child:
       Container(
       margin: EdgeInsets.only(
           top: kDefaultPadding,
@@ -44,6 +46,7 @@ class TitleWithMoreBtn extends StatelessWidget {
                 fontSize: kSize * 3.0,
             ),
         )
+      ),
       )
     );
   }

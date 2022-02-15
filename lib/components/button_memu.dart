@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
-
 import 'constants.dart';
 
-class  ButtonMenu extends StatelessWidget {
+class ButtonMenu extends StatelessWidget {
   const ButtonMenu({
     Key key,
-    @required
-    this.title,
+    @required this.title,
     this.kSize,
-    this. press,
+    this.presst,
   }) : super(key: key);
   final String title;
   final double kSize;
-  final press;
+  final presst;
 
   @override
   Widget build(BuildContext context) {
     return Container(
         width: kSize * 14.0,
-        margin: EdgeInsets.only(left:
-        kDefaultPadding / 4,
+        margin: EdgeInsets.only(
+            left: kDefaultPadding / 4,
             right: kDefaultPadding / 4,
             top: kDefaultPadding / 2,
             bottom: kDefaultPadding / 2),
-
         decoration: BoxDecoration(
             border: Border.all(color: Colors.black12, width: 1),
             borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -35,7 +32,7 @@ class  ButtonMenu extends StatelessWidget {
               ),
             ]),
         child: TextButton(
-            onPressed: press,
+            onPressed: presst,
             child: Text(
               title,
               style: TextStyle(
@@ -43,6 +40,8 @@ class  ButtonMenu extends StatelessWidget {
                 color: kTextColor,
                 fontSize: kSize * 2.0,
               ),
-            )));
+            )
+        )
+    );
   }
 }
