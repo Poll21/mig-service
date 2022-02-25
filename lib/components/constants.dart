@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
   const kTextColor = Colors.white;
   const kBackgroudColor = Colors.lightBlueAccent;
   const kRextColor = Colors.red;
-  const kShadowColor =Colors.black12;
+  const kShadowColor =Colors.black45;
 
 
   const double kDefaultPadding = 15.0;
