@@ -6,6 +6,55 @@ import 'package:migservice/components/prices/%D1%81ontact_Information.dart';
 import 'package:migservice/components/size_progect.dart';
 import 'home_screen.dart';
 
+class MobileAppBarr extends StatelessWidget{
+
+  Widget build(BuildContext context) {
+    return AppBar(
+      leading: Builder(
+        builder: (BuildContext context) {
+          return IconButton(
+            icon: const Icon(Icons.menu_outlined),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+            tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+          );
+        },
+      ),
+      title: Column(
+        children: [
+          Text(
+            'СЕРВИСНЫЙ ЦЕНТР',
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'MIG-SERVICE',
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+      actions: [Container(
+          padding: EdgeInsets.all(kDefaultPadding),
+          child:Image.asset('assets/logo_r.png')),
+      ] ,
+      centerTitle: true,
+      toolbarHeight: 80,
+      elevation: 30,
+      backgroundColor: kPrimaryColor,
+      shadowColor: kShadowColor,
+      shape: ShapeBorder.lerp(
+          const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(kDefaultRadius),
+                bottomRight: Radius.circular(kDefaultRadius),
+              )),
+          null,
+          0),
+
+    );
+  }
+}
+
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar ({
     Key key,
