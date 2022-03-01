@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
         decoration: BoxDecoration(
           color: kBackgroudColor,
           borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(kDefaultRadius * 2),
+            bottomRight: Radius.circular(kDefaultRadius),
           ),
         ),
         child: Drawer(

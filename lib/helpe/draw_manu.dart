@@ -38,8 +38,14 @@ class DrawManu extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: kDefaultPadding * kMobilSize * 1.6,
-            color: kPrimaryColor,
+            height: kDefaultPadding * kMobilSize * 1.2,
+
+            decoration: BoxDecoration(
+              color: kPrimaryColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(kDefaultRadius),
+              ),
+            ),
           ),
           Expanded(
             child: ListView( children: textFields,),

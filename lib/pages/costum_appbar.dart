@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:migservice/components/button_memu.dart';
 import 'package:migservice/components/constants.dart';
 import 'package:migservice/components/header_with_seachbox.dart';
@@ -73,7 +74,7 @@ class CustomAppBar extends StatelessWidget {
           children: [
             Responsive(
               mobile: Container(
-                height: kDefaultPadding * kMobilSize * 1.6,
+                height: kDefaultPadding * kMobilSize * 1.2,
                 decoration: BoxDecoration(
                     color: kPrimaryColor,
                     borderRadius: BorderRadius.only(
@@ -88,10 +89,10 @@ class CustomAppBar extends StatelessWidget {
                       ),
                     ]
                 ),
-                child: Column(
-                  children: [
+                child:
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
                         IconButton(
                           color: kTextColor,
@@ -101,20 +102,18 @@ class CustomAppBar extends StatelessWidget {
                             Scaffold.of(context).openDrawer();
                           }
                         ),
-                        Text('СЕРВИСНЫЙ ЦЕНТР',
-                          style: TextStyle(
-                              fontSize: kMobilSize * 2.5,
-                              fontWeight: FontWeight.bold),
+                        HeaderWithSearchBox(kSize: kMobilSize),
+                        IconButton(
+                            color: kTextColor,
+                            icon: Icon(Icons.zoom_in, color: kTextColor),
+                            iconSize: kMobilSize * 5.0,
+                            onPressed: (){
+                              Scaffold.of(context).openDrawer();
+                            }
                         ),
-                        SizedBox(
-                          width: kMobilSize * 5.0,
-                        )
                       ],
                     ),
-                    HeaderWithSearchBox(kSize: kMobilSize),
-                  ],
-                ),
-              ),
+               ),
               tablet: ButRoW(kSize: kTabletSize),
               desktop: ButRoW(kSize: kDesktopSize),
             ),
