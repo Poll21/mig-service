@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:migservice/components/prices/%D1%81ontact_Information.dart';
+import 'package:migservice/pages/%D1%81ontact_Information.dart';
 
 import 'constants.dart';
 

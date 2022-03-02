@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:migservice/components/button_memu.dart';
 import 'package:migservice/components/constants.dart';
 import 'package:migservice/components/header_with_seachbox.dart';
-import 'package:migservice/components/prices/%D1%81ontact_Information.dart';
+import 'package:migservice/pages/%D1%81ontact_Information.dart';
 import 'package:migservice/components/size_progect.dart';
 import 'home_screen.dart';
 

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:migservice/controllers/counterController.dart';
 import 'package:migservice/pages/costum_appbar.dart';
 import 'package:migservice/pages/home_screen.dart';
 import '../constants.dart';
@@ -8,7 +10,7 @@ import '../title_page.dart';
 
 
 class BodyPrice extends StatelessWidget {
-
+  final CounterController _counterController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +18,8 @@ class BodyPrice extends StatelessWidget {
         body:Column(
           children: [
           CustomAppBar(
-            icon: Icons.chevron_left,
-                  pressIcon: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()))
+            icon: Icons.bakery_dining,
+                  pressIcon: () {Get.back();}
           ),
           TitlePag(title: 'РЕМОНТ СМАРТФОНОВ'),
           Responsive(
