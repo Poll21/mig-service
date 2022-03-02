@@ -6,7 +6,8 @@ import 'package:migservice/pages/home_screen.dart';
 import '../components/attention_page.dart';
 import '../components/constants.dart';
 import '../components/prices/body_prise.dart';
-import '../pages/сontact_Information.dart';
+import '../components/prices/prices_tab.dart';
+import '../pages/сontact_screen.dart';
 
 class TwoString {
   //класс который хранит две текстовах строки
@@ -25,7 +26,7 @@ class DrawManu extends StatelessWidget {
     //создаем лист тапа данных TwoString
     TwoString(text: 'Главная', function: (){Get.to(HomeScreen());}),
     TwoString(text: 'Ремонт', function: (){Get.to(BodyPrice());}),
-    TwoString(text: 'Услуги', function: (){}),
+    TwoString(text: 'Услуги', function: (){Get.to(PricesTab());}),
     TwoString(text: 'Контакты', function: (){Get.to(ContactInf());}),
     TwoString(text: 'О нас', function: (){}),
     TwoString(text: 'Мои ремонты', function: (){}),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:migservice/pages/%D1%81ontact_Information.dart';
-
+import '../pages/сontact_screen.dart';
 import 'constants.dart';
 
 class AttentionPage extends StatelessWidget {

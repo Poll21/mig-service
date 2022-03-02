@@ -5,10 +5,10 @@ import 'package:migservice/components/title_page.dart';
 import 'package:get/get.dart';
 import '../controllers/counterController.dart';
 import '../helpe/draw_manu.dart';
-import 'costum_appbar.dart';
+import '../helpe/costum_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
-
+  final CounterController counterController = Get.put(CounterController());
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
