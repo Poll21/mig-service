@@ -16,10 +16,7 @@ class BodyPrice extends StatelessWidget {
         backgroundColor: kBackgroudColor,
         body:Column(
           children: [
-          CustomAppBar(
-            icon: Icons.bakery_dining,
-            pressIcon: () {Get.back();}
-          ),
+          CustomAppBarOthe(),
           TitlePag(title: 'РЕМОНТ СМАРТФОНОВ'),
           Responsive(
               mobile: PriceHeading(kSize: kMobilSize * 0.8),

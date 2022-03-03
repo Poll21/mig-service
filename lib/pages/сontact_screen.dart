@@ -13,10 +13,7 @@ class ContactInf extends StatelessWidget {
       backgroundColor: kBackgroudColor,
       body:Column(
           children: [
-            CustomAppBar(
-                icon: Icons.chevron_left,
-                pressIcon: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()))
-            ),
+            CustomAppBarOthe(),
             TitlePag(title: 'Свяжитесь с нами:'),
            
           ]

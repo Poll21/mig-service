@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:migservice/controllers/counterController.dart';
 import 'package:migservice/pages/home_screen.dart';
-
-import '../components/attention_page.dart';
 import '../components/constants.dart';
 import '../components/prices/body_prise.dart';
-import '../components/prices/prices_tab.dart';
+import '../pages/my_service_screen.dart';
+import '../pages/service_screen.dart';
 import '../pages/сontact_screen.dart';
 
-class TwoString {
-  //класс который хранит две текстовах строки
+class MenuString {//класс который хранит текст и функцию
   final String text;
   final Function function;
 
-  TwoString({
+  MenuString({
     this.text,
     this. function,
   });
@@ -22,14 +20,14 @@ class TwoString {
 
 class DrawManu extends StatelessWidget {
   final CounterController counterController = Get.put(CounterController());
-  final List<TwoString> textData = [
+  final List<MenuString> textData = [
     //создаем лист тапа данных TwoString
-    TwoString(text: 'Главная', function: (){Get.to(HomeScreen());}),
-    TwoString(text: 'Ремонт', function: (){Get.to(BodyPrice());}),
-    TwoString(text: 'Услуги', function: (){Get.to(PricesTab());}),
-    TwoString(text: 'Контакты', function: (){Get.to(ContactInf());}),
-    TwoString(text: 'О нас', function: (){}),
-    TwoString(text: 'Мои ремонты', function: (){}),
+    MenuString(text: 'Главная', function: (){Get.to(HomeScreen());}),
+    MenuString(text: 'Ремонт', function: (){Get.to(BodyPrice());}),
+    MenuString(text: 'Услуги', function: (){Get.to(ServiceScreen());}),
+    MenuString(text: 'Контакты', function: (){Get.to(ContactInf());}),
+    MenuString(text: 'О нас', function: (){Get.to(ContactInf());}),
+    MenuString(text: 'Мои ремонты', function: (){Get.to(MyServiceScreen());}),
   ];
 
   DrawManu({Key key}) : super(key: key);
@@ -39,7 +37,7 @@ class DrawManu extends StatelessWidget {
     final List<Widget>
         textFields = //списку виджетов присваивается значение интерируемого листа
         textData
-            .map((TwoString towString) => DrawManuItam(text: towString, function: towString,))
+            .map((MenuString towString) => DrawManuItam(text: towString, function: towString,))
             .toList(); // .map интерируем textData и получаем текст, а .toList() преобразует в список виджетов
 
     final double width = MediaQuery.of(context).size.width;
@@ -69,10 +67,10 @@ class DrawManu extends StatelessWidget {
   }
 }
 
-//преобразуем телсе и виджет
+//преобразуем текст и виджет DrawManuItam
 class DrawManuItam extends StatelessWidget {
-  final TwoString text;// обращаемся к созданному классу переменных TwoString
-  final TwoString function;
+  final MenuString text;// обращаемся к созданному классу переменных TwoString
+  final MenuString function;
   const DrawManuItam({Key key, this.text, this.function}) : super(key: key);
 
   @override
@@ -95,8 +93,79 @@ class DrawManuItam extends StatelessWidget {
                   ),
                 ),
         ),
-
       ],
     );
   }
 }
+// class ButtonMenu extends StatelessWidget {
+//   final CounterController counterController = Get.put(CounterController());
+//   final List<MenuString> textData = [
+//     //создаем лист тапа данных TwoString
+//     MenuString(text: 'Главная', function: (){Get.to(HomeScreen());}),
+//     MenuString(text: 'Ремонт', function: (){Get.to(BodyPrice());}),
+//     MenuString(text: 'Услуги', function: (){Get.to(ServiceScreen());}),
+//     MenuString(text: 'Контакты', function: (){Get.to(ContactInf());}),
+//     MenuString(text: 'О нас', function: (){Get.to(ContactInf());}),
+//     MenuString(text: 'Мои ремонты', function: (){Get.to(MyServiceScreen());}),
+//   ];
+//
+//   ButtonMenu({Key key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     final List<Widget>
+//     textFields = //списку виджетов присваивается значение интерируемого листа
+//     textData
+//         .map((MenuString towString) => ButtonMenuItam(text: towString, function: towString,))
+//         .toList(); // .map интерируем textData и получаем текст, а .toList() преобразует в список виджетов
+//     return Row(
+//       children: textFields,
+//     );
+//   }
+// }
+// //преобразуем текст и виджет ButtonMenuItem
+// class  ButtonMenuItam extends StatelessWidget {
+//   final MenuString text;
+//   final MenuString function;
+//   final double kSize;
+//
+//   const ButtonMenuItam({
+//     Key key,
+//     @required
+//     this.text,
+//     this. function,
+//     this.kSize,
+//   }) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//         width: kSize * 14.0,
+//         margin: EdgeInsets.only(left:
+//         kDefaultPadding / 4,
+//             right: kDefaultPadding / 4,
+//             top: kDefaultPadding / 2,
+//             bottom: kDefaultPadding / 2),
+//         decoration: BoxDecoration(
+//             border: Border.all(color: Colors.black12, width: 1),
+//             borderRadius: BorderRadius.all(Radius.circular(10)),
+//             boxShadow: [
+//               BoxShadow(
+//                 offset: Offset(0, 5),
+//                 blurRadius: 5,
+//                 color: kShadowColor.withOpacity(0.10),
+//               ),
+//             ]),
+//         child: TextButton(
+//             onPressed: function.function,
+//             child: Text(
+//               text.text,
+//               style: TextStyle(
+//                 fontWeight: FontWeight.w100,
+//                 color: kTextColor,
+//                 fontSize: kSize * 2.0,
+//               ),
+//             )));
+//   }
+// }
+
