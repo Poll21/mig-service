@@ -12,12 +12,12 @@ class HeaderWithSearchBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.only(
+    return Expanded(
+        child: Container(
+      padding: EdgeInsets.only(
         bottom: kDefaultPadding,
-
       ),
-      height: kDefaultPadding * kSize ,
+      height: kDefaultPadding * kSize,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         mainAxisSize: MainAxisSize.max,
@@ -29,18 +29,18 @@ class HeaderWithSearchBox extends StatelessWidget {
               Text(
                 'СЕРВИСНЫЙ ЦЕНТР',
                 style: TextStyle(
-                    fontSize: kMobilSize * 2.5, fontWeight: FontWeight.bold),
+                    fontSize: kSize * 3, fontWeight: FontWeight.normal),
               ),
               Text('MIG-SERVICE',
                   style: TextStyle(
                       color: kTextColor,
                       fontWeight: FontWeight.bold,
-                      fontSize: kDefaultPadding  * kSize / 3)),
+                      fontSize:  kSize * 7)),
             ],
           ),
           Image.asset('assets/logo_r.png', height: kDefaultPadding * kSize),
         ],
       ),
-    );
+    ));
   }
 }

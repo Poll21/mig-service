@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -112,7 +113,7 @@ class CustomAppBarOthe extends StatelessWidget {
                   ],
                 ),
               ),
-              tablet: ButRoW(kSize: kDesktopSize),
+              tablet: ButRoW(kSize: kTabletSize),
               desktop: ButRoW(kSize: kDesktopSize),
             ),
           ],
@@ -146,7 +147,11 @@ class ButRoW extends StatelessWidget {
           ]),
       child: Column(
         children: [
-         ButtonMenu(kSize: kSize),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [ButtonMenu(kSize: kTabletSize),],
+          ),
+
           HeaderWithSearchBox(kSize: kSize),
         ],
       ),
