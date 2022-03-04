@@ -4,6 +4,7 @@ import 'package:migservice/controllers/counterController.dart';
 import 'package:migservice/pages/home_screen.dart';
 import '../components/constants.dart';
 import '../components/prices/body_prise.dart';
+import '../pages/about_us.dart';
 import '../pages/my_service_screen.dart';
 import '../pages/service_screen.dart';
 import '../pages/сontact_screen.dart';
@@ -26,7 +27,7 @@ class DrawManu extends StatelessWidget {
     MenuString(text: 'Ремонт', function: (){Get.to(BodyPrice());}),
     MenuString(text: 'Услуги', function: (){Get.to(ServiceScreen());}),
     MenuString(text: 'Контакты', function: (){Get.to(ContactInf());}),
-    MenuString(text: 'О нас', function: (){Get.to(ContactInf());}),
+    MenuString(text: 'О нас', function: (){Get.to(AboutUsScreen());}),
     MenuString(text: 'Мои ремонты', function: (){Get.to(MyServiceScreen());}),
   ];
 

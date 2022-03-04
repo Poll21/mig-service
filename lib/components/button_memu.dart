@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:migservice/components/prices/body_prise.dart';
 import 'package:migservice/controllers/counterController.dart';
 import '../helpe/draw_manu.dart';
+import '../pages/about_us.dart';
 import '../pages/home_screen.dart';
 import '../pages/my_service_screen.dart';
 import '../pages/service_screen.dart';
@@ -38,7 +39,7 @@ class ButtonMenu extends StatelessWidget {
     MenuString(
         text: 'О нас',
         function: () {
-          Get.to(ContactInf());
+          Get.to(AboutUsScreen());
         }),
     MenuString(
         text: 'Мои ремонты',

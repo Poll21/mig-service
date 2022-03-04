@@ -39,6 +39,7 @@ class BodyPrice extends StatelessWidget {
 
 
 
+
 class PriceHeading extends StatelessWidget {
   const PriceHeading({
     Key key,
@@ -114,21 +115,7 @@ class ScrolPrice extends StatelessWidget {
   Widget build(BuildContext context) {
     return  ListView(
       scrollDirection: Axis.vertical,
-      children: <Widget>[
-        PriceDetale(image: 'assets/8_fOyVKHrV4.jpg',title: 'Восстановление устройства после удара или попадания жидкости', price:'от 1500р.',kSize: kSize,),
-        PriceDetale(image: 'assets/android_logo_PNG27.png',title: 'Восстановление операционной системы (програмный ремонт без разбора устройства)', price:'от 1000р.',kSize: kSize,),
-        PriceDetale(image: 'assets/LCD.jpg',title: 'Замена модуля дисплей + сенсор', price:'от 1000р.',kSize: kSize,),
-        PriceDetale(image: 'assets/LCD1.jpg',title: 'Замена дисплея', price:'от 1000р.',kSize: kSize,),
-        PriceDetale(image: 'assets/tachskrin.jpg',title: 'Замена сенсора', price:'от 1000р.',kSize: kSize,),
-        PriceDetale(image: 'assets/microUSB.jpg',title: 'Замена системного разъема', price:'от 800р.',kSize: kSize,),
-        PriceDetale(image: 'assets/FPC.jpg',title: 'Замена межплатного шлефа', price:'от 500р.',kSize: kSize,),
-        PriceDetale(image: 'assets/camer.jpg',title: 'Замена модуля камеры', price:'от 500р.',kSize: kSize,),
-        PriceDetale(image: 'assets/recever.jpg',title: 'Замена динамика', price:'от 500р.',kSize: kSize,),
-        PriceDetale(image: 'assets/mic.jpg',title: 'Замена микрофоны', price:'от 500р.',kSize: kSize,),
-        PriceDetale(image: 'assets/Buser.jpg',title: 'Замена полифонического динамика', price:'от 500р.',kSize: kSize,),
-        PriceDetale(image: 'assets/cover.jpg',title: 'Замена корпусных элементов', price:'от 500р.',kSize: kSize,),
-        PriceDetale(image: 'assets/cpu_PNG42.png',title: 'Замена микросхемы', price:'от 2500р.',kSize: kSize,),
-      ],
+      children: smartPrice,
     );
   }
 }
@@ -197,3 +184,18 @@ class PriceDetale extends StatelessWidget {
     );
   }
 }
+List<Widget> smartPrice = [
+  PriceDetale(image: 'assets/8_fOyVKHrV4.jpg',title: 'Восстановление устройства после удара или попадания жидкости', price:'от 1500р.',kSize: kSize,),
+  PriceDetale(image: 'assets/android_logo_PNG27.png',title: 'Восстановление операционной системы (програмный ремонт без разбора устройства)', price:'от 1000р.',kSize: kSize,),
+  PriceDetale(image: 'assets/LCD.jpg',title: 'Замена модуля дисплей + сенсор', price:'от 1000р.',kSize: kSize,),
+  PriceDetale(image: 'assets/LCD1.jpg',title: 'Замена дисплея', price:'от 1000р.',kSize: kSize,),
+  PriceDetale(image: 'assets/tachskrin.jpg',title: 'Замена сенсора', price:'от 1000р.',kSize: kSize,),
+  PriceDetale(image: 'assets/microUSB.jpg',title: 'Замена системного разъема', price:'от 800р.',kSize: kSize,),
+  PriceDetale(image: 'assets/FPC.jpg',title: 'Замена межплатного шлефа', price:'от 500р.',kSize: kSize,),
+  PriceDetale(image: 'assets/camer.jpg',title: 'Замена модуля камеры', price:'от 500р.',kSize: kSize,),
+  PriceDetale(image: 'assets/recever.jpg',title: 'Замена динамика', price:'от 500р.',kSize: kSize,),
+  PriceDetale(image: 'assets/mic.jpg',title: 'Замена микрофоны', price:'от 500р.',kSize: kSize,),
+  PriceDetale(image: 'assets/Buser.jpg',title: 'Замена полифонического динамика', price:'от 500р.',kSize: kSize,),
+  PriceDetale(image: 'assets/cover.jpg',title: 'Замена корпусных элементов', price:'от 500р.',kSize: kSize,),
+  PriceDetale(image: 'assets/cpu_PNG42.png',title: 'Замена микросхемы', price:'от 2500р.',kSize: kSize,),
+];
