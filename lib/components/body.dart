@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:migservice/components/constants.dart';
 import 'package:migservice/components/prices/body_prise.dart';
 import 'package:migservice/components/size_progect.dart';
@@ -46,37 +47,37 @@ class StartMenu extends StatelessWidget {
           image: 'assets/smartphone.png',
           title: 'СМАРТФОНОВ',
           kSize: kSize,
-          press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BodyPrice())),
+          press: () {Get.to(BodyPrice(priceALL: 'СМАРТФОНОВ',));},
         ),
         PlantCard(
           image: 'assets/tablet.png',
           title: 'ПЛАНШЕТОВ',
           kSize: kSize,
-          press: () {},
+          press: () {Get.to(BodyPrice(priceALL: 'ПЛАНШЕТОВ',));},
         ),
         PlantCard(
           image: 'assets/noteboock.png',
           title: 'НОУТБУКОВ',
           kSize: kSize,
-          press: () {},
+          press: () {Get.to(BodyPrice(priceALL: 'НОУТБУКОВ',));},
         ),
         PlantCard(
           image: 'assets/computer.png',
           title: 'КОМПЬЮТЕРОВ',
           kSize: kSize,
-          press: () {},
+          press: () {Get.to(BodyPrice(priceALL: 'КОМПЬЮТЕРОВ',));},
         ),
         PlantCard(
           image: 'assets/TV.png',
           title: 'ТЕЛЕВИЗОРОВ',
           kSize: kSize,
-          press: () {},
+          press: () {Get.to(BodyPrice(priceALL: 'ТЕЛЕВИЗОРОВ',));},
         ),
         PlantCard(
           image: 'assets/photocamera.png',
           title: 'ФОТОКАМЕР',
           kSize: kSize,
-          press: () {},
+          press: () {Get.to(BodyPrice(priceALL: 'ФОТОКАМЕР',));},
         )
       ],
     );

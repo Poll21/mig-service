@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +12,9 @@ import '../title_page.dart';
 
 class BodyPrice extends StatelessWidget {
   final CounterController counterController = Get.put(CounterController());
+  final String priceALL;
+
+  BodyPrice({Key key, this.priceALL}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +22,7 @@ class BodyPrice extends StatelessWidget {
         body:Column(
           children: [
           CustomAppBarOthe(),
-          TitlePag(title: 'РЕМОНТ СМАРТФОНОВ'),
+          TitlePag(title: 'РЕМОНТ ' + priceALL,),
           Responsive(
               mobile: PriceHeading(kSize: kMobilSize * 0.8),
               tablet: PriceHeading(kSize: kTabletSize),
@@ -107,31 +112,53 @@ class ScrolPrice extends StatelessWidget {
   const ScrolPrice({
     Key key,
     this.kSize,
+    this.priceALL,
   }) : super(key: key);
 
   final double kSize;
+  final String priceALL;
 
   @override
   Widget build(BuildContext context) {
+    if (priceALL == 'СМАРТФОНОВ'){
+       final List<Widget>  fild  = smartPrice.map((PriceString smartPrice) => PriceDetale(
+         title: smartPrice,
+         image: smartPrice,
+         price: smartPrice,
+         kSize: kSize,))
+           .toList();;
+    }else{}
+    final List<Widget>
+    textFields = //списку виджетов присваивается значение интерируемого листа
+    smartPrice
+        .map((PriceString smartPrice) => PriceDetale(
+      title: smartPrice,
+      image: smartPrice,
+      price: smartPrice,
+      kSize: kSize,))
+        .toList();
+
     return  ListView(
       scrollDirection: Axis.vertical,
-      children: smartPrice,
+      children: fild,
     );
   }
 }
 
 class PriceDetale extends StatelessWidget {
+  final PriceString image, title, price;
+  final double kSize;
   const PriceDetale({
     Key key,
     this.image,
     this.title,
     this.price,
     this.kSize,
-    this. press,
+
   }) : super(key: key);
-  final String image, title, price;
-  final double kSize;
-  final press;
+
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -153,7 +180,7 @@ class PriceDetale extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(kDefaultRadius))
                     ),
-                    child: Image.asset(image)
+                    child: Image.asset(image.image)
                 ),
               ),
             ),
@@ -163,7 +190,7 @@ class PriceDetale extends StatelessWidget {
                 child: Container(
                     padding: EdgeInsets.only(left: kDefaultPadding, right: kDefaultPadding),
                     child: Center(
-                        child: Text(title,
+                        child: Text(title.title,
                           style: TextStyle(
                               fontSize: kSize * 3.5,
                               ),
@@ -174,7 +201,7 @@ class PriceDetale extends StatelessWidget {
             Expanded(
                 flex: 2,
                 child: Center(
-                    child: Text(price,
+                    child: Text('${price.price}'+ 'р.',
                       style: TextStyle(
                         color: kRextColor.withOpacity(0.80),
                           fontSize: kSize * 4.0,
@@ -184,18 +211,49 @@ class PriceDetale extends StatelessWidget {
     );
   }
 }
-List<Widget> smartPrice = [
-  PriceDetale(image: 'assets/8_fOyVKHrV4.jpg',title: 'Восстановление устройства после удара или попадания жидкости', price:'от 1500р.',kSize: kSize,),
-  PriceDetale(image: 'assets/android_logo_PNG27.png',title: 'Восстановление операционной системы (програмный ремонт без разбора устройства)', price:'от 1000р.',kSize: kSize,),
-  PriceDetale(image: 'assets/LCD.jpg',title: 'Замена модуля дисплей + сенсор', price:'от 1000р.',kSize: kSize,),
-  PriceDetale(image: 'assets/LCD1.jpg',title: 'Замена дисплея', price:'от 1000р.',kSize: kSize,),
-  PriceDetale(image: 'assets/tachskrin.jpg',title: 'Замена сенсора', price:'от 1000р.',kSize: kSize,),
-  PriceDetale(image: 'assets/microUSB.jpg',title: 'Замена системного разъема', price:'от 800р.',kSize: kSize,),
-  PriceDetale(image: 'assets/FPC.jpg',title: 'Замена межплатного шлефа', price:'от 500р.',kSize: kSize,),
-  PriceDetale(image: 'assets/camer.jpg',title: 'Замена модуля камеры', price:'от 500р.',kSize: kSize,),
-  PriceDetale(image: 'assets/recever.jpg',title: 'Замена динамика', price:'от 500р.',kSize: kSize,),
-  PriceDetale(image: 'assets/mic.jpg',title: 'Замена микрофоны', price:'от 500р.',kSize: kSize,),
-  PriceDetale(image: 'assets/Buser.jpg',title: 'Замена полифонического динамика', price:'от 500р.',kSize: kSize,),
-  PriceDetale(image: 'assets/cover.jpg',title: 'Замена корпусных элементов', price:'от 500р.',kSize: kSize,),
-  PriceDetale(image: 'assets/cpu_PNG42.png',title: 'Замена микросхемы', price:'от 2500р.',kSize: kSize,),
+
+class PriceString { //класс который хранит две текстовах строки и картинку
+  final String title;
+  final double price;
+  final String image;
+
+
+
+  PriceString({
+    this.title,
+    this.price,
+    this.image,
+  });
+}
+
+
+List<PriceString> smartPrice = [
+  PriceString(image: 'assets/8_fOyVKHrV4.jpg',title: 'Восстановление устройства после удара или попадания жидкости', price:1500,),
+  PriceString(image: 'assets/android_logo_PNG27.png',title: 'Восстановление операционной системы (програмный ремонт без разбора устройства)', price:1000),
+  PriceString(image: 'assets/LCD.jpg',title: 'Замена модуля дисплей + сенсор', price:1000,),
+  PriceString(image: 'assets/LCD1.jpg',title: 'Замена дисплея', price:1000),
+  PriceString(image: 'assets/tachskrin.jpg',title: 'Замена сенсора', price:1000),
+  PriceString(image: 'assets/microUSB.jpg',title: 'Замена системного разъема', price:1000),
+  PriceString(image: 'assets/FPC.jpg',title: 'Замена межплатного шлефа', price:500),
+  PriceString(image: 'assets/camer.jpg',title: 'Замена модуля камеры', price:500,),
+  PriceString(image: 'assets/recever.jpg',title: 'Замена динамика', price:500),
+  PriceString(image: 'assets/mic.jpg',title: 'Замена микрофоны', price:500),
+  PriceString(image: 'assets/Buser.jpg',title: 'Замена полифонического динамика', price:500),
+  PriceString(image: 'assets/cover.jpg',title: 'Замена корпусных элементов', price:500),
+  PriceString(image: 'assets/cpu_PNG42.png',title: 'Замена микросхемы', price:2500),
+];
+List<PriceString> tabPrice = [
+  PriceString(image: 'assets/8_fOyVKHrV4.jpg',title: 'Восстановление устройства после удара или попадания жидкости', price:1500,),
+  PriceString(image: 'assets/android_logo_PNG27.png',title: 'Восстановление операционной системы (програмный ремонт без разбора устройства)', price:1000),
+  PriceString(image: 'assets/LCD.jpg',title: 'Замена модуля дисплей + сенсор', price:1000,),
+  PriceString(image: 'assets/LCD1.jpg',title: 'Замена дисплея', price:1000),
+  PriceString(image: 'assets/tachskrin.jpg',title: 'Замена сенсора', price:1000),
+  PriceString(image: 'assets/microUSB.jpg',title: 'Замена системного разъема', price:1000),
+  PriceString(image: 'assets/FPC.jpg',title: 'Замена межплатного шлефа', price:500),
+  PriceString(image: 'assets/camer.jpg',title: 'Замена модуля камеры', price:500,),
+  PriceString(image: 'assets/recever.jpg',title: 'Замена динамика', price:500),
+  PriceString(image: 'assets/mic.jpg',title: 'Замена микрофоны', price:500),
+  PriceString(image: 'assets/Buser.jpg',title: 'Замена полифонического динамика', price:500),
+  PriceString(image: 'assets/cover.jpg',title: 'Замена корпусных элементов', price:500),
+  PriceString(image: 'assets/cpu_PNG42.png',title: 'Замена микросхемы', price:2500),
 ];
