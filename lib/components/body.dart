@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:migservice/components/constants.dart';
 import 'package:migservice/components/prices/body_prise.dart';
+import 'package:migservice/components/prices/price_list.dart';
 import 'package:migservice/components/size_progect.dart';
 
 
@@ -47,37 +48,37 @@ class StartMenu extends StatelessWidget {
           image: 'assets/smartphone.png',
           title: 'СМАРТФОНОВ',
           kSize: kSize,
-          press: () {Get.to(BodyPrice(priceALL: 'СМАРТФОНОВ',));},
+          press: () {Get.to(BodyPrice( price: 'СМАРТФОНЫ', allPrices: smartPrice,));},
         ),
         PlantCard(
           image: 'assets/tablet.png',
           title: 'ПЛАНШЕТОВ',
           kSize: kSize,
-          press: () {Get.to(BodyPrice(priceALL: 'ПЛАНШЕТОВ',));},
+          press: () {Get.to(BodyPrice(price: 'ПЛАНШЕТОВ', allPrices: tabPrice));},
         ),
         PlantCard(
           image: 'assets/noteboock.png',
           title: 'НОУТБУКОВ',
           kSize: kSize,
-          press: () {Get.to(BodyPrice(priceALL: 'НОУТБУКОВ',));},
+          press: () {Get.to(BodyPrice(price: 'НОУТБУКОВ', allPrices: noutboockPrice,));},
         ),
         PlantCard(
           image: 'assets/computer.png',
           title: 'КОМПЬЮТЕРОВ',
           kSize: kSize,
-          press: () {Get.to(BodyPrice(priceALL: 'КОМПЬЮТЕРОВ',));},
+          press: () {Get.to(BodyPrice(price: 'КОМПЬЮТЕРОВ', allPrices: noutboockPrice,));},
         ),
         PlantCard(
           image: 'assets/TV.png',
           title: 'ТЕЛЕВИЗОРОВ',
           kSize: kSize,
-          press: () {Get.to(BodyPrice(priceALL: 'ТЕЛЕВИЗОРОВ',));},
+          press: () {Get.to(BodyPrice(price: 'ТЕЛЕВИЗОРОВ', allPrices: noutboockPrice,));},
         ),
         PlantCard(
           image: 'assets/photocamera.png',
           title: 'ФОТОКАМЕР',
           kSize: kSize,
-          press: () {Get.to(BodyPrice(priceALL: 'ФОТОКАМЕР',));},
+          press: () {Get.to(BodyPrice(price: 'ФОТОКАМЕР', allPrices: noutboockPrice,));},
         )
       ],
     );

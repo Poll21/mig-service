@@ -7,12 +7,10 @@ import 'attention_page.dart';
 
 
 class TitlePag extends StatelessWidget {
-  const TitlePag ({
-    Key key,
-    this.title,
+  final String title;
 
-  }) : super(key: key);
-    final String title;
+  const TitlePag ({Key key, this.title,}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Responsive(

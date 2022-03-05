@@ -40,6 +40,7 @@ class CustomAppBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               mainAxisSize: MainAxisSize.max,
               children: [
+                SizedBox(width: kDefaultPadding),
                 IconButton(
                     color: kTextColor,
                     icon: Icon(icon, color: kTextColor),
@@ -55,6 +56,7 @@ class CustomAppBar extends StatelessWidget {
                     onPressed: () {
                       Get.to(MyServiceScreen());
                     }),
+                SizedBox(width: kDefaultPadding),
               ],
             ),
           ),
