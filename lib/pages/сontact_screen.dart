@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icon.dart';
 import 'package:migservice/components/costomicons_icons.dart';
 import 'package:migservice/helpe/costum_appbar.dart';
 import '../components/constants.dart';
 import '../components/size_progect.dart';
 import '../components/title_page.dart';
+
 
 
 class ContactInf extends StatelessWidget {
@@ -188,7 +191,7 @@ class ContInform extends StatelessWidget {
                       IconCont(
                         kSize: kSize,
                         kColor: Colors.blue,
-                        kIcon: Costomicons.vk,
+                        kIcon: Icons.whatsapp,
                         press: () => Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -324,20 +327,7 @@ class ContInformMob extends StatelessWidget {
       child: Container(
         color: kPrimaryColor.withOpacity(0.30),
         child: ListView(scrollDirection: Axis.vertical, children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'г. Барнаул,',
-                style: TextStyle(color: kTextColor, fontSize: kSize * 5),
-              ),
-              Text(
-                'пр. Красоармейский 4',
-                style: TextStyle(color: kTextColor, fontSize: kSize * 4),
-              ),
-            ],
-          ),
-          OperatingMode(
+         OperatingMode(
             kSize: kSize,
           ),
           Row(
@@ -434,14 +424,27 @@ class Hand extends StatelessWidget {
   final double kSize;
 
   Widget build(BuildContext context) {
-    return Container(
+    return
+      Container(
       height: kDefaultRadius * kSize,
-      padding: EdgeInsets.only(top: kDefaultPadding * kSize),
+      //padding: EdgeInsets.only(top: kDefaultPadding * kSize),
       decoration: BoxDecoration(
           color: kPrimaryColor.withOpacity(0.30),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(kDefaultRadius * kSize),
               topRight: Radius.circular(kDefaultRadius * kSize))),
+      child:
+        Center(
+
+          child:FittedBox(
+            child:Padding(padding: EdgeInsets.symmetric(horizontal: kDefaultRadius),
+            child: Text(
+              'г.Барнаул,пр. Красоармейский 4',
+              style: TextStyle(color: kTextColor, fontSize: kSize * 40),
+            ),)
+
+
+          ))
     );
   }
 }

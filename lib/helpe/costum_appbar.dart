@@ -153,7 +153,6 @@ class ButRoW extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [ButtonMenu(kSize: kTabletSize),],
           ),
-
           HeaderWithSearchBox(kSize: kSize),
         ],
       ),

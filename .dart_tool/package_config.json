@@ -74,6 +74,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "line_icons",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/line_icons-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.11",
       "packageUri": "lib/",
@@ -164,7 +170,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2022-03-04T02:57:45.643223Z",
+  "generated": "2022-03-05T10:35:08.672908Z",
   "generator": "pub",
   "generatorVersion": "2.16.0"
 }
