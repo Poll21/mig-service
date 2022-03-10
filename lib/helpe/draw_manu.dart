@@ -4,6 +4,7 @@ import 'package:migservice/controllers/counterController.dart';
 import 'package:migservice/pages/home_screen.dart';
 import '../components/constants.dart';
 import '../components/prices/body_prise.dart';
+import '../components/prices/price_list.dart';
 import '../pages/about_us.dart';
 import '../pages/my_service_screen.dart';
 import '../pages/service_screen.dart';
@@ -24,7 +25,7 @@ class DrawManu extends StatelessWidget {
   final List<MenuString> textData = [
     //создаем лист тапа данных TwoString
     MenuString(text: 'Главная', function: (){Get.to(HomeScreen());}),
-    MenuString(text: 'Ремонт', function: (){Get.to(BodyPrice());}),
+    MenuString(text: 'Ремонт', function: (){Get.bottomSheet(DropdownRepairButton());},),
     MenuString(text: 'Услуги', function: (){Get.to(ServiceScreen());}),
     MenuString(text: 'Контакты', function: (){Get.to(ContactInf());}),
     MenuString(text: 'О нас', function: (){Get.to(AboutUsScreen());}),
@@ -98,6 +99,38 @@ class DrawManuItam extends StatelessWidget {
     );
   }
 }
+
+class DropdownRepairButton extends StatefulWidget {
+  const DropdownRepairButton({Key key}) : super(key: key);
+
+  @override
+  State<DropdownRepairButton> createState() => _DropdownRepairButton();
+}
+class _DropdownRepairButton extends State<DropdownRepairButton>{
+  String dropdownValue = 'РЕМОНТ';
+  String value = 'РЕМОНТ';
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: dropdownValue,
+      icon: Icon(Icons.arrow_drop_down_sharp, color: Colors.black),
+      onChanged: (String newValue) {
+        setState(() {
+          dropdownValue = newValue;
+          });
+        },
+      items: <String>['One', 'Two', 'Free', 'Four']
+          .map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+}
+
 // class ButtonMenu extends StatelessWidget {
 //   final CounterController counterController = Get.put(CounterController());
 //   final List<MenuString> textData = [
