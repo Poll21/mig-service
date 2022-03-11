@@ -1,47 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controllers/counterController.dart';
+import '../pages/home_screen.dart';
 import '../pages/service_screen.dart';
 import 'constants.dart';
 
 
 class ExpansionTilE extends StatelessWidget {//виджет прокручиваемого списка
-  const ExpansionTilE({Key key}) : super(key: key);
+  final CounterController counterController = Get.put(CounterController());
+   ExpansionTilE({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+
+    List<Widget> itemData =
+            data.map((Entry data) => EntryItem(entry: data, )).toList();
       //билдер вызывающий виджетов EntryItem по индексу элемента списка data
-      itemBuilder: (BuildContext context, int index) => EntryItem(data[index]),
-      itemCount: data.length,
-    );
+      // itemBuilder: (BuildContext context, int index) => EntryItem(data[index]),
+      // itemCount: data.length,
+
   }
 }
 
 class Entry {//класс хранящий параметры списка виджетов от которого наследуется data
-   const Entry(this.title, [this.function, this.children = const <Entry>[]]);//список внутри списка не обязательный параметр
+   const Entry(this.title, this.function, [this.children = const <Entry>[]]);//список внутри списка не обязательный параметр
   final String title; //текст строки списка
   final Function function;
   final List<Entry> children; //вкладываемый список
-
 }
 
-const List<Entry> data = <Entry>[//список виджетов
-  Entry('ГЛАВНАЯ', ),
-  Entry('РЕМОНТ',
+ final List<Entry> data = <Entry>[//список виджетов
+  Entry('ГЛАВНАЯ', (){Get.to(HomeScreen());} ),
+  Entry('РЕМОНТ', (){},
     <Entry>[
-      Entry('СМАРФОНОВ'),
-      Entry('ПЛАНШЕТОВ'),
-      Entry('НОУТБУКОВ'),
-      Entry('КОМПЬТЕРОВ'),
-      Entry('ТЕЛЕВИЗОРОВ'),
-      Entry('ФОТОАППАРАТОВ'),
+      Entry('СМАРФОНОВ',(){Get.to(HomeScreen());}),
+      Entry('ПЛАНШЕТОВ',(){Get.to(HomeScreen());}),
+      Entry('НОУТБУКОВ',(){Get.to(HomeScreen());}),
+      Entry('КОМПЬТЕРОВ',(){Get.to(HomeScreen());}),
+      Entry('ТЕЛЕВИЗОРОВ',(){Get.to(HomeScreen());}),
+      Entry('ФОТОАППАРАТОВ',(){Get.to(HomeScreen());}),
     ],
   ),
-  Entry('УСЛУГИ'),
-  Entry('КОНТАКТЫ'),
-  Entry('О НАС'),
-  Entry('МОИ РЕМОНТЫ'),
+  Entry('УСЛУГИ',(){Get.to(HomeScreen());}),
+  Entry('КОНТАКТЫ',(){Get.to(HomeScreen());}),
+  Entry('О НАС',(){Get.to(HomeScreen());}),
+  Entry('МОИ РЕМОНТЫ',(){Get.to(HomeScreen());}),
 ];
 
 class EntryItem extends StatelessWidget {
