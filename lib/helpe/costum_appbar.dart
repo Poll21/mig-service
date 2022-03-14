@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:migservice/components/button_memu.dart';
+
 import 'package:migservice/components/constants.dart';
+import 'package:migservice/components/expand_menu.dart';
 import 'package:migservice/components/header_with_seachbox.dart';
 import 'package:migservice/components/size_progect.dart';
 import 'package:migservice/pages/my_service_screen.dart';
@@ -149,10 +150,7 @@ class ButRoW extends StatelessWidget {
           ]),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [ButtonMenu(kSize: kTabletSize),],
-          ),
+          ButtonMenu(kSize: kTabletSize),
           HeaderWithSearchBox(kSize: kSize),
         ],
       ),

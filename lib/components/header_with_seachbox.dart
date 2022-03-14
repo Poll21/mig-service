@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
-
+//шапка для планшетов и больших экранов
 class HeaderWithSearchBox extends StatelessWidget {
   final double kSize;
 
