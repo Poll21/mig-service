@@ -30,7 +30,7 @@ dependencies:
   foldable_sidebar: ^1.0.0
   new_gradient_app_bar: ^0.2.0
   get: ^4.6.1
-  line_icons: ^2.0.0
+  line_icons: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -63,9 +63,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
+  fonts:
+   - family: Costomicons
+     fonts:
+       - asset: assets/icons/Costomicons.ttf
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic

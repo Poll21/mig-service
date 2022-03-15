@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../pages/сontact_screen.dart';
 import 'constants.dart';
+import '../components/costomicons_icons.dart';
 
 class AttentionPage extends StatelessWidget {
   const AttentionPage({
@@ -58,7 +59,7 @@ class AttentionPage extends StatelessWidget {
               ),
               child:IconButton(
                 onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ContactInf())),
-                icon: Icon(Icons.email,color: kTextColor,),),
+                icon: Icon(Costomicons.vk,color: kTextColor,),),
             ),
             Container(
               decoration: BoxDecoration(

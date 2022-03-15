@@ -7,8 +7,9 @@ import 'package:migservice/components/constants.dart';
 import 'package:migservice/components/expand_menu.dart';
 import 'package:migservice/components/header_with_seachbox.dart';
 import 'package:migservice/components/size_progect.dart';
+import 'package:migservice/helpe/bootom_menu.dart';
 import 'package:migservice/pages/my_service_screen.dart';
-
+import '../components/expand_menu.dart';
 
 class CustomAppBar extends StatelessWidget {
   final icon;
@@ -98,6 +99,7 @@ class CustomAppBarOthe extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    SizedBox(width: kDefaultPadding),
                     IconButton(
                         color: kTextColor,
                         icon: Icon(Icons.arrow_back_ios, color: kTextColor),
@@ -113,6 +115,7 @@ class CustomAppBarOthe extends StatelessWidget {
                         onPressed: () {
                           Get.to(MyServiceScreen());
                         }),
+                    SizedBox(width: kDefaultPadding),
                   ],
                 ),
               ),
@@ -150,8 +153,8 @@ class ButRoW extends StatelessWidget {
           ]),
       child: Column(
         children: [
-          ButtonMenu(kSize: kTabletSize),
-          HeaderWithSearchBox(kSize: kSize),
+          ButtonMenu(kSize: kSize,),
+          HeaderWithSearchBox(kSize: kTabletSize),
         ],
       ),
     );
