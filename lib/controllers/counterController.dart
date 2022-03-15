@@ -6,4 +6,5 @@ class CounterController extends GetxController{
   void increment (){
     counter++;//метод увеличивающий переменную на 1
   }
+
 }

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:migservice/components/attention_page.dart';
 import 'package:migservice/components/prices/body_prise.dart';
 import 'package:migservice/controllers/counterController.dart';
+import 'package:migservice/helpe/smol_bootom_menu.dart';
 import '../components/constants.dart';
 import '../pages/about_us.dart';
 import '../pages/home_screen.dart';
@@ -14,8 +15,9 @@ import '../pages/сontact_screen.dart';
 class MenuString {//класс который хранит текст и функцию
   final String text;
   final Function function;
+  final Widget widget;
 
-  MenuString({
+  MenuString( {this.widget,
     this.text,
     this. function,
   });
@@ -37,12 +39,10 @@ class ButtonMenu extends StatelessWidget {
             Get.to(HomeScreen());
           }),
       MenuString(
-          text: 'Ремонт',
-          function: () {
-            Navigator.push(context, PageRouteBuilder(
-                opaque: false,
-                pageBuilder: (BuildContext context, _, __) => AttentionPage(kSize: kMobilSize,)));;
-          }),
+        text: 'Ремонт',
+        function: (){}
+
+          ),
       MenuString(
           text: 'Услуги',
           function: () {
@@ -63,7 +63,9 @@ class ButtonMenu extends StatelessWidget {
           function: () {
             Get.to(MyServiceScreen());
           }),
-    ];final List<Widget>
+    ];
+
+    final List<Widget>
     textFields = //списку виджетов присваивается значение интерируемого листа
     textData
         .map((MenuString towString) => ButtonMenuItem(
@@ -79,7 +81,6 @@ class ButtonMenu extends StatelessWidget {
         );
   }
 }
-
 
 //преобразуем текст и виджет ButtonMenuItem
 class ButtonMenuItem extends StatelessWidget {
@@ -115,6 +116,7 @@ class ButtonMenuItem extends StatelessWidget {
                     ),
                   ]),
               child: TextButton(
+                //onFocusChange: function.function,
                   onPressed: function.function,
                   child: Text(
                     text.text,
@@ -129,3 +131,4 @@ class ButtonMenuItem extends StatelessWidget {
     );
   }
 }
+
