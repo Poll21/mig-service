@@ -107,12 +107,9 @@ class EntryItem extends StatelessWidget {
       child: ExpansionTile(
         iconColor: kTextColor,
         collapsedIconColor: kTextColor,
-
-        //иначе вызывается виджет раскрытия дополнительного списка children
         key: PageStorageKey<Entry>(root),
         title: InkWell(
           splashColor: kPrimaryColor,
-
           child: Text(
             entry.title,
             style: TextStyle(

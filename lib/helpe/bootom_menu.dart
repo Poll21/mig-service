@@ -15,78 +15,82 @@ import '../pages/сontact_screen.dart';
 class MenuString {
   final String text;
   final Function function;
-  MenuString( {
+
+  MenuString({
     this.text,
-    this. function,
+    this.function,
   });
 }
 
 class DropdownButtonRepair extends StatefulWidget {
-  const DropdownButtonRepair({Key key}) : super(key: key);
+  final CounterController counterController = Get.put(CounterController());
+
+  DropdownButtonRepair({Key key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _DropdownButtonRepair(kTabletSize);
+  State<StatefulWidget> createState() => _DropdownButtonRepairState();
 }
 
-class _DropdownButtonRepair extends State<DropdownButtonRepair>{
-  final double kSize;
+class _DropdownButtonRepairState extends State<DropdownButtonRepair> {
+  static const menuItems = <Widget>[
+    Text(
+      "Смар",
+      style: TextStyle(
+        fontWeight: FontWeight.w100,
+        color: kTextColor,
+        fontSize: kTabletSize * 2.5,
+      ),
+    ),
+    Text('Two'),
+    Text('Three'),
+    Text('Four'),
+  ];
+  final List<DropdownMenuItem<Widget>> _dropDownMenuItems = menuItems
+      .map(
+        (Widget value) => DropdownMenuItem<Widget>(
 
-  _DropdownButtonRepair(this.kSize);
+          value: value,
+          child: ButtonDropItem(kSize: kTabletSize,),
+        ),
+      )
+      .toList();
 
+  String _btn2SelectedVal;
 
   @override
   Widget build(BuildContext context) {
-    final List<MenuString> dropItem = [
-      //создаем лист тапа данных TwoString
-      MenuString(
-          text: 'смартфоны',
-          function: () {
-            Get.to(HomeScreen());
-          }),
-      MenuString(
-          text: 'планшеты',
-          function: (){}
-      ),
-      MenuString(
-          text: 'ноутбуки',
-          function: () {
+    return Center(child: Container(
+        width: kTabletSize * 20.0,
+        height: kTabletSize * 5,
+        margin: EdgeInsets.symmetric(
+            vertical: kDefaultPadding / 2, horizontal: kDefaultPadding / 2),
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.black12, width: 1),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(0, 5),
+                blurRadius: 5,
+                color: kShadowColor.withOpacity(0.10),
+              ),
+            ]),
+        child: DropdownButton(
+          isExpanded: true,
+          autofocus: true,
+          // value: _btn2SelectedVal,
+          hint: const Center(child: Text(
+              'Ремонт',
+              style: TextStyle(
+                fontWeight: FontWeight.w100,
+                color: kTextColor,
+                fontSize: kTabletSize * 2.5,
+              ),)
+          ),
+          onChanged: (Function) {
             Get.to(ServiceScreen());
-          }),
-      MenuString(
-          text: 'компьютеры',
-          function: () {
-            Get.to(ContactInf());
-          }),
-      MenuString(
-          text: 'телевизоры',
-          function: () {
-            Get.to(AboutUsScreen());
-          }),
-      MenuString(
-          text: 'фотокамкры',
-          function: () {
-            Get.to(MyServiceScreen());
-          }),
-      MenuString(
-          text: 'и другие',
-          function: () {
-            Get.to(MyServiceScreen());
-          }),
-    ];
-    final List<Widget>
-    dropFields = //списку виджетов присваивается значение интерируемого листа
-    dropItem
-        .map((MenuString towString) => ButtonDropItem(
-      text: towString,
-      function: towString,
-      kSize: kSize,
-    ))
-        .toList();
-    return DropdownButton(
-     hint: const Text('Ремонт'),
-      items: dropFields,
-      onTap: (){},
-    );
+          },
+          items: _dropDownMenuItems,
+        )),);
   }
 }
 
@@ -94,7 +98,9 @@ class ButtonDropItem extends StatelessWidget {
   final double kSize;
   final MenuString text;
   final MenuString function;
-  const ButtonDropItem({Key key, this.kSize, this.text, this.function}) : super(key: key);
+
+  const ButtonDropItem({Key key, this.kSize, this.text, this.function})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -104,8 +110,7 @@ class ButtonDropItem extends StatelessWidget {
         Container(
             width: kSize * 20.0,
             margin: EdgeInsets.symmetric(
-                vertical: kDefaultPadding / 2,
-                horizontal: kDefaultPadding / 2),
+                vertical: kDefaultPadding / 2, horizontal: kDefaultPadding / 2),
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.black12, width: 1),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -125,9 +130,7 @@ class ButtonDropItem extends StatelessWidget {
                     color: kTextColor,
                     fontSize: kSize * 2.5,
                   ),
-                ))
-
-        ),
+                ))),
       ],
     );
   }
@@ -141,33 +144,44 @@ class ButtonMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            ButtonMenuItem(
-              text: 'Главная',
-              function: () {Get.to(HomeScreen());},
-              kSize: kSize,),
-            DropdownButtonRepair(),
-            ButtonMenuItem(
-              text: 'Услуги',
-              function: () {Get.to(ServiceScreen());},
-              kSize: kSize,),
-            ButtonMenuItem(
-              text: 'Контакты',
-              function: () {Get.to(ContactInf());},
-              kSize: kSize,),
-            ButtonMenuItem(
-              text: 'О нас',
-              function: () {Get.to(AboutUsScreen());},
-              kSize: kSize,),
-            ButtonMenuItem(
-              text: 'Мои ремонты',
-              function: () {Get.to(MyServiceScreen());},
-              kSize: kSize,),
-          ]
-        );
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+      ButtonMenuItem(
+        text: 'Главная',
+        function: () {
+          Get.to(HomeScreen());
+        },
+        kSize: kSize,
+      ),
+      DropdownButtonRepair(),
+      ButtonMenuItem(
+        text: 'Услуги',
+        function: () {
+          Get.to(ServiceScreen());
+        },
+        kSize: kSize,
+      ),
+      ButtonMenuItem(
+        text: 'Контакты',
+        function: () {
+          Get.to(ContactInf());
+        },
+        kSize: kSize,
+      ),
+      ButtonMenuItem(
+        text: 'О нас',
+        function: () {
+          Get.to(AboutUsScreen());
+        },
+        kSize: kSize,
+      ),
+      ButtonMenuItem(
+        text: 'Мои ремонты',
+        function: () {
+          Get.to(MyServiceScreen());
+        },
+        kSize: kSize,
+      ),
+    ]);
   }
 }
 
@@ -176,6 +190,7 @@ class ButtonMenuItem extends StatelessWidget {
   final double kSize;
   final String text;
   final Function function;
+
   const ButtonMenuItem({
     Key key,
     this.text,
@@ -188,40 +203,31 @@ class ButtonMenuItem extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-          Container(
-              width: kSize * 20.0,
-              margin: EdgeInsets.symmetric(
-                vertical: kDefaultPadding / 2,
-                  horizontal: kDefaultPadding / 2),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black12, width: 1),
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(0, 5),
-                      blurRadius: 5,
-                      color: kShadowColor.withOpacity(0.10),
-        ),
-    ]),
-              child: TextButton(
-                  onPressed: function,
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w100,
-                      color: kTextColor,
-                      fontSize: kSize * 2.5,
-                    ),
-                  ))
-              
-          ),
+        Container(
+            width: kSize * 20.0,
+            margin: EdgeInsets.symmetric(
+                vertical: kDefaultPadding / 2, horizontal: kDefaultPadding / 2),
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black12, width: 1),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, 5),
+                    blurRadius: 5,
+                    color: kShadowColor.withOpacity(0.10),
+                  ),
+                ]),
+            child: TextButton(
+                onPressed: function,
+                child: Text(
+                  text,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w100,
+                    color: kTextColor,
+                    fontSize: kSize * 2.5,
+                  ),
+                ))),
       ],
     );
   }
 }
-
-
-
-
-
-
