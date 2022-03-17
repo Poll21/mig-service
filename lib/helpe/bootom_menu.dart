@@ -22,120 +22,6 @@ class MenuString {
   });
 }
 
-class DropdownButtonRepair extends StatefulWidget {
-  final CounterController counterController = Get.put(CounterController());
-
-  DropdownButtonRepair({Key key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() => _DropdownButtonRepairState();
-}
-
-class _DropdownButtonRepairState extends State<DropdownButtonRepair> {
-  static const menuItems = <Widget>[
-    Text(
-      "Смар",
-      style: TextStyle(
-        fontWeight: FontWeight.w100,
-        color: kTextColor,
-        fontSize: kTabletSize * 2.5,
-      ),
-    ),
-    Text('Two'),
-    Text('Three'),
-    Text('Four'),
-  ];
-  final List<DropdownMenuItem<Widget>> _dropDownMenuItems = menuItems
-      .map(
-        (Widget value) => DropdownMenuItem<Widget>(
-
-          value: value,
-          child: ButtonDropItem(kSize: kTabletSize,),
-        ),
-      )
-      .toList();
-
-  String _btn2SelectedVal;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Container(
-        width: kTabletSize * 20.0,
-        height: kTabletSize * 5,
-        margin: EdgeInsets.symmetric(
-            vertical: kDefaultPadding / 2, horizontal: kDefaultPadding / 2),
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.black12, width: 1),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            boxShadow: [
-              BoxShadow(
-                offset: Offset(0, 5),
-                blurRadius: 5,
-                color: kShadowColor.withOpacity(0.10),
-              ),
-            ]),
-        child: DropdownButton(
-          isExpanded: true,
-          autofocus: true,
-          // value: _btn2SelectedVal,
-          hint: const Center(child: Text(
-              'Ремонт',
-              style: TextStyle(
-                fontWeight: FontWeight.w100,
-                color: kTextColor,
-                fontSize: kTabletSize * 2.5,
-              ),)
-          ),
-          onChanged: (Function) {
-            Get.to(ServiceScreen());
-          },
-          items: _dropDownMenuItems,
-        )),);
-  }
-}
-
-class ButtonDropItem extends StatelessWidget {
-  final double kSize;
-  final MenuString text;
-  final MenuString function;
-
-  const ButtonDropItem({Key key, this.kSize, this.text, this.function})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-            width: kSize * 20.0,
-            margin: EdgeInsets.symmetric(
-                vertical: kDefaultPadding / 2, horizontal: kDefaultPadding / 2),
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.black12, width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 5),
-                    blurRadius: 5,
-                    color: kShadowColor.withOpacity(0.10),
-                  ),
-                ]),
-            child: TextButton(
-                onPressed: function.function,
-                child: Text(
-                  text.text,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w100,
-                    color: kTextColor,
-                    fontSize: kSize * 2.5,
-                  ),
-                ))),
-      ],
-    );
-  }
-}
-
 class ButtonMenu extends StatelessWidget {
   final CounterController counterController = Get.put(CounterController());
   final double kSize;
@@ -152,7 +38,16 @@ class ButtonMenu extends StatelessWidget {
         },
         kSize: kSize,
       ),
-      DropdownButtonRepair(),
+      ButtonMenuItem(
+        text: 'Ремонт',
+        function: () {
+          Navigator.push(context, PageRouteBuilder(
+              opaque: false,
+              pageBuilder: (BuildContext context, _, __) => SmolBootomMenu(kSize: kMobilSize,)));
+        },
+        kSize: kSize,
+      ),
+
       ButtonMenuItem(
         text: 'Услуги',
         function: () {
@@ -218,6 +113,10 @@ class ButtonMenuItem extends StatelessWidget {
                   ),
                 ]),
             child: TextButton(
+                // onHover: (event) => {Navigator.push(context, PageRouteBuilder(
+                // opaque: false,
+                // pageBuilder: (BuildContext context, _, __) => SmolBootomMenu(kSize: kMobilSize,)))
+                // },
                 onPressed: function,
                 child: Text(
                   text,
