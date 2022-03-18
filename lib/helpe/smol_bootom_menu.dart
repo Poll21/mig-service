@@ -26,7 +26,8 @@ class SmolBootomMenu extends StatelessWidget {
       delegate: MySingleChildLayoutDelegate(
           width/4,
           height/2 - kDefaultPadding * kSize * 2.5),
-      child: AlertDialog(
+      child:
+      AlertDialog(
         actionsOverflowDirection: VerticalDirection.down,
         elevation: 0,
         backgroundColor: kPrimaryColor.withOpacity(0),
@@ -44,25 +45,29 @@ class SmolBootomMenu extends StatelessWidget {
                 Get.to(BodyPrice(price: 'Планшеты', allPrices: smartPrice));
               },
               kSize: kSize,
-            ),ButtonMenuItem(
+            ),
+          ButtonMenuItem(
               text: 'Планшеты',
               function: () {
                 Get.to(BodyPrice(price: 'Планшеты', allPrices: tabPrice));
               },
               kSize: kSize,
-            ),ButtonMenuItem(
+            ),
+          ButtonMenuItem(
               text: 'Главная',
               function: () {
                 Get.to(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));
               },
               kSize: kSize,
-            ),ButtonMenuItem(
+            ),
+          ButtonMenuItem(
               text: 'Главная',
               function: () {
                 Get.to(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));
               },
               kSize: kSize,
-            ),ButtonMenuItem(
+            ),
+          ButtonMenuItem(
               text: 'Главная',
               function: () {
                 Get.to(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));

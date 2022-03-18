@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:migservice/components/attention_page.dart';
 import 'package:migservice/components/prices/body_prise.dart';
+import 'package:migservice/components/prices/price_list.dart';
 import 'package:migservice/controllers/counterController.dart';
 import 'package:migservice/helpe/smol_bootom_menu.dart';
 import '../components/constants.dart';
@@ -30,6 +31,8 @@ class ButtonMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
     return Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
       ButtonMenuItem(
         text: 'Главная',
@@ -41,13 +44,79 @@ class ButtonMenu extends StatelessWidget {
       ButtonMenuItem(
         text: 'Ремонт',
         function: () {
-          Navigator.push(context, PageRouteBuilder(
-              opaque: false,
-              pageBuilder: (BuildContext context, _, __) => SmolBootomMenu(kSize: kMobilSize,)));
+          showDialog(
+            barrierColor: kPrimaryColor.withOpacity(0),
+            context: context,
+            builder: (BuildContext dialogContext) {
+              return CustomSingleChildLayout(
+                  delegate: MySingleChildLayoutDelegate(
+                      width / 4,
+                      height / 2 - kDefaultPadding * 12),
+                  child:
+                  AlertDialog(
+                    contentPadding: EdgeInsets.all(0),
+                    // actionsOverflowDirection: VerticalDirection.down,
+                    elevation: 0,
+                    backgroundColor: kPrimaryColor.withOpacity(1),
+                    title: Column(children:[
+                      ButtonMenuItem(
+                        text: 'Смартфоны',
+                        function: () {
+                          Get.offAll(BodyPrice(
+                              price: 'СМАРТФОНЫ', allPrices: smartPrice));
+                        },
+                        kSize: kSize,
+                      ),
+                      ButtonMenuItem(
+                        text: 'Планшеты',
+                        function: () {
+                          Get.to(BodyPrice(
+                              price: 'Планшеты', allPrices: smartPrice));
+                        },
+                        kSize: kSize,
+                      ),
+                      ButtonMenuItem(
+                        text: 'Планшеты',
+                        function: () {
+                          Get.to(BodyPrice(
+                              price: 'Планшеты', allPrices: tabPrice));
+                        },
+                        kSize: kSize,
+                      ),
+                      ButtonMenuItem(
+                        text: 'Главная',
+                        function: () {
+                          Get.to(BodyPrice(
+                              price: 'СМАРТФОНЫ', allPrices: smartPrice));
+                        },
+                        kSize: kSize,
+                      ),
+                      ButtonMenuItem(
+                        text: 'Главная',
+                        function: () {
+                          Get.to(BodyPrice(
+                              price: 'СМАРТФОНЫ', allPrices: smartPrice));
+                        },
+                        kSize: kSize,
+                      ),
+                      ButtonMenuItem(
+                        text: 'Главная',
+                        function: () {
+                          Get.to(BodyPrice(
+                              price: 'СМАРТФОНЫ', allPrices: smartPrice));
+                        },
+                        kSize: kSize,
+                      ),
+                    ]),
+                  ));
+            },
+          );
+          // Navigator.push(context, PageRouteBuilder(
+          //    opaque: false,
+          //    pageBuilder: (BuildContext context, _, __) => SmolBootomMenu(kSize: kMobilSize,)));
         },
         kSize: kSize,
       ),
-
       ButtonMenuItem(
         text: 'Услуги',
         function: () {
@@ -95,13 +164,10 @@ class ButtonMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+    return
         Container(
             width: kSize * 20.0,
-             margin: EdgeInsets.symmetric(
-                vertical: kDefaultPadding / 2),
+
             decoration: BoxDecoration(
                 color: kPrimaryColor.withOpacity(0.5),
                 border: Border.all(color: Colors.black12, width: 1),
@@ -122,8 +188,8 @@ class ButtonMenuItem extends StatelessWidget {
                     color: kTextColor,
                     fontSize: kSize * 2.5,
                   ),
-                ))),
-      ],
+                )))
+
     );
   }
 }
