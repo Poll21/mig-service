@@ -19,31 +19,73 @@ class SmolBootomMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
     return CustomSingleChildLayout(
 
-      delegate: MySingleChildLayoutDelegate(),
+      delegate: MySingleChildLayoutDelegate(
+          width/4,
+          height/2 - kDefaultPadding * kSize * 2.5),
       child: AlertDialog(
-        backgroundColor: kPrimaryColor.withOpacity(0.00),
-        title: Container(child: Column(
-          children: [
+        actionsOverflowDirection: VerticalDirection.down,
+        elevation: 0,
+        backgroundColor: kPrimaryColor.withOpacity(0),
+        actions:[
             ButtonMenuItem(
+              text: 'Смартфоны',
+              function: () {
+                Get.offAll(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));
+              },
+              kSize: kSize,
+            ),
+            ButtonMenuItem(
+              text: 'Планшеты',
+              function: () {
+                Get.to(BodyPrice(price: 'Планшеты', allPrices: smartPrice));
+              },
+              kSize: kSize,
+            ),ButtonMenuItem(
+              text: 'Планшеты',
+              function: () {
+                Get.to(BodyPrice(price: 'Планшеты', allPrices: tabPrice));
+              },
+              kSize: kSize,
+            ),ButtonMenuItem(
               text: 'Главная',
               function: () {
-                Get.to(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));;
+                Get.to(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));
+              },
+              kSize: kSize,
+            ),ButtonMenuItem(
+              text: 'Главная',
+              function: () {
+                Get.to(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));
+              },
+              kSize: kSize,
+            ),ButtonMenuItem(
+              text: 'Главная',
+              function: () {
+                Get.to(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));
               },
               kSize: kSize,
             ),
           ],
-        ),)
+
       ),
     );
   }
 }
 
+
+
 class MySingleChildLayoutDelegate extends SingleChildLayoutDelegate {
+   MySingleChildLayoutDelegate(this.width, this.height);
+   final double  width;
+   final double  height;
+
   @override
   Offset getPositionForChild(Size size, Size childSize) {
-    return Offset(-150, -300);
+    return Offset(-width, -height);
   }
 
   @override

@@ -10,6 +10,7 @@ import 'package:migservice/components/size_progect.dart';
 import 'package:migservice/helpe/bootom_menu.dart';
 import 'package:migservice/pages/my_service_screen.dart';
 import '../components/expand_menu.dart';
+import '../pages/home_screen.dart';
 
 class CustomAppBar extends StatelessWidget {
   final icon;
@@ -105,7 +106,7 @@ class CustomAppBarOthe extends StatelessWidget {
                         icon: Icon(Icons.arrow_back_ios, color: kTextColor),
                         iconSize: kMobilSize * 5.0,
                         onPressed: () {
-                          Get.back();
+                          Get.to(HomeScreen());
                         }),
                     HeaderWithSearchBox(kSize: kMobilSize),
                     IconButton(

@@ -202,7 +202,7 @@ class PriceDetale extends StatelessWidget {
 }
 
 class PriceString {
-  //класс который хранит две текстовах строки и картинку
+  //класс который хранит ссылку на изображение, описание ицену услуги
   final String title, image;
   final double price;
 

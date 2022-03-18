@@ -100,9 +100,10 @@ class ButtonMenuItem extends StatelessWidget {
       children: [
         Container(
             width: kSize * 20.0,
-            margin: EdgeInsets.symmetric(
-                vertical: kDefaultPadding / 2, horizontal: kDefaultPadding / 2),
+             margin: EdgeInsets.symmetric(
+                vertical: kDefaultPadding / 2),
             decoration: BoxDecoration(
+                color: kPrimaryColor.withOpacity(0.5),
                 border: Border.all(color: Colors.black12, width: 1),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 boxShadow: [
@@ -113,10 +114,6 @@ class ButtonMenuItem extends StatelessWidget {
                   ),
                 ]),
             child: TextButton(
-                // onHover: (event) => {Navigator.push(context, PageRouteBuilder(
-                // opaque: false,
-                // pageBuilder: (BuildContext context, _, __) => SmolBootomMenu(kSize: kMobilSize,)))
-                // },
                 onPressed: function,
                 child: Text(
                   text,
