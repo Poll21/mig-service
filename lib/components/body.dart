@@ -6,6 +6,8 @@ import 'package:migservice/pages/prise_sreen.dart';
 import 'package:migservice/components/prices/price_list.dart';
 import 'package:migservice/components/size_progect.dart';
 
+import '../helpe/butoon_menu.dart';
+
 
 
 class Body extends StatelessWidget {
@@ -34,6 +36,13 @@ class StartMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final List<Widget> cardItem =
+    butoonSmallData.map((MenuString menuString) =>
+        PlantCard(
+          image: menuString.image ,title: menuString.text, press: menuString.function, kSize: kSize,))
+        .toList();
+
     return GridView(
       physics: BouncingScrollPhysics(),
       padding: EdgeInsets.all(kDefaultPadding * 2),
@@ -43,50 +52,14 @@ class StartMenu extends StatelessWidget {
           crossAxisSpacing: kDefaultPadding * 3,
           childAspectRatio: 0.15 * kSize,
       ),
-      children: [
-        PlantCard(
-          image: 'assets/smartphone.png',
-          title: 'СМАРТФОНОВ',
-          kSize: kSize,
-          press: () {Get.to(BodyPrice( price: 'СМАРТФОНЫ', allPrices: smartPrice,));},
-        ),
-        PlantCard(
-          image: 'assets/tablet.png',
-          title: 'ПЛАНШЕТОВ',
-          kSize: kSize,
-          press: () {Get.to(BodyPrice(price: 'ПЛАНШЕТОВ', allPrices: tabPrice));},
-        ),
-        PlantCard(
-          image: 'assets/noteboock.png',
-          title: 'НОУТБУКОВ',
-          kSize: kSize,
-          press: () {Get.to(BodyPrice(price: 'НОУТБУКОВ', allPrices: noutboockPrice,));},
-        ),
-        PlantCard(
-          image: 'assets/computer.png',
-          title: 'КОМПЬЮТЕРОВ',
-          kSize: kSize,
-          press: () {Get.to(BodyPrice(price: 'КОМПЬЮТЕРОВ', allPrices: noutboockPrice,));},
-        ),
-        PlantCard(
-          image: 'assets/TV.png',
-          title: 'ТЕЛЕВИЗОРОВ',
-          kSize: kSize,
-          press: () {Get.to(BodyPrice(price: 'ТЕЛЕВИЗОРОВ', allPrices: noutboockPrice,));},
-        ),
-        PlantCard(
-          image: 'assets/photocamera.png',
-          title: 'ФОТОКАМЕР',
-          kSize: kSize,
-          press: () {Get.to(BodyPrice(price: 'ФОТОКАМЕР', allPrices: noutboockPrice,));},
-        )
-      ],
+      children: cardItem,
+
     );
   }
 }
 
 
-
+//карточка ремонтируемых устройств
 class PlantCard extends StatelessWidget {
   const PlantCard({
     Key key,
@@ -130,7 +103,7 @@ class PlantCard extends StatelessWidget {
                 child: Text(title,
                   style: TextStyle(
                       color: kRextColor,
-                      fontSize: kSize * 3.0,
+                      fontSize: kSize * 4.0,
                       fontWeight: FontWeight.bold),
                 ),
               ),

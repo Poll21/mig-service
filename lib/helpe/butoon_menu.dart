@@ -5,58 +5,71 @@ import 'package:migservice/pages/prise_sreen.dart';
 import 'package:migservice/components/prices/price_list.dart';
 import 'package:migservice/controllers/counterController.dart';
 import '../components/constants.dart';
-import '../pages/about_us.dart';
-import '../pages/сontact_screen.dart';
 
-//сласс хронящий имя страници и маршрут к ней
+
+//сласс хронящий имя страници, картинку(не обязательный параметр) и маршрут к ней
 class MenuString {
+
   final String text;
   final Function function;
+  final String image;
 
-  MenuString({
+  MenuString({this.image,
     this.text,
     this.function,
   });
 }
+
+final List<MenuString> butoonSmallData = [
+  MenuString(
+    image: 'assets/smartphone.png',
+    text: 'Смартфонов',
+    function: () {
+      Get.offAll(BodyPrice(
+          price: 'СМАРТФОНОВ', allPrices: smartPrice));
+    },
+  ),
+  MenuString(
+    image: 'assets/tablet.png',
+    text: 'Планшетов',
+    function: () {
+      Get.offAll(BodyPrice(
+          price: 'ПЛАНШЕТОВ', allPrices: tabPrice));
+    },
+  ),
+  MenuString(
+    image: 'assets/noteboock.png',
+    text: 'Ноутбуков',
+    function: () {
+      Get.offAll(BodyPrice(
+          price: 'НОУТБУКОВ', allPrices: tabPrice));
+    },),
+  MenuString(
+    image: 'assets/computer.png',
+    text: 'Компьтеров',
+    function: () {
+      Get.offAll(BodyPrice(
+          price: 'КОМПБЮТЕРОВ', allPrices: tabPrice));
+    },),
+  MenuString(
+    image: 'assets/TV.png',
+    text: 'Телевизаров',
+    function: () {
+      Get.offAll(BodyPrice(
+          price: 'ТЕЛЕВИЗОРОВ', allPrices: tabPrice));
+    },),
+  MenuString(
+    image: 'assets/photocamera.png',
+    text: 'Фотокамер',
+    function: () {
+      Get.offAll(BodyPrice(
+          price: 'ФОТОКАМЕР', allPrices: tabPrice));
+    },),
+];
 //всплывающее мень
 class ButoonMenuSmall extends StatelessWidget {
-  final List<MenuString> butoonSmallData = [
-    MenuString(text: 'Смартфоны',
-      function: () {
-        Get.offAll(BodyPrice(
-            price: 'СМАРТФОНЫ', allPrices: smartPrice));
-      },
-    ),
-    MenuString(text: 'Планшеты',
-      function: () {
-        Get.offAll(BodyPrice(
-            price: 'ПЛАНШЕТОВ', allPrices: tabPrice));
-      },
-    ),
-    MenuString(text: 'Ноутбуков',
-      function: () {
-        Get.offAll(BodyPrice(
-            price: 'НОУТБУКОВ', allPrices: tabPrice));
-      },),
-    MenuString(text: 'Компьтеров',
-      function: () {
-        Get.offAll(BodyPrice(
-            price: 'КОМПБЮТЕРОВ', allPrices: tabPrice));
-      },),
-    MenuString(text: 'Телевизаров',
-      function: () {
-        Get.offAll(BodyPrice(
-            price: 'ТЕЛЕВИЗОРОВ', allPrices: tabPrice));
-      },),
-    MenuString(text: 'Фотокамер',
-      function: () {
-        Get.offAll(BodyPrice(
-            price: 'ФОТОКАМЕР', allPrices: tabPrice));
-      },),
-  ];
   final double kSize;
-
-  ButoonMenuSmall({Key key, this.kSize}) : super(key: key);
+  ButoonMenuSmall({Key key, this.kSize, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -112,15 +125,15 @@ class BootomMenuBig extends StatelessWidget {
         },),
       MenuString(text: 'Контакты',
         function: () {
-          Get.to(ContactInf());
+          Get.offAllNamed('/Contact');
         },),
       MenuString(text: 'О нас',
         function: () {
-          Get.to(AboutUsScreen());
+          Get.offAllNamed('/AboutUs');
         },),
       MenuString(text: 'Мои ремонты',
         function: () {
-          Get.to(AboutUsScreen());
+          Get.offAllNamed('/MyService');
         },),
     ];
     final List<Widget> botoonBig =

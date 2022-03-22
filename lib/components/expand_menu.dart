@@ -4,8 +4,9 @@ import 'package:migservice/pages/prise_sreen.dart';
 import 'package:migservice/components/prices/price_list.dart';
 import '../controllers/counterController.dart';
 import '../pages/home_screen.dart';
-import '../pages/сontact_screen.dart';
 import 'constants.dart';
+
+
 //класс хранящий параметры списка виджетов от которого насле дуется data
 class Entry {
   const Entry(this.title, this.function,
@@ -33,7 +34,7 @@ class ExpansionTilE extends StatelessWidget {
 final List<Entry> driwData = <Entry>[
   //список виджетов
   Entry('ГЛАВНАЯ', () {
-    Get.offAll(HomeScreen());
+    Get.offAllNamed('/');
   }),
   Entry(
     'РЕМОНТ',
@@ -60,16 +61,16 @@ final List<Entry> driwData = <Entry>[
     ],
   ),
   Entry('УСЛУГИ', () {
-    Get.offAll(HomeScreen());
+    Get.offAllNamed('/Service');
   }),
   Entry('КОНТАКТЫ', () {
-    Get.offAll(ContactInf());
+    Get.offAllNamed('/Contact');
   }),
   Entry('О НАС', () {
-    Get.offAll(HomeScreen());
+    Get.offAllNamed('/AboutUs');
   }),
   Entry('МОИ РЕМОНТЫ', () {
-    Get.offAll(HomeScreen());
+    Get.offAllNamed('/MyService');
   }),
 ];
 
@@ -98,7 +99,8 @@ class EntryItem extends StatelessWidget {
           ),
         ),
         onTap: root.function,
-      ); //если список children пуст
+      );
+    //если список children пуст
     return Padding(
       padding: const EdgeInsets.only(left: 10.0),
       child: ExpansionTile(

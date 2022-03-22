@@ -18,6 +18,7 @@ class MyServiceScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarOthe(),
+
         ],
       ),);
   }

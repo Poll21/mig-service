@@ -191,7 +191,7 @@ class ContInform extends StatelessWidget {
                       IconCont(
                         kSize: kSize,
                         kColor: Colors.blue,
-                        kIcon: Icons.whatsapp,
+                        kIcon: Costomicons.vk,
                         press: () => Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -231,21 +231,6 @@ class ContInform extends StatelessWidget {
                 color: kPrimaryColor.withOpacity(0.30),
                 child: Column(
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'г. Барнаул,',
-                          style:
-                          TextStyle(color: kTextColor, fontSize: kSize * 5),
-                        ),
-                        Text(
-                          'пр. Красоармейский 4',
-                          style:
-                          TextStyle(color: kTextColor, fontSize: kSize * 4),
-                        ),
-                      ],
-                    ),
                     Expanded(
                       child: ListView(children: [
                         Container(

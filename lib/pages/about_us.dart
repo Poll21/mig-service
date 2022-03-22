@@ -20,12 +20,8 @@ class AboutUsScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarOthe(),
-          TitlePag(title: 'О нас'),
-          Responsive(
-            mobile: PriceHeading(kSize: kMobilSize * 0.8),
-            tablet: PriceHeading(kSize: kTabletSize),
-            desktop: PriceHeading(kSize: kDesktopSize),
-          ),
+          TitlePag(title: 'О нас:'),
+
         ],
       ),);
   }
