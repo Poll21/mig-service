@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:migservice/components/prices/body_prise.dart';
+import 'package:migservice/pages/prise_sreen.dart';
 import 'package:migservice/components/prices/price_list.dart';
 import '../controllers/counterController.dart';
 import '../pages/home_screen.dart';
 import '../pages/сontact_screen.dart';
 import 'constants.dart';
-
+//класс хранящий параметры списка виджетов от которого насле дуется data
 class Entry {
-  //класс хранящий параметры списка виджетов от которого наследуется data
   const Entry(this.title, this.function,
       [this.children =
       const <Entry>[]]); //список внутри списка не обязательный параметр
@@ -16,11 +15,9 @@ class Entry {
   final Function function;
   final List<Entry> children; //вкладываемый список
 }
-
+//виджет прокручиваемого списка
 class ExpansionTilE extends StatelessWidget {
-  //виджет прокручиваемого списка
   final CounterController counterController = Get.put(CounterController());
-
   ExpansionTilE({Key key}) : super(key: key);
 
   @override
@@ -36,43 +33,43 @@ class ExpansionTilE extends StatelessWidget {
 final List<Entry> driwData = <Entry>[
   //список виджетов
   Entry('ГЛАВНАЯ', () {
-    Get.to(HomeScreen());
+    Get.offAll(HomeScreen());
   }),
   Entry(
     'РЕМОНТ',
     () {},
     <Entry>[
-      Entry('СМАРФОНОВ', () {
-        Get.to(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));
+      Entry('Смартфонов', () {
+        Get.offAll(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));
       }),
-      Entry('ПЛАНШЕТОВ', () {
-        Get.to(HomeScreen());
+      Entry('Планшетов', () {
+        Get.offAll(HomeScreen());
       }),
-      Entry('НОУТБУКОВ', () {
-        Get.to(HomeScreen());
+      Entry('Ноутбуков', () {
+        Get.offAll(HomeScreen());
       }),
-      Entry('КОМПЬТЕРОВ', () {
-        Get.to(HomeScreen());
+      Entry('Компьютеров', () {
+        Get.offAll(HomeScreen());
       }),
-      Entry('ТЕЛЕВИЗОРОВ', () {
-        Get.to(HomeScreen());
+      Entry('Телевизаров', () {
+        Get.offAll(HomeScreen());
       }),
-      Entry('ФОТОАППАРАТОВ', () {
-        Get.to(HomeScreen());
+      Entry('Фотокамер', () {
+        Get.offAll(HomeScreen());
       }),
     ],
   ),
   Entry('УСЛУГИ', () {
-    Get.to(HomeScreen());
+    Get.offAll(HomeScreen());
   }),
   Entry('КОНТАКТЫ', () {
-    Get.to(ContactInf());
+    Get.offAll(ContactInf());
   }),
   Entry('О НАС', () {
-    Get.to(HomeScreen());
+    Get.offAll(HomeScreen());
   }),
   Entry('МОИ РЕМОНТЫ', () {
-    Get.to(HomeScreen());
+    Get.offAll(HomeScreen());
   }),
 ];
 

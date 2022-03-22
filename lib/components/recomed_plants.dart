@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:migservice/components/constants.dart';
 
 
-import 'prices/body_prise.dart';
+import '../pages/prise_sreen.dart';
 
 class RecomendsPlants extends StatelessWidget{
   const RecomendsPlants({

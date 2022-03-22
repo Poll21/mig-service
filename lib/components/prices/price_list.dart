@@ -1,4 +1,4 @@
-import 'package:migservice/components/prices/body_prise.dart';
+import 'package:migservice/pages/prise_sreen.dart';
 
 List<PriceString> smartPrice = [
   PriceString(image: 'assets/8_fOyVKHrV4.jpg',title: 'Восстановление устройства после удара или попадания жидкости', price:1500,),

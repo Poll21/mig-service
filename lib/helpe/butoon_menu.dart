@@ -1,16 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:migservice/components/prices/body_prise.dart';
+import 'package:migservice/pages/prise_sreen.dart';
 import 'package:migservice/components/prices/price_list.dart';
 import 'package:migservice/controllers/counterController.dart';
 import '../components/constants.dart';
 import '../pages/about_us.dart';
-import '../pages/home_screen.dart';
-import '../pages/my_service_screen.dart';
-import '../pages/service_screen.dart';
 import '../pages/сontact_screen.dart';
 
+//сласс хронящий имя страници и маршрут к ней
 class MenuString {
   final String text;
   final Function function;
@@ -20,9 +18,9 @@ class MenuString {
     this.function,
   });
 }
-
-class BootomMenuSmall extends StatelessWidget {
-  final List<MenuString> botoonSmallData = [
+//всплывающее мень
+class ButoonMenuSmall extends StatelessWidget {
+  final List<MenuString> butoonSmallData = [
     MenuString(text: 'Смартфоны',
       function: () {
         Get.offAll(BodyPrice(
@@ -31,55 +29,57 @@ class BootomMenuSmall extends StatelessWidget {
     ),
     MenuString(text: 'Планшеты',
       function: () {
-        Get.to(BodyPrice(
-            price: 'Планшеты', allPrices: tabPrice));
+        Get.offAll(BodyPrice(
+            price: 'ПЛАНШЕТОВ', allPrices: tabPrice));
       },
     ),
-    MenuString(text: 'Планшеты',
+    MenuString(text: 'Ноутбуков',
       function: () {
-        Get.to(BodyPrice(
-            price: 'Планшеты', allPrices: tabPrice));
+        Get.offAll(BodyPrice(
+            price: 'НОУТБУКОВ', allPrices: tabPrice));
       },),
-    MenuString(text: 'Планшеты',
+    MenuString(text: 'Компьтеров',
       function: () {
-        Get.to(BodyPrice(
-            price: 'Планшеты', allPrices: tabPrice));
+        Get.offAll(BodyPrice(
+            price: 'КОМПБЮТЕРОВ', allPrices: tabPrice));
       },),
-    MenuString(text: 'Планшеты',
+    MenuString(text: 'Телевизаров',
       function: () {
-        Get.to(BodyPrice(
-            price: 'Планшеты', allPrices: tabPrice));
+        Get.offAll(BodyPrice(
+            price: 'ТЕЛЕВИЗОРОВ', allPrices: tabPrice));
       },),
-    MenuString(text: 'Планшеты',
+    MenuString(text: 'Фотокамер',
       function: () {
-        Get.to(BodyPrice(
-            price: 'Планшеты', allPrices: tabPrice));
+        Get.offAll(BodyPrice(
+            price: 'ФОТОКАМЕР', allPrices: tabPrice));
       },),
   ];
   final double kSize;
 
-  BootomMenuSmall({Key key, this.kSize}) : super(key: key);
+  ButoonMenuSmall({Key key, this.kSize}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size .height;
-    final List<Widget> botoonSmall =
-    botoonSmallData.map((MenuString menuString) =>
+    final List<Widget> butoonSmall =
+    butoonSmallData.map((MenuString menuString) =>
         ButtonMenuItem(
           text: menuString.text, function: menuString.function, kSize: kSize,))
         .toList();
     return CustomSingleChildLayout(
         delegate: MySingleChildLayoutDelegate(
             width / 4,
-            height / 3),
+            height / 3.1),
         child:
         AlertDialog(
           contentPadding: EdgeInsets.all(0),
           // actionsOverflowDirection: VerticalDirection.down,
           elevation: 0,
-          backgroundColor: kPrimaryColor.withOpacity(1),
-          title: Column(children: botoonSmall),
+          backgroundColor: kPrimaryColor.withOpacity(0),
+          title: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: butoonSmall),
         ));
   }
 }
@@ -94,21 +94,21 @@ class BootomMenuBig extends StatelessWidget {
     final List<MenuString> botoonBigData = [
       MenuString(text: 'Главная',
         function: () {
-          Get.to(HomeScreen());
+          Get.offAllNamed('/');
         },
       ),
       MenuString(text: 'Ремонт',
           function: () {
-            showDialog(
+            showDialog(   //вызывает всплывающие кнорки
                 barrierColor: kPrimaryColor.withOpacity(0),
                 context: context,
                 builder: (BuildContext dialogContext) {
-                  return BootomMenuSmall(kSize: kSize,);
+                  return ButoonMenuSmall(kSize: kSize,);
                 }); //добавить функцию
           }),
       MenuString(text: 'Услуги',
         function: () {
-          Get.to(ServiceScreen());
+          Get.offAllNamed('/Service');
         },),
       MenuString(text: 'Контакты',
         function: () {
@@ -118,7 +118,7 @@ class BootomMenuBig extends StatelessWidget {
         function: () {
           Get.to(AboutUsScreen());
         },),
-      MenuString(text: 'О нас',
+      MenuString(text: 'Мои ремонты',
         function: () {
           Get.to(AboutUsScreen());
         },),
@@ -133,8 +133,7 @@ class BootomMenuBig extends StatelessWidget {
       children: botoonBig,);
   }
 }
-
-
+//строка основного меню
 class ButtonMenu extends StatelessWidget {
   final CounterController counterController = Get.put(CounterController());
   final double kSize;
@@ -157,8 +156,7 @@ class ButtonMenu extends StatelessWidget {
     );
   }
 }
-
-//преобразуем текст и виджет ButtonMenuItem
+//отрисовка отдельной кнопки меню
 class ButtonMenuItem extends StatelessWidget {
   final double kSize;
   final String text;
@@ -196,25 +194,12 @@ class ButtonMenuItem extends StatelessWidget {
                   color: kTextColor,
                   fontSize: kSize * 2.5,
                 ),
-              )))
-
-    ;
+              )
+          )
+      );
   }
 }
-
-
-//задает положение расширяемой кнопки "Ремонт"
-
-class LocationBootons extends StatelessWidget {
-  const LocationBootons({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-
+//делигат задающий роложение всплавающего меню
 class MySingleChildLayoutDelegate extends SingleChildLayoutDelegate {
   MySingleChildLayoutDelegate(this.width, this.height);
 

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:migservice/components/constants.dart';
-import 'package:migservice/components/prices/body_prise.dart';
+import 'package:migservice/pages/prise_sreen.dart';
 import 'package:migservice/components/prices/price_list.dart';
 import 'package:migservice/components/size_progect.dart';
 

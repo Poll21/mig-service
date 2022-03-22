@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../components/constants.dart';
-import '../components/prices/body_prise.dart';
+import 'prise_sreen.dart';
 import '../components/size_progect.dart';
 import '../components/title_page.dart';
 import '../controllers/counterController.dart';
@@ -20,7 +20,7 @@ class AboutUsScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarOthe(),
-          TitlePag(title: 'РЕМОНТ СМАРТФОНОВ'),
+          TitlePag(title: 'О нас'),
           Responsive(
             mobile: PriceHeading(kSize: kMobilSize * 0.8),
             tablet: PriceHeading(kSize: kTabletSize),

@@ -7,7 +7,7 @@ import 'package:migservice/components/constants.dart';
 import 'package:migservice/components/expand_menu.dart';
 import 'package:migservice/components/header_with_seachbox.dart';
 import 'package:migservice/components/size_progect.dart';
-import 'package:migservice/helpe/bootom_menu.dart';
+import 'package:migservice/helpe/butoon_menu.dart';
 import 'package:migservice/pages/my_service_screen.dart';
 import '../components/expand_menu.dart';
 import '../pages/home_screen.dart';
@@ -138,7 +138,7 @@ class ButRoW extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: kDefaultPadding * kSize * 1.6,
+      height: kDefaultPadding * kTabletSize * 1.6,
       decoration: BoxDecoration(
           color: kPrimaryColor,
           borderRadius: BorderRadius.only(

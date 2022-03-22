@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:migservice/controllers/counterController.dart';
 import 'package:migservice/helpe/costum_appbar.dart';
-import '../constants.dart';
-import '../size_progect.dart';
-import '../title_page.dart';
+import '../components/constants.dart';
+import '../components/size_progect.dart';
+import '../components/title_page.dart';
 
 class BodyPrice extends StatelessWidget {
   final CounterController counterController = Get.put(CounterController());
@@ -49,7 +49,7 @@ class BodyPrice extends StatelessWidget {
     );
   }
 }
-
+//шапка прайса
 class PriceHeading extends StatelessWidget {
   const PriceHeading({
     Key key,
@@ -137,7 +137,7 @@ class ScrolPrice extends StatelessWidget {
     );
   }
 }
-
+//строка прайс листа
 class PriceDetale extends StatelessWidget {
   final PriceString image, title, price;
   final double kSize;
@@ -200,12 +200,10 @@ class PriceDetale extends StatelessWidget {
     );
   }
 }
-
+//класс который хранит ссылку на изображение, описание ицену услуги
 class PriceString {
-  //класс который хранит ссылку на изображение, описание ицену услуги
   final String title, image;
   final double price;
-
   PriceString({
     this.title,
     this.price,
