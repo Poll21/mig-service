@@ -31,6 +31,11 @@ dependencies:
   new_gradient_app_bar: ^0.2.0
   get: ^4.6.1
   line_icons: ^2.0.1
+  cloud_firestore: ^3.1.10
+  firebase_storage: ^10.2.9
+  firebase_auth: ^3.3.11
+  firebase_core: ^1.13.1
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   flutter_test:
