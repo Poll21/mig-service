@@ -41,22 +41,22 @@ final List<Entry> driwData = <Entry>[
     () {},
     <Entry>[
       Entry('Смартфонов', () {
-        Get.offAll(BodyPrice(price: 'СМАРТФОНЫ', allPrices: smartPrice));
+        Get.offAll(BodyPrice(price: 'СМАРТФОНОВ', allPrices: smartPrice));
       }),
       Entry('Планшетов', () {
-        Get.offAll(HomeScreen());
+        Get.offAll(BodyPrice(price: 'ПЛАНШЕТОВ', allPrices: tabPrice));
       }),
       Entry('Ноутбуков', () {
-        Get.offAll(HomeScreen());
+        Get.offAll(BodyPrice(price: 'НОУТБУКОВ', allPrices: smartPrice));
       }),
       Entry('Компьютеров', () {
-        Get.offAll(HomeScreen());
+        Get.offAll(BodyPrice(price: 'КОМПЬЮТЕРОВ', allPrices: smartPrice));
       }),
       Entry('Телевизаров', () {
-        Get.offAll(HomeScreen());
+        Get.offAll(BodyPrice(price: 'ТЕЛЕВИЗАРОВ', allPrices: smartPrice));
       }),
       Entry('Фотокамер', () {
-        Get.offAll(HomeScreen());
+        Get.offAll(BodyPrice(price: 'ФОТОКАМЕР', allPrices: smartPrice));
       }),
     ],
   ),

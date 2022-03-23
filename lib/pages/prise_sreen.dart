@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:migservice/components/prices/price_list.dart';
 import 'package:migservice/controllers/counterController.dart';
 import 'package:migservice/helpe/costum_appbar.dart';
 import '../components/constants.dart';
@@ -25,14 +25,14 @@ class BodyPrice extends StatelessWidget {
           title: 'РЕМОНТ ' + price,
         ),
         Responsive(
-          mobile: PriceHeading(kSize: kMobilSize * 0.8),
-          tablet: PriceHeading(kSize: kTabletSize),
-          desktop: PriceHeading(kSize: kDesktopSize),
+          mobile: PriceHeading(kSize: kMobilSize, k: 1),
+          tablet: PriceHeading(kSize: kTabletSize, k: 2),
+          desktop: PriceHeading(kSize: kDesktopSize, k: 2),
         ),
         Expanded(
           child: Responsive(
             mobile: ScrolPrice(
-              kSize: kMobilSize * 0.8,
+              kSize: kMobilSize ,
               allPrices: allPrices,
             ),
             tablet: ScrolPrice(
@@ -49,68 +49,75 @@ class BodyPrice extends StatelessWidget {
     );
   }
 }
+
+
 //шапка прайса
 class PriceHeading extends StatelessWidget {
+  final  int k;
+  final double kSize;
   const PriceHeading({
     Key key,
-    this.kSize,
+    this.kSize, this.k,
   }) : super(key: key);
 
-  final double kSize;
+
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
-      height: 80,
-      padding: EdgeInsets.only(top: kDefaultPadding * 2),
+      padding: EdgeInsets.only(top: kDefaultPadding ),
       decoration: BoxDecoration(
           color: kPrimaryColor.withOpacity(0.30),
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(kDefaultRadius * 2),
-              topRight: Radius.circular(kDefaultRadius * 2))),
-      child: Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Expanded(
-              flex: 2,
-              child: Center(
-                  child: Text(
-                'Дталь',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: kSize * 3.0, fontWeight: FontWeight.bold),
-              )),
-            ),
-            Expanded(
-              flex: 5,
-              child: Container(
-                padding: EdgeInsets.only(
-                    left: kDefaultPadding, right: kDefaultPadding),
+              topLeft: Radius.circular(kDefaultRadius * k),
+              topRight: Radius.circular(kDefaultRadius * k))),
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: kDefaultPadding),
+        child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Expanded(
+                flex: 2,
                 child: Center(
-                  child: Text('Описание услуги',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: kSize * 3.0, fontWeight: FontWeight.bold)),
-                ),
+                    child: Text(
+                  'Дталь',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: kSize * 3.0, fontWeight: FontWeight.bold),
+                )),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                child: Center(
-                    child: Text('Стоимость',
+              Expanded(
+                flex: 5,
+                child: Container(
+                  padding: EdgeInsets.only(
+                      left: kDefaultPadding, right: kDefaultPadding),
+                  child: Center(
+                    child: Text('Описание услуги',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: kSize * 3.0,
-                            fontWeight: FontWeight.bold))),
+                            fontSize: kSize * 3.0, fontWeight: FontWeight.bold)),
+                  ),
+                ),
               ),
-            ),
-          ]),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  child: Center(
+                      child: Text('Стоимость',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: kSize * 3.0,
+                              fontWeight: FontWeight.bold))),
+                ),
+              ),
+            ]),
+      ),
     );
   }
 }
-
+//генерация скрол-списка прайса
 class ScrolPrice extends StatelessWidget {
   final double kSize;
   final List<PriceString> allPrices;
@@ -200,13 +207,4 @@ class PriceDetale extends StatelessWidget {
     );
   }
 }
-//класс который хранит ссылку на изображение, описание ицену услуги
-class PriceString {
-  final String title, image;
-  final double price;
-  PriceString({
-    this.title,
-    this.price,
-    this.image,
-  });
-}
+
