@@ -1,10 +1,7 @@
-
-
-//класс который хранит ссылку на изображение, описание ицену услуги
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-
+//класс который хранит ссылку на изображение, описание ицену услуги
 class PriceString {
   final String title, image;
   final double price;
@@ -62,6 +59,17 @@ List<PriceString> noutboockPrice = [
   PriceString(image: 'assets/cover.jpg',title: 'Замена корпусных элементов', price:500),
   PriceString(image: 'assets/cpu_PNG42.png',title: 'Замена микросхемы', price:2500),
 ];
+
+Future<Widget> _getImage(BuildContext context, String imageName) async{
+  Image image;
+  await FireStorageService.loadImage(context, imageName).then((value) {
+    image = Image.network(
+      value.toString(),
+      fit: BoxFit.scaleDown,
+    );
+  });
+  return image;
+}
 
 class FireStorageService extends ChangeNotifier{
   FireStorageService();
