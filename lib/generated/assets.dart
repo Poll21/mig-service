@@ -4,6 +4,7 @@ class Assets {
 
   static const String assets1 = 'assets/1.jpg';
   static const String assets2 = 'assets/2.jpg';
+  static const String assets603676a45debae3a8f721d90 = 'assets/foto_engineer.jpg';
   static const String assets8FOyVKHrV4 = 'assets/8_fOyVKHrV4.jpg';
   static const String assetsAndroidLogoPNG27 = 'assets/android_logo_PNG27.png';
   static const String assetsBuser = 'assets/Buser.jpg';

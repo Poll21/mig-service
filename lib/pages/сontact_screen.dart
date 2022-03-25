@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icon.dart';
-import 'package:migservice/components/costomicons_icons.dart';
-import 'package:migservice/helpe/costum_appbar.dart';
-import '../components/constants.dart';
-import '../components/size_progect.dart';
-import '../components/title_page.dart';
+import 'package:migservice/generated/costomicons_icons.dart';
+import '../components/constants/constants.dart';
+import '../components/helpe/costum_appbar.dart';
+import '../components/helpe/size_progect.dart';
+import '../components/widget/title_page.dart';
 
 
 

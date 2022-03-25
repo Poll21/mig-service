@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:migservice/components/constants.dart';
-import 'package:migservice/pages/about_us.dart';
+import 'package:migservice/components/constants/constants.dart';
+import 'package:migservice/pages/about_us_sсreen.dart';
 import 'package:migservice/pages/home_screen.dart';
 import 'package:get/get.dart';
-import 'package:migservice/pages/prise_sreen.dart';
+import 'package:migservice/pages/prise_sсreen.dart';
 import 'package:migservice/pages/service_screen.dart';
 import 'pages/my_service_screen.dart';
 import 'pages/сontact_screen.dart';

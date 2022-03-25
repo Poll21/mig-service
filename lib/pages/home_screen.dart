@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:migservice/components/body.dart';
-import 'package:migservice/components/constants.dart';
-import 'package:migservice/components/title_page.dart';
+import 'package:migservice/components/widget/body_home_screen.dart';
+import 'package:migservice/components/constants/constants.dart';
+import 'package:migservice/components/widget/title_page.dart';
 import 'package:get/get.dart';
+import '../components/helpe/costum_appbar.dart';
+import '../components/helpe/draw_manu.dart';
 import '../controllers/counterController.dart';
-import '../helpe/draw_manu.dart';
-import '../helpe/costum_appbar.dart';
+
 
 class HomeScreen extends StatelessWidget {
   final CounterController counterController = Get.put(CounterController());
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           },
         ),
         TitlePag(title: 'СРОЧНЫЙ РЕМОНТ'),
-        Body(),
+        BodyHomeScreen(),
       ]),
       drawer: Container(
         margin: EdgeInsets.only(bottom: height/3),

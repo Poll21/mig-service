@@ -60,6 +60,17 @@ List<PriceString> noutboockPrice = [
   PriceString(image: 'assets/cpu_PNG42.png',title: 'Замена микросхемы', price:2500),
 ];
 
+List<PriceString> servicePrice = [
+  PriceString(image: 'assets/8_fOyVKHrV4.jpg',title: 'Разблокировка устройства', price:1500,),
+  PriceString(image: 'assets/android_logo_PNG27.png',title: 'Восстановление операционной системы (програмный ремонт без разбора устройства)', price:1500),
+  PriceString(image: 'assets/LCD.jpg',title: 'Выезд для диагностики или забора оборудования', price:300,),
+  PriceString(image: 'assets/LCD1.jpg',title: 'Технологическая чистка: очистка от пыли, смазка динамических элементов, замена термоотводящих прослоек', price:1200),
+  PriceString(image: 'assets/tachskrin.jpg',title: 'Установка специализированного ПО, драйверов, переферийных устройств', price:500),
+  PriceString(image: 'assets/microUSB.jpg',title: 'Програмная чистка устройства: вирусы, рекламные бамеры, не используемые файлы', price:1000),
+  PriceString(image: 'assets/FPC.jpg',title: 'Сохранение или перенос информации', price:500),
+  PriceString(image: 'assets/camer.jpg',title: 'Восстановление информации с поврежденных носителей', price:1000,),
+];
+
 // Future<Widget> _getImage(BuildContext context, String imageName) async{
 //   Image image;
 //   await FireStorageService.loadImage(context, imageName).then((value) {
