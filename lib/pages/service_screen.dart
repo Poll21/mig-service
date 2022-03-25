@@ -4,6 +4,11 @@ import 'package:get/get.dart';
 import 'package:migservice/controllers/counterController.dart';
 import 'package:migservice/helpe/costum_appbar.dart';
 
+import '../components/constants.dart';
+import '../components/size_progect.dart';
+import '../components/title_page.dart';
+import '../helpe/price_heading.dart';
+
 class ServiceScreen extends StatelessWidget {
   final CounterController counterController = Get.put(CounterController());
 
@@ -16,41 +21,15 @@ class ServiceScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarOthe(),
-          FutureBuilder(
-            future: _getImage(context, "ckul_nout.jpg"),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == CnnectionState.done) {
-                return SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: snapshot.data,
-                );
-              }
-            },
+          TitlePag(
+            title: 'НАШИ УСЛУГИ',
           ),
-
-        ],
+          Responsive(
+            mobile: PriceHeading(kSize: kMobilSize, k: 1, text: 'Услуга'),
+            tablet: PriceHeading(kSize: kTabletSize, k: 2, text: 'Услуга'),
+            desktop: PriceHeading(kSize: kDesktopSize, k: 2, text: 'Услуга'),
+          ),
+        ]
       ),);
-  }
-}
-
-class CnnectionState {
-}
-
-Future<Widget> _getImage(BuildContext context, String imageName) async{
-  Image image;
-  await FireStorageService.loadImage(context, imageName).then((value) {
-    image = Image.network(
-      value.toString(),
-      fit: BoxFit.scaleDown,
-    );
-  });
-  return image;
-}
-
-class FireStorageService extends ChangeNotifier{
-  FireStorageService();
-  static Future<dynamic> loadImage(BuildContext context, String Image) async{
-    return await FirebaseStorage.instance.ref().child(Image).getDownloadURL();
   }
 }

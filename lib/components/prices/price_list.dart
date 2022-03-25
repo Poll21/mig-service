@@ -60,20 +60,20 @@ List<PriceString> noutboockPrice = [
   PriceString(image: 'assets/cpu_PNG42.png',title: 'Замена микросхемы', price:2500),
 ];
 
-Future<Widget> _getImage(BuildContext context, String imageName) async{
-  Image image;
-  await FireStorageService.loadImage(context, imageName).then((value) {
-    image = Image.network(
-      value.toString(),
-      fit: BoxFit.scaleDown,
-    );
-  });
-  return image;
-}
-
-class FireStorageService extends ChangeNotifier{
-  FireStorageService();
-  static Future<dynamic> loadImage(BuildContext context, String sImage) async{
-    return await FirebaseStorage.instance.ref().child(sImage).getDownloadURL();
-  }
-}
+// Future<Widget> _getImage(BuildContext context, String imageName) async{
+//   Image image;
+//   await FireStorageService.loadImage(context, imageName).then((value) {
+//     image = Image.network(
+//       value.toString(),
+//       fit: BoxFit.scaleDown,
+//     );
+//   });
+//   return image;
+// }
+//
+// class FireStorageService extends ChangeNotifier{
+//   FireStorageService();
+//   static Future<dynamic> loadImage(BuildContext context, String sImage) async{
+//     return await FirebaseStorage.instance.ref().child(sImage).getDownloadURL();
+//   }
+// }

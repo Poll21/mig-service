@@ -6,10 +6,10 @@ import 'package:migservice/helpe/costum_appbar.dart';
 import '../components/constants.dart';
 import '../components/size_progect.dart';
 import '../components/title_page.dart';
+import '../helpe/price_heading.dart';
 
 class BodyPrice extends StatelessWidget {
   final CounterController counterController = Get.put(CounterController());
-
   final String price;
   List<PriceString> allPrices;
 
@@ -25,9 +25,9 @@ class BodyPrice extends StatelessWidget {
           title: 'РЕМОНТ ' + price,
         ),
         Responsive(
-          mobile: PriceHeading(kSize: kMobilSize, k: 1),
-          tablet: PriceHeading(kSize: kTabletSize, k: 2),
-          desktop: PriceHeading(kSize: kDesktopSize, k: 2),
+          mobile: PriceHeading(kSize: kMobilSize, k: 1, text: 'Деталь'),
+          tablet: PriceHeading(kSize: kTabletSize, k: 2, text: 'Деталь'),
+          desktop: PriceHeading(kSize: kDesktopSize, k: 2, text: 'Деталь'),
         ),
         Expanded(
           child: Responsive(
@@ -51,72 +51,8 @@ class BodyPrice extends StatelessWidget {
 }
 
 
-//шапка прайса
-class PriceHeading extends StatelessWidget {
-  final  int k;
-  final double kSize;
-  const PriceHeading({
-    Key key,
-    this.kSize, this.k,
-  }) : super(key: key);
 
 
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Container(
-      padding: EdgeInsets.only(top: kDefaultPadding ),
-      decoration: BoxDecoration(
-          color: kPrimaryColor.withOpacity(0.30),
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(kDefaultRadius * k),
-              topRight: Radius.circular(kDefaultRadius * k))),
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: kDefaultPadding),
-        child: Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Expanded(
-                flex: 2,
-                child: Center(
-                    child: Text(
-                  'Дталь',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: kSize * 3.0, fontWeight: FontWeight.bold),
-                )),
-              ),
-              Expanded(
-                flex: 5,
-                child: Container(
-                  padding: EdgeInsets.only(
-                      left: kDefaultPadding, right: kDefaultPadding),
-                  child: Center(
-                    child: Text('Описание услуги',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: kSize * 3.0, fontWeight: FontWeight.bold)),
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Container(
-                  child: Center(
-                      child: Text('Стоимость',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: kSize * 3.0,
-                              fontWeight: FontWeight.bold))),
-                ),
-              ),
-            ]),
-      ),
-    );
-  }
-}
 //генерация скрол-списка прайса
 class ScrolPrice extends StatelessWidget {
   final double kSize;
