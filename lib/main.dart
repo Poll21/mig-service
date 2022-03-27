@@ -8,7 +8,8 @@ import 'package:migservice/pages/prise_sсreen.dart';
 import 'package:migservice/pages/service_screen.dart';
 import 'pages/my_service_screen.dart';
 import 'pages/сontact_screen.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'generated/firebase_options.dart';
 
 void main() {
   runApp(MyApp());

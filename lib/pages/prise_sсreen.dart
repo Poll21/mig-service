@@ -30,7 +30,8 @@ class BodyPrice extends StatelessWidget {
           desktop: PriceHeading(radius: 2, widget: PriseTitl(kSize: kDesktopSize, text: 'Деталь')),
         ),
         Expanded(
-          child: Responsive(
+          child:
+          Responsive(
             mobile: ScrolPrice(
               kSize: kMobilSize ,
               allPrices: allPrices,

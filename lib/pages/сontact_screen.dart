@@ -1,40 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:migservice/generated/costomicons_icons.dart';
 import '../components/constants/constants.dart';
 import '../components/helpe/costum_appbar.dart';
 import '../components/helpe/size_progect.dart';
+import '../components/widget/price_heading.dart';
 import '../components/widget/title_page.dart';
 
-
-
 class ContactInf extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroudColor,
-      body:Column(
-          children: [
-            CustomAppBarOthe(),
-            TitlePag(title: 'Свяжитесь с нами:'),
-            Responsive(
-              mobile: Hand(kSize: 1),
-              tablet: Hand(kSize: 2),
-              desktop: Hand(kSize: 2),
-            ),
-            Responsive(
-              mobile: ContInformMob(kSize: kMobilSize),
-              tablet: ContInform(kSize: kTabletSize),
-              desktop: ContInform(kSize: kDesktopSize),
-            ),
-          ]
-      ),
-
+      body: Column(children: [
+        CustomAppBarOthe(),
+        TitlePag(title: 'Свяжитесь с нами:'),
+        Responsive(
+          mobile: PriceHeading(radius: 1, widget: Hand(kSize: kMobilSize, text: 'г.Барнаул, пр.Красоармейский 4')),
+          tablet: PriceHeading(radius: 2, widget: Hand(kSize: kMobilSize, text: 'г.Барнаул, пр.Красоармейский 4')),
+          desktop: PriceHeading(radius: 2, widget: Hand(kSize: kMobilSize, text: 'г.Барнаул, пр.Красоармейский 4')),
+        ),
+        Responsive(
+          mobile: ContInformMob(kSize: kMobilSize),
+          tablet: ContInform(kSize: kTabletSize),
+          desktop: ContInform(kSize: kDesktopSize),
+        ),
+      ]),
     );
   }
 }
 
+//режим работы
 class OperatingMode extends StatelessWidget {
   const OperatingMode({
     Key key,
@@ -49,58 +47,42 @@ class OperatingMode extends StatelessWidget {
       child: Center(
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-            padding: EdgeInsets.all(kDefaultPadding * 2),
+            padding: EdgeInsets.all(kDefaultPadding),
             decoration: BoxDecoration(
-                color: kPrimaryColor.withOpacity(0.40),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(kDefaultRadius),
-                )),
+              color: kPrimaryColor.withOpacity(0.40),
+              borderRadius: BorderRadius.all(
+              Radius.circular(kDefaultRadius),
+              )
+            ),
             child: Column(children: [
-              Text(
-                'Режим работы:',
-                style: TextStyle(color: kTextColor, fontSize: kSize * 4),
-              ),
-              Text(
-                'Пн. 10:00-19:00',
-                style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
-                'Вт. 10:00-19:00',
-                style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
-                'Ср. 10:00-19:00',
-                style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
-                'Чт. 10:00-19:00',
-                style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
-                'Пт. 10:00-19:00',
-                style: TextStyle(color: kTextColor, fontSize: kSize * 3),
-              ),
-              Text(
-                'Сб. 10:00-19:00*',
-                style: TextStyle(color: kRextColor, fontSize: kSize * 3),
-              ),
-              Text(
-                'Вб. 10:00-19:00*',
-                style: TextStyle(color: kRextColor, fontSize: kSize * 3),
-              ),
-              Container(
-                margin: EdgeInsets.all(kDefaultPadding),
-                child: Text(
-                  '  *В субботу и воскресенье сервисный центр работает в режиме приема и выдачи.',
-                  style: TextStyle(color: kRextColor, fontSize: kSize * 2),
-                ),
-              ),
-            ]),
-          )),
+              Text('Режим работы:',
+                style: TextStyle(color: kTextColor, fontSize: kSize * 5),),
+              Text('Пн. 10:00-19:00',
+                style: TextStyle(color: kTextColor, fontSize: kSize * 4),),
+              Text('Вт. 10:00-19:00',
+                style: TextStyle(color: kTextColor, fontSize: kSize * 4),),
+              Text('Ср. 10:00-19:00',
+                style: TextStyle(color: kTextColor, fontSize: kSize * 4),),
+              Text('Чт. 10:00-19:00',
+                style: TextStyle(color: kTextColor, fontSize: kSize * 4),),
+              Text('Пт. 10:00-19:00',
+                style: TextStyle(color: kTextColor, fontSize: kSize * 4),),
+              Text('Сб. 10:00-19:00*',
+                style: TextStyle(color: kRextColor, fontSize: kSize * 4),),
+              Text('Вб. 10:00-19:00*',
+                style: TextStyle(color: kRextColor, fontSize: kSize * 4),),
+              Padding(
+               padding: EdgeInsets.all(kDefaultPadding),
+                child: Text('*В субботу и воскресенье сервисный центр работает в режиме приема и выдачи.',
+                  style: TextStyle(color: kRextColor, fontSize: kSize * 3),),
+          ),
+        ]),
+      )),
     );
   }
 }
 
+//отображение иконки
 class IconCont extends StatelessWidget {
   const IconCont({
     Key key,
@@ -135,6 +117,7 @@ class IconCont extends StatelessWidget {
   }
 }
 
+//список контактов
 class ContInform extends StatelessWidget {
   const ContInform({
     Key key,
@@ -152,7 +135,7 @@ class ContInform extends StatelessWidget {
             child: Container(
               color: kPrimaryColor.withOpacity(0.30),
               child:
-              ListView(scrollDirection: Axis.vertical, children: <Widget>[
+                  ListView(scrollDirection: Axis.vertical, children: <Widget>[
                 OperatingMode(
                   kSize: kSize,
                 ),
@@ -298,6 +281,7 @@ class ContInform extends StatelessWidget {
   }
 }
 
+//список контактов для мобильной версии
 class ContInformMob extends StatelessWidget {
   const ContInformMob({
     Key key,
@@ -311,33 +295,33 @@ class ContInformMob extends StatelessWidget {
       child: Container(
         color: kPrimaryColor.withOpacity(0.30),
         child: ListView(scrollDirection: Axis.vertical, children: <Widget>[
-         OperatingMode(
+          OperatingMode(
             kSize: kSize,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconCont(
-                kSize: kSize,
-                kColor: Colors.green[500],
-                kIcon: Icons.phone,
-                press: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ContactInf())),
-              ),
+                  kSize: kSize,
+                  kColor: Colors.green[500],
+                  kIcon: Icons.phone,
+                  press: () {
+                    Get.offAllNamed('/Contact');
+                  }),
               IconCont(
-                kSize: kSize,
-                kColor: Colors.blue,
-                kIcon: Costomicons.vk,
-                press: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ContactInf())),
-              ),
+                  kSize: kSize,
+                  kColor: Colors.blue,
+                  kIcon: Costomicons.vk,
+                  press: () {
+                    Get.offAllNamed('/Contact');
+                  }),
               IconCont(
-                kSize: kSize,
-                kColor: Colors.green[500],
-                kIcon: Costomicons.whatsapp,
-                press: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ContactInf())),
-              ),
+                  kSize: kSize,
+                  kColor: Colors.green[500],
+                  kIcon: Costomicons.whatsapp,
+                  press: () {
+                    Get.offAllNamed('/Contact');
+                  }),
             ],
           ),
           Container(
@@ -361,7 +345,7 @@ class ContInformMob extends StatelessWidget {
                     width: kSize * 15,
                     decoration: BoxDecoration(
                       borderRadius:
-                      BorderRadius.all(Radius.circular(kDefaultRadius / 2)),
+                          BorderRadius.all(Radius.circular(kDefaultRadius / 2)),
                       image: DecorationImage(
                           alignment: AlignmentDirectional.center,
                           fit: BoxFit.cover,
@@ -373,7 +357,7 @@ class ContInformMob extends StatelessWidget {
                     width: kSize * 15,
                     decoration: BoxDecoration(
                       borderRadius:
-                      BorderRadius.all(Radius.circular(kDefaultRadius / 2)),
+                          BorderRadius.all(Radius.circular(kDefaultRadius / 2)),
                       image: DecorationImage(
                           alignment: AlignmentDirectional.center,
                           fit: BoxFit.cover,
@@ -385,7 +369,7 @@ class ContInformMob extends StatelessWidget {
                     width: kSize * 15,
                     decoration: BoxDecoration(
                       borderRadius:
-                      BorderRadius.all(Radius.circular(kDefaultRadius / 2)),
+                          BorderRadius.all(Radius.circular(kDefaultRadius / 2)),
                       image: DecorationImage(
                           alignment: AlignmentDirectional.center,
                           fit: BoxFit.cover,
@@ -401,34 +385,23 @@ class ContInformMob extends StatelessWidget {
 }
 
 class Hand extends StatelessWidget {
+  final double kSize;
+  final String text;
   const Hand({
     Key key,
-    this.kSize,
+    this.kSize, this.text,
   }) : super(key: key);
-  final double kSize;
 
   Widget build(BuildContext context) {
-    return
-      Container(
-      height: kDefaultRadius * kSize,
-      //padding: EdgeInsets.only(top: kDefaultPadding * kSize),
-      decoration: BoxDecoration(
-          color: kPrimaryColor.withOpacity(0.30),
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(kDefaultRadius * kSize),
-              topRight: Radius.circular(kDefaultRadius * kSize))),
-      child:
-        Center(
-
-          child:FittedBox(
-            child:Padding(padding: EdgeInsets.symmetric(horizontal: kDefaultRadius),
-            child: Text(
-              'г.Барнаул,пр. Красоармейский 4',
-              style: TextStyle(color: kTextColor, fontSize: kSize * 40),
-            ),)
-
-
-          ))
-    );
+    return Center(
+        child: FittedBox(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: kDefaultRadius),
+              child: Text(text,
+              style: TextStyle(
+            color: kTextColor,
+            fontSize: kSize * 10,
+          )),
+    )));
   }
 }
