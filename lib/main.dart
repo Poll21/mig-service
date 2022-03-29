@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:migservice/components/constants/constants.dart';
 import 'package:migservice/pages/about_us_sсreen.dart';
@@ -11,7 +10,11 @@ import 'pages/сontact_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'generated/firebase_options.dart';
 
-void main() {
+void main()  async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
