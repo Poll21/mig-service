@@ -19,7 +19,7 @@ class HeaderWithSearchBox extends StatelessWidget {
             child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                // crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Expanded(
                   flex: 1,
@@ -28,7 +28,6 @@ class HeaderWithSearchBox extends StatelessWidget {
                   flex: 3,
                   child:
                   Column(
-
                     children: [
                     Center(
                       child: FittedBox(
@@ -38,9 +37,9 @@ class HeaderWithSearchBox extends StatelessWidget {
                       ),
                     ),
                   ),
-                    Center(
-                      child: FittedBox(
-                        child: Text('MIG-SERVICE',
+                  Expanded(
+                    child:Center(
+                      child: Text('MIG-SERVICE',
                           style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold, fontSize: kSize * 7)),
                       ),
                     ),

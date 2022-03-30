@@ -30,43 +30,30 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js');
-      });
-    }
-  </script>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAU9wRS29CpF6OJg9-ApLnUKyG7yDu6loU",
+    authDomain: "migservice-a0daf.firebaseapp.com",
+    databaseURL: "https://migservice-a0daf-default-rtdb.firebaseio.com",
+    projectId: "migservice-a0daf",
+    storageBucket: "migservice-a0daf.appspot.com",
+    messagingSenderId: "1098673807089",
+    appId: "1:1098673807089:web:02098c368644ce765b1350",
+    measurementId: "G-QR5T0EYC3W"
+  };
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyAU9wRS29CpF6OJg9-ApLnUKyG7yDu6loU",
-      authDomain: "migservice-a0daf.firebaseapp.com",
-      databaseURL: "https://migservice-a0daf-default-rtdb.firebaseio.com",
-      projectId: "migservice-a0daf",
-      storageBucket: "migservice-a0daf.appspot.com",
-      messagingSenderId: "1098673807089",
-      appId: "1:1098673807089:web:02098c368644ce765b1350",
-      measurementId: "G-QR5T0EYC3W"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>

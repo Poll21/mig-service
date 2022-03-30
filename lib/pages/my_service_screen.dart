@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,7 +24,7 @@ class _MyServiceScreenState extends State<MyServiceScreen> {
         future: FutureStoreDataBase().getData(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return Image.asset('assets/1.jpg');            
+            return Text('eroor');
           } 
           if (snapshot.connectionState == ConnectionState.done) {
             return Image.network(snapshot.data.toString(),);
@@ -52,9 +53,9 @@ class FutureStoreDataBase {
     }   
   }
   Future<void>downloadURLExample() async{
-    downloadURL = await firebase_storage.FirebaseStorage.instance
+    downloadURL = await FirebaseStorage.instance
     .ref()
-    .child('ckul_nout.jpg').
+    .child("FPC.jpg").
     getDownloadURL();
     debugPrint(downloadURL.toString());
   }
