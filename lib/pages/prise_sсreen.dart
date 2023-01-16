@@ -65,8 +65,8 @@ class ScrolPrice extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Widget> priceItem = allPrices
         .map((PriceString smartPrice) => PriceDetale(
-              title: smartPrice,
               image: smartPrice,
+              title: smartPrice,
               price: smartPrice,
               kSize: kSize,
             ))

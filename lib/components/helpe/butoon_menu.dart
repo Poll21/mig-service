@@ -10,7 +10,8 @@ class MenuString {
   final String text;
   final Function function;
   final String image;
-  MenuString({this.image,
+  MenuString({
+    this.image,
     this.text,
     this.function,
   });

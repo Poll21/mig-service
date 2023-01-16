@@ -32,7 +32,10 @@ class StartMenu extends StatelessWidget {
     final List<Widget> cardItem =
     butoonSmallData.map((MenuString menuString) =>
         PlantCard(
-          image: menuString.image ,title: menuString.text, press: menuString.function, kSize: kSize,))
+          image: menuString.image ,
+          title: menuString.text,
+          press: menuString.function,
+          kSize: kSize,))
         .toList();
     return GridView(
       physics: BouncingScrollPhysics(),

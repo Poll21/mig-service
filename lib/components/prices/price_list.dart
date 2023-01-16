@@ -70,21 +70,3 @@ List<PriceString> servicePrice = [
   PriceString(image: 'assets/FPC.jpg',title: 'Сохранение или перенос информации', price:500),
   PriceString(image: 'assets/camer.jpg',title: 'Восстановление информации с поврежденных носителей', price:1000,),
 ];
-
-// Future<Widget> _getImage(BuildContext context, String imageName) async{
-//   Image image;
-//   await FireStorageService.loadImage(context, imageName).then((value) {
-//     image = Image.network(
-//       value.toString(),
-//       fit: BoxFit.scaleDown,
-//     );
-//   });
-//   return image;
-// }
-//
-// class FireStorageService extends ChangeNotifier{
-//   FireStorageService();
-//   static Future<dynamic> loadImage(BuildContext context, String sImage) async{
-//     return await FirebaseStorage.instance.ref().child(sImage).getDownloadURL();
-//   }
-// }

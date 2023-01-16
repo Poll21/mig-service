@@ -13,7 +13,8 @@ class TitlePag extends StatelessWidget {
   Widget build(BuildContext context) {
     return Responsive(
         mobile: TitleWithMoreBtn(title: title,
-          kSize: kMobilSize ,press: () {
+          kSize: kMobilSize ,
+          press: () {
             Navigator.push(context, PageRouteBuilder(
             opaque: false,
             pageBuilder: (BuildContext context, _, __) => AttentionPage(kSize: kMobilSize,)));
